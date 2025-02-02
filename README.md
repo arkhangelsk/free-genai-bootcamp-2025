@@ -1,1 +1,1 @@
-Exercises from FenAI Bootcamp 2025
+Exercises from GenAI Bootcamp 2025
