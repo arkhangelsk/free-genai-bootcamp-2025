@@ -1,13 +1,20 @@
-## MetaAI Powered Assistant Guide
+# MetaAI Powered Assistant Guide
+## Access Detail
+* Link: https://www.meta.ai/
 
-### Which Model
+## ML Model used by Meta AI: 
+* Llama 3 model
 
-Meta.ai is using Llama 3 70B
+## Parameters:
+* 70 billion parameters
 
-https://huggingface.co/meta-llama/Meta-Llama-3-70B
+## Context Window Size: 
+* 131k tokens
 
-### Prompting Guides
+## Hugging Face:
+* https://huggingface.co/meta-llama/Meta-Llama-3-70B
 
-https://www.llama.com/docs/how-to-guides/prompting/
+## Prompting Guide
 
-It appears that Lllama does not have any special prompting requirements to best understand context like other models.
+* https://www.llama.com/docs/how-to-guides/prompting/
+
