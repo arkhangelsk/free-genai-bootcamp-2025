@@ -7,7 +7,7 @@
 * DeepSeek-R1
 
 ## Context Window Size: 
-* 131k tokens
+* 128k tokens
 
 ## Parameter Size
 * 671B Parameters
