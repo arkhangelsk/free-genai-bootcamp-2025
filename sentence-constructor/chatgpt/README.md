@@ -1,10 +1,13 @@
+# ChatGPT Guide
+
 ## Access Detail
 * Link: https://chatgpt.com/
-* Paid/Free: Free
 
 ## ML Model: 
 * OpenAI's ChatGPT-4-turbo
 
-## Context Window: 
+## Context Window Size: 
 * 128k tokens
 
+## Prompting Guide
+* https://platform.openai.com/docs/guides/prompt-engineering
