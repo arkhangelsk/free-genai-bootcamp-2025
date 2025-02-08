@@ -178,3 +178,90 @@ Great job! You're almost perfect! Just a **tiny** adjustment:
 
 Give it a try! 😊
 
+# Prompt 3
+**Role:** Arabic Language Teacher  
+
+**Teaching Instructions:**  
+- The student will provide an English sentence.  
+- Your task is to **guide** the student in translating the sentence into **Modern Standard Arabic (MSA)** rather than simply providing the answer.  
+- Use **hints and step-by-step questioning** to help the student construct the translation correctly.  
+- Provide a **table of related vocabulary**
+- Additionally, include a **table of essential connectors and particles** (e.g., "and," "but," "because," "if") to support sentence construction.  
+- Offer **phonetic transcriptions (Romanized Arabic)** to assist with pronunciation.  
+- Correct any mistakes subtly by asking leading questions or offering alternative phrasing.  
+
+**Student Input:**  
+*I am a student, and I like coffee.*  
+
+**Expected Response Format:**  
+1. **Step-by-Step Clues** to guide the student toward the correct translation.  
+2. **Vocabulary Table** (excluding particles, pronouns, or verb conjugations).  
+3. **Table of Essential Connectors and Particles** to support grammar learning.  
+4. **Follow-up questions** to reinforce understanding and encourage self-correction.
+
+## ChatGPT Response
+Great! Let’s break down your sentence into parts and build the Arabic translation step by step.  
+
+### **Step 1: Identifying Key Parts of the Sentence**  
+Your sentence:  
+👉 *I am a student, and I like coffee.*  
+
+Let's analyze the main components:  
+- **Subject:** "I"  
+- **Verb 1:** "am" (linking verb)  
+- **Noun:** "a student"  
+- **Connector:** "and"  
+- **Verb 2:** "like"  
+- **Noun:** "coffee"  
+
+### **Step 2: Translating "I am a student"**  
+📌 In Arabic, the verb "to be" (am/is/are) is **not used** in the present tense. Instead, we say:  
+**"أنا طالب"** (*Ana ṭālib* – if male)  
+**"أنا طالبة"** (*Ana ṭāliba* – if female)  
+
+👉 Which one applies to you? 😊  
+
+### **Step 3: Translating "I like coffee"**  
+- The verb **"like"** in Arabic is **أحب** (*uḥibb*).  
+- The noun **"coffee"** in Arabic is **القهوة** (*al-qahwa*).  
+- In Arabic, the verb comes **before** the object.  
+
+So, "I like coffee" becomes:  
+**أنا أحب القهوة** (*Ana uḥibb al-qahwa*).  
+
+### **Step 4: Adding "and"**  
+The word for "and" in Arabic is **و** (*wa*), and it directly connects the two parts:  
+✅ **أنا طالب/طالبة وأحب القهوة**  
+(*Ana ṭālib/ṭāliba wa uḥibb al-qahwa*).  
+
+---
+
+## **📌 Vocabulary Table**
+| English | Arabic | Romanized Arabic |
+|---------|--------|------------------|
+| student (male) | طالب | Ṭālib |
+| student (female) | طالبة | Ṭāliba |
+| coffee | القهوة | Al-qahwa |
+| like | أحب | Uḥibb |
+
+## **📌 Essential Connectors & Particles**
+| English | Arabic | Romanized Arabic |
+|---------|--------|------------------|
+| and | و | wa |
+| but | لكن | lākin |
+| because | لأن | li'anna |
+| if | إذا | idhā |
+
+---
+
+### **Final Sentence with Phonetics**
+✅ **أنا طالب/طالبة وأحب القهوة**  
+**(*Ana ṭālib/ṭāliba wa uḥibb al-qahwa*)**  
+
+---
+
+### **Follow-up Questions for You**  
+1️⃣ If you wanted to say *"I love coffee"* instead of *"I like coffee,"* what small change would you make? 😊  
+2️⃣ How would you say *"I am a teacher and I like coffee"*? (Hint: "teacher" = **معلّم (muʿallim)** for males, **معلّمة (muʿallima)** for females)  
+
+Let’s practice! 🎉
