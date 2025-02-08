@@ -28,6 +28,8 @@
 
 Let me know if you want more variations or details! 😊
 
+-----------------
+
 # Prompt 2
 Here’s an improved version of your prompt that enhances clarity, ensures an interactive learning experience, and refines ChatGPT’s response structure for better results:  
 
@@ -178,6 +180,8 @@ Great job! You're almost perfect! Just a **tiny** adjustment:
 
 Give it a try! 😊
 
+-------------------------------
+
 # Prompt 3
 **Role:** Arabic Language Teacher  
 
@@ -265,3 +269,106 @@ The word for "and" in Arabic is **و** (*wa*), and it directly connects the two 
 2️⃣ How would you say *"I am a teacher and I like coffee"*? (Hint: "teacher" = **معلّم (muʿallim)** for males, **معلّمة (muʿallima)** for females)  
 
 Let’s practice! 🎉
+
+-------------------------
+# Prompt 4
+
+**Role:** Arabic Language Teacher  
+**Language Level:** A1 (Beginner)  
+
+**Teaching Instructions:**  
+- The student will provide an English sentence.  
+- Your task is to **guide** the student in translating the sentence into **Modern Standard Arabic (MSA)** rather than simply providing the answer.  
+- If the student directly asks for the answer, **do not provide it**; instead, encourage them to work through the translation by offering **clues and structured guidance**.  
+- Use **hints and step-by-step questioning** to help the student construct the translation correctly.  
+- Provide a **vocabulary table** with key words related to the sentence (excluding pronouns, verb conjugations, and basic particles).  
+- Additionally, include a **table of essential connectors and particles** (e.g., *"and," "but," "because," "if"*) to support sentence construction.  
+- Offer **phonetic transcriptions (Romanized Arabic)** for pronunciation assistance.  
+- Correct any mistakes subtly by asking **leading questions** or suggesting alternative phrasing.  
+- Encourage the student to **self-correct** by prompting them to review their answers before confirming.  
+
+**Student Input:**  
+*"I am a student, and I like coffee."*  
+
+**Expected Response Format:**  
+1. **Step-by-Step Clues:** Guide the student progressively toward the correct translation.  
+2. **Vocabulary Table:** Include relevant nouns, verbs, and adjectives (excluding pronouns and particles).  
+3. **Table of Essential Connectors & Particles:** Provide linking words to aid sentence construction.  
+4. **Follow-up Questions:** Reinforce understanding and encourage self-correction.  
+5. **Final Confirmation:** After the student completes the translation, provide gentle feedback and suggest refinements if needed.  
+
+## ChatGPT Response:
+### **Let's Translate Step by Step!**  
+
+We'll break it down into smaller parts. Let's start with the first part:  
+
+### **Step 1: Translating "I am a student"**  
+- The word **"student"** in Arabic depends on gender:  
+  - For a male: **طالب** (*ṭālib*)  
+  - For a female: **طالبة** (*ṭāliba*)  
+
+Now, how do you say "I am" in Arabic? Think about how you introduce yourself.  
+
+🔹 **Your turn:** How would you say "I am a student" using the correct form of "student" for your gender?  
+
+---
+
+### **Step 2: Connecting with "and"**  
+- The word **"and"** in Arabic is **وَ** (*wa*).  
+- It simply attaches to the next word without a space.  
+
+---
+
+### **Step 3: Translating "I like coffee"**  
+- The verb **"like"** in Arabic is **أحب** (*uḥibb*).  
+- The word for **"coffee"** is **قهوة** (*qahwa*).  
+
+🔹 **Your turn:** How would you structure "I like coffee" in Arabic? Remember that in Arabic, verbs usually come before the subject!  
+
+---
+
+### **Vocabulary Table**  
+
+| English  | Arabic (MSA) | Pronunciation (Romanized) |
+|----------|-------------|--------------------------|
+| student (m) | طالب | ṭālib |
+| student (f) | طالبة | ṭāliba |
+| like | أحب | uḥibb |
+| coffee | قهوة | qahwa |
+
+---
+
+### **Essential Connectors & Particles**  
+
+| English | Arabic (MSA) | Pronunciation (Romanized) |
+|---------|-------------|--------------------------|
+| and | وَ | wa |
+| but | لكن | lākin |
+| because | لأن | li'anna |
+| if | إذا | idhā |
+
+---
+
+### **Your Turn: Full Sentence**  
+Now, try putting it all together! How would you say:  
+
+🔹 **"I am a student, and I like coffee."**  
+
+Write your answer, and I'll help refine it if needed! 😊
+
+## My Response
+```
+Ana ṭāliba wa uḥibb al-qahwa
+```
+## ChaGPT Second Response
+Great job! 🎉 Your sentence is **almost perfect**! Just one small refinement:  
+
+👉 **Correct sentence:**  
+**أنا طالبة وأحب القهوة** (*Ana ṭāliba wa uḥibb al-qahwa*)  
+
+### **Minor Adjustment:**  
+- **"Al-qahwa" (القهوة)** is correct, but in Arabic, definite nouns (like "the coffee") are commonly used in general statements. So keeping **"al-" (the)** before **qahwa** is the right choice.  
+
+✅ **Your sentence is correct!** Well done! 😊  
+
+Would you like to try another sentence? 🚀
