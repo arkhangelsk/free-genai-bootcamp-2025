@@ -70,7 +70,7 @@ DB Browser for SQLite is a free, user-friendly tool for managing SQLite database
 <img width="774" alt="image" src="https://github.com/user-attachments/assets/f32d1928-b6b8-4da8-ace8-040f33744f97" />
 
 
-#### **4. Run SQL Queries (Optional)**  
+#### **4. Run SQL Queries**  
 - Switch to the **"Execute SQL"** tab.  
 - Enter SQL commands like:
   ```sql
