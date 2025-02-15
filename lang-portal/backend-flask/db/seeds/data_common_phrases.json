@@ -1,0 +1,112 @@
+[
+  {
+    "arabic": "شُكْرًا",
+    "romanized": "Shukran",
+    "english": "Thank you",
+    "example": {
+      "arabic": "شُكْرًا لَكَ! هَذَا لَطِيفٌ مِنْكَ",
+      "romanized": "Shukran laka! Hādhā laṭīfun minka.",
+      "english": "Thank you"
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "عَفْوًا",
+    "romanized": "ʿAfwan",
+    "english": "You’re welcome",
+    "example": {
+      "arabic": "عَفْوًا، لا شُكْرَ عَلَى وَاجِبٍ",
+      "romanized": "ʿAfwan, lā shukra ʿalā wājib.",
+      "english": "You’re welcome"
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "مِنْ فَضْلِكَ",
+    "romanized": "Min faḍlika",
+    "english": "Please",
+    "example": {
+      "arabic": "مِنْ فَضْلِكَ، أَعْطِنِي الكِتَابَ",
+      "romanized": "Min faḍlika, aʿṭinī al-kitāb.",
+      "english": "Please, give me the book."
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "عُذْرًا",
+    "romanized": "Uḏran",
+    "english": "Excuse me",
+    "example": {
+      "arabic": "عُذْرًا، هَلْ يُمْكِنُكَ المُسَاعَدَة؟",
+      "romanized": "Uḏran, hal yumkinuka al-musāʿadah?",
+      "english": "Excuse me"
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "نَعَمْ",
+    "romanized": "Naʿam",
+    "english": "Yes",
+    "example": {
+      "arabic": "نَعَمْ، أَنَا مُتَفِقٌ مَعَكَ",
+      "romanized": "Naʿam, anā mutafiqun maʿaka.",
+      "english": "Yes"
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "لا",
+    "romanized": "Lā",
+    "english": "No",
+    "example": {
+      "arabic": "لا، هَذَا غَيْرُ صَحِيحٍ",
+      "romanized": "Lā, hādhā ghayru ṣaḥīḥ.",
+      "english": "No"
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "لا أَعْرِفُ",
+    "romanized": "Lā aʿrifu",
+    "english": "I don’t know",
+    "example": {
+      "arabic": "لا أَعْرِفُ الجَوَابَ",
+      "romanized": "Lā aʿrifu al-jawāb.",
+      "english": "I don’t know"
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "أَنَا آسِفٌ",
+    "romanized": "Anā āsif",
+    "english": "I’m sorry",
+    "example": {
+      "arabic": "أَنَا آسِفٌ، لَقَدْ أَخْطَأْتُ",
+      "romanized": "Anā āsif, laqad akhṭaʾtu.",
+      "english": "I’m sorry"
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "بِكَمْ هَذَا؟",
+    "romanized": "Bikam hādhā?",
+    "english": "How much is this?",
+    "example": {
+      "arabic": "بِكَمْ هَذَا القَمِيص؟",
+      "romanized": "Bikam hādhā al-qamīṣ?",
+      "english": "How much is this?"
+    },
+    "group_id": 2
+  },
+  {
+    "arabic": "النَّجْدَة!",
+    "romanized": "Al-najdah!",
+    "english": "Help!",
+    "example": {
+      "arabic": "النَّجْدَة! هُنَاكَ حَادِثٌ)",
+      "romanized": "Al-najdah! Hunāka ḥādith.",
+      "english": "Help! There’s an accident."
+    },
+    "group_id": 2
+  }
+]

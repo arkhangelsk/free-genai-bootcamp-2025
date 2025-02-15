@@ -1,0 +1,112 @@
+[
+  {
+    "arabic": "مَرْحَبًا",
+    "romanized": "Marhaban",
+    "english": "Hello",
+    "example": {
+      "arabic": "مرحبا، كيف حالك؟",
+      "romanized": "Marhaban! Kayfa ḥāluka?",
+      "english": "Hello, how are you?"
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "السَّلامُ عَلَيْكُمْ",
+    "romanized": "As-salāmu ʿalaykum",
+    "english": "Peace be upon you",
+    "example": {
+      "arabic": "السَّلامُ عَلَيْكُمْ، كَيْفَ الحَال؟",
+      "romanized": "As-salāmu ʿalaykum, kayfa al-ḥāl?",
+      "english": "Peace be upon you, how are you?"
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "وَعَلَيْكُمُ السَّلامُ",
+    "romanized": "Wa ʿalaykum as-salām",
+    "english": "And peace be upon you",
+    "example": {
+      "arabic": "!وَعَلَيْكُمُ السَّلامُ، شُكْرًا",
+      "romanized": "Wa ʿalaykum as-salām, shukran!",
+      "english": "And peace be upon you, thank you!"
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "صَبَاحُ الخَيْرِ",
+    "romanized": "Ṣabāḥ al-khayr",
+    "english": "Good morning",
+    "example": {
+      "arabic": "صَبَاحُ الخَيْرِ! هَلْ أَنْتَ جَاهِز؟",
+      "romanized": "Ṣabāḥ al-khayr! Hal anta jāhiz?",
+      "english": "Good morning! Are you ready?"
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "مَسَاءُ الخَيْرِ",
+    "romanized": "Masāʾ al-khayr",
+    "english": "Good evening",
+    "example": {
+      "arabic": "مَسَاءُ الخَيْرِ، كَيْفَ كَانَ يَوْمُكَ؟",
+      "romanized": "Masāʾ al-khayr, kayfa kāna yawmuka?",
+      "english": "Good evening, how was your day?"
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "تَصْبِحُ عَلَى خَيْر",
+    "romanized": "Tuṣbiḥu ʿalā khayr",
+    "english": "Good night",
+    "example": {
+      "arabic": "تَصْبِحُ عَلَى خَيْر! أَرَاكَ غَدًا",
+      "romanized": "Tuṣbiḥu ʿalā khayr! Arāka ghadan.",
+      "english": "Good night! See you tomorrow."
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "كَيْفَ حَالُكَ؟",
+    "romanized": "Kayfa ḥāluka?",
+    "english": "How are you?",
+    "example": {
+      "arabic": "كَيْفَ حَالُكَ؟ أَنَا بِخَيْر",
+      "romanized": "Kayfa ḥāluka? Anā bi-khayr.",
+      "english": "How are you? I’m fine."
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "أَنَا بِخَيْر، شُكْرًا",
+    "romanized": "Anā bi-khayr, shukran",
+    "english": "I’m fine, thank you",
+    "example": {
+      "arabic": "أَنَا بِخَيْر، شُكْرًا! وَأَنْتَ؟",
+      "romanized": "Anā bi-khayr, shukran! Wa anta?",
+      "english": "I’m fine, thank you! And you?"
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "مَعَ السَّلامَة",
+    "romanized": "Maʿa as-salāmah",
+    "english": "Goodbye",
+    "example": {
+      "arabic": "مَعَ السَّلامَة! إِلَى اللِّقَاء",
+      "romanized": "Maʿa as-salāmah! Ilā al-liqāʾ.",
+      "english": "Goodbye! See you later."
+    },
+    "group_id": 1
+  },
+  {
+    "arabic": "أَهْلاً وَسَهْلاً",
+    "romanized": "Ahlan wa sahlan",
+    "english": "Welcome",
+    "example": {
+      "arabic": "أَهْلاً وَسَهْلاً! تَفَضَّلْ بِالجُلُوس",
+      "romanized": "Ahlan wa sahlan! Tafaḍḍal bil-julūs.",
+      "english": "Welcome! Please have a seat."
+    },
+    "group_id": 1
+  }
+]

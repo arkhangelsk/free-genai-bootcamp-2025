@@ -1,0 +1,112 @@
+[
+  {
+    "arabic": "يَأْكُلُ",
+    "romanized": "ya'kulu",
+    "english": "to eat",
+    "example": {
+      "arabic": "الوَلَدُ يَأْكُلُ التُفَّاحَ",
+      "romanized": "Al-waladu ya'kulu at-tuffāḥa.",
+      "english": "The boy eats the apple."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَشْرَبُ",
+    "romanized": "yashrabu",
+    "english": "to drink",
+    "example": {
+      "arabic": "الأُمُّ تَشْرَبُ القَهْوَةَ",
+      "romanized": "Al-ummu tashrabu al-qahwata.",
+      "english": "The mother drinks coffee."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَذْهَبُ",
+    "romanized": "yadhhabu",
+    "english": "to go",
+    "example": {
+      "arabic": "أَنَا أَذْهَبُ إِلَى المَدْرَسَةِ",
+      "romanized": "Anā adhhabu ilā al-madrasati.",
+      "english": "I go to school."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَأْتِي",
+    "romanized": "ya'tī",
+    "english": "to come",
+    "example": {
+      "arabic": "الأَصْدِقَاءُ يَأْتُونَ الغَدَاءَ",
+      "romanized": "Al-aṣdiqāʼu yaʼtūna al-ghadāʼa.",
+      "english": "The friends come for lunch."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَكْتُبُ",
+    "romanized": "yaktubu",
+    "english": "to write",
+    "example": {
+      "arabic": "المُعَلِّمُ يَكْتُبُ عَلَى السَّبُّورَةِ",
+      "romanized": "Al-muʿallimu yaktubu ʿalā as-sabbūrati.",
+      "english": "The teacher writes on the board."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَقْرَأُ",
+    "romanized": "yaqra'u",
+    "english": "to read",
+    "example": {
+      "arabic": "البِنْتُ تَقْرَأُ الكِتَابَ",
+      "romanized": "Al-bintu taqraʼu al-kitāba.",
+      "english": "The girl reads the book."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَتَكَلَّمُ",
+    "romanized": "yatakallamu",
+    "english": "to speak",
+    "example": {
+      "arabic": "هُوَ يَتَكَلَّمُ العَرَبِيَّةَ",
+      "romanized": "Huwa yatakallamu al-ʿarabiyyata.",
+      "english": "He speaks Arabic."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَفْهَمُ",
+    "romanized": "yafhamu",
+    "english": "to understand",
+    "example": {
+      "arabic": "الطَّالِبُ يَفْهَمُ الدَّرْسَ",
+      "romanized": "Aṭ-ṭālibu yafhamu ad-darsa.",
+      "english": "The student understands the lesson."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَدْرُسُ",
+    "romanized": "yadrusu",
+    "english": "to study",
+    "example": {
+      "arabic": "نَحْنُ نَدْرُسُ اللُّغَةَ العَرَبِيَّةَ",
+      "romanized": "Naḥnu nadrusu al-lughata al-ʿarabiyyata.",
+      "english": "We study the Arabic language."
+    },
+    "group_id": 3
+  },
+  {
+    "arabic": "يَنَامُ",
+    "romanized": "yanāmu",
+    "english": "to sleep",
+    "example": {
+      "arabic": "الطِّفْلُ يَنَامُ مُبَكِّرًا",
+      "romanized": "Aṭ-ṭiflu yanāmu mubakkiran.",
+      "english": "The child sleeps early."
+    },
+    "group_id": 3
+  }
+]
