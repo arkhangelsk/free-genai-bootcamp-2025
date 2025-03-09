@@ -106,12 +106,12 @@ const RecipeInstructions: React.FC<RecipeInstructionsProps> = ({
               <div
                 key={index}
                 className={`flex justify-between items-center mt-2 p-2 rounded ${
-                  speakingIndex === index ? "bg-yellow-100" : ""
+                  speakingIndex === index ? "bg-green-100" : ""
                 }`}
               >
                 <button
                   onClick={() => speakInstruction(instruction, index)}
-                  className="ml-2 p-2 text-blue-600 hover:text-blue-800 flex-shrink-0"
+                  className="ml-2 p-2 text-green-900 hover:text-amber-400 flex-shrink-0"
                   title="Play audio"
                 >
                   <svg

@@ -44,7 +44,9 @@ bun dev
 ### Open the App:  
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the app.
 
-![screenshot](images/arabic-learning-app-search.png)
+![screenshot](images/arabic-learning-app-search-results.png)
 
-![search results](images/arabic-learning-app-search-2.png)
+![search results](images/ingredients.png)
+
+![search results](images/instructions.png)
 
