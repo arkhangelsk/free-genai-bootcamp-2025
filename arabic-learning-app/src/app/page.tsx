@@ -501,16 +501,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="bg-white py-12 text-center">
-        <h2 className="text-2xl font-semibold">How It Works</h2>
-        <div className="flex flex-col md:flex-row justify-center mt-6 gap-8">
-          <div className="p-4 bg-gray-200 rounded-lg">Pick a Recipe</div>
-          <div className="p-4 bg-gray-200 rounded-lg">Learn & Shop</div>
-          <div className="p-4 bg-gray-200 rounded-lg">Cook & Listen</div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="text-center py-6 bg-gray-800 text-white mt-12">
         <p>&copy; 2025 Middle Eastern Recipes. All rights reserved.</p>
