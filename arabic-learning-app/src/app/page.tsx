@@ -425,12 +425,41 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Recipe Categories */}
+      <section className="container mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold text-center text-green-900 mb-8">
+          Recipe Categories فئات الوصفة
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            "Appetizers المقبلات",
+            "Main Dishes الأطباق الرئيسية",
+            "Desserts الحلويات",
+            "Beverages المشروبات",
+          ].map((category) => (
+            <div
+              key={category}
+              className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              <h3 className="text-xl font-semibold text-green-900 mb-4">
+                {category}
+              </h3>
+              <button className="mt-4 bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors duration-300">
+                Explore
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Searched Recipes */}
       {searchedRecipes.length > 0 && (
         <section className="container mx-auto px-4 py-12">
           <div className="flex justify-between items-center mb-6">
             <div>
-              <h2 className="text-2xl font-semibold">Searched Recipes</h2>
+              <h2 className="text-2xl font-semibold">
+                Searched Recipes وصفات بحثت
+              </h2>
               <p className="text-sm text-gray-600 mt-1">
                 Showing {searchedRecipes.length} of {MAX_SAVED_RECIPES} maximum
                 saved recipes
@@ -474,40 +503,15 @@ export default function Home() {
         </section>
       )}
 
-      {/* Recipe Categories */}
-      <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl font-semibold mb-6">Recipe Categories</h2>
-        <div className="grid grid-cols-2 md-grid-cols-4 gap-6">
-          {["Appetizers", "Main Dishes", "Desserts", "Beverages"].map(
-            (category) => (
-              <div
-                key={category}
-                className="bg-white p-4 rounded-lg shadow text-center"
-              >
-                <h3 className="text-lg font-semibold">{category}</h3>
-              </div>
-            )
-          )}
-        </div>
-      </section>
-
       {/* Featured Recipes */}
       <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl font-semibold mb-6">Popular Recipes</h2>
+        <h2 className="text-2xl font-semibold mb-6">
+          Popular Recipes وصفات شعبية
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {recipes.map((recipe, index) => (
             <RecipeCard key={index} {...recipe} />
           ))}
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="bg-white py-12 text-center">
-        <h2 className="text-2xl font-semibold">How It Works</h2>
-        <div className="flex flex-col md:flex-row justify-center mt-6 gap-8">
-          <div className="p-4 bg-gray-200 rounded-lg">Pick a Recipe</div>
-          <div className="p-4 bg-gray-200 rounded-lg">Learn & Shop</div>
-          <div className="p-4 bg-gray-200 rounded-lg">Cook & Listen</div>
         </div>
       </section>
 
