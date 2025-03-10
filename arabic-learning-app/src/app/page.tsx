@@ -23,8 +23,8 @@ interface Recipe {
     english: string;
   };
   ingredients: Ingredient[];
-  recipeEnglish?: string;
-  recipeArabic?: string;
+  recipeEnglish?: string[] | string;
+  recipeArabic?: string[] | string;
   image?: string;
 }
 
@@ -181,8 +181,99 @@ export default function Home() {
     },
   ]);
 
+  // Function to sanitize JSON string by removing control characters and ensuring valid JSON
+ const sanitizeJsonString = (jsonStr: string): string => {
+   try {
+     // First attempt: Basic sanitization
+     let sanitized = jsonStr
+       .replace(/[\u0000-\u001F\u007F-\u009F]/g, "") // Remove control characters
+       .replace(/\n/g, "\\n") // Properly escape newlines
+       .replace(/\r/g, "\\r") // Properly escape carriage returns
+       .replace(/\t/g, "\\t") // Properly escape tabs
+       .replace(/\\(?!["\\/bfnrt])/g, "\\\\"); // Escape backslashes not followed by valid escape chars
+
+     // Fix trailing commas in arrays
+     sanitized = sanitized.replace(/,\s*]/g, "]");
+
+     // Fix trailing commas in objects
+     sanitized = sanitized.replace(/,\s*}/g, "}");
+
+     // Fix missing commas between array elements (addresses the specific error)
+     sanitized = sanitized.replace(/][ \t\r\n]*\[/g, "],[");
+
+     // Fix missing commas between string elements
+     sanitized = sanitized.replace(/"[ \t\r\n]*"/g, '","');
+
+     // Check if the JSON is valid after sanitization
+     JSON.parse(sanitized);
+     return sanitized;
+   } catch (parseError) {
+     console.warn(
+       "Basic sanitization failed, attempting more aggressive repair:",
+       parseError
+     );
+
+     // Second attempt: More aggressive cleaning and repair
+     try {
+       // Extract what looks like a JSON object
+       const jsonMatch = jsonStr.match(/({[\s\S]*})/);
+       if (jsonMatch) {
+         jsonStr = jsonMatch[0];
+       }
+
+       // Ensure the string starts and ends with valid JSON brackets
+       if (!jsonStr.trim().startsWith("{")) jsonStr = "{" + jsonStr;
+       if (!jsonStr.trim().endsWith("}")) jsonStr = jsonStr + "}";
+
+       // Replace unescaped quotes in strings
+       let inString = false;
+       let result = "";
+
+       for (let i = 0; i < jsonStr.length; i++) {
+         const char = jsonStr[i];
+
+         if (char === '"' && (i === 0 || jsonStr[i - 1] !== "\\")) {
+           inString = !inString;
+         }
+
+         // Handle array syntax problems
+         if (inString && char === "]") {
+           result += "\\]"; // Escape closing brackets inside strings
+         } else if (inString && char === "[") {
+           result += "\\["; // Escape opening brackets inside strings
+         } else {
+           result += char;
+         }
+       }
+
+       // Check if we closed all strings properly
+       let fixedJson = result;
+       if (inString) {
+         fixedJson += '"'; // Close any unclosed string
+       }
+
+       // Final fixes for common issues
+       fixedJson = fixedJson
+         // Fix double commas
+         .replace(/,,/g, ",")
+         // Fix space between property name and colon
+         .replace(/"([^"]+)"[ \t]+:/g, '"$1":')
+         // Fix missing quotes around property names
+         .replace(/([{,]\s*)([a-zA-Z0-9_$]+)(\s*:)/g, '$1"$2"$3');
+
+       // Validate the final result
+       JSON.parse(fixedJson);
+       return fixedJson;
+     } catch (finalError) {
+       // If all repair attempts fail, throw an error with details
+       console.error("All JSON repair attempts failed:", finalError);
+       throw new Error("Failed to repair malformed JSON");
+     }
+   }
+ };
+
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
+    <div className="min-h-screen bg-gray-100 text-green-900">
       {/* Hero Section */}
       <header className="text-center py-16 bg-yellow-50">
         <h1 className="text-4xl font-bold">
@@ -211,29 +302,36 @@ export default function Home() {
                   try {
                     const requestBody = {
                       model: "llama3",
-                      prompt: `You MUST return ONLY a valid JSON object for a Middle Eastern ${query} recipe, with NO other text. Follow this EXACT format:
-{
-  "title": "Recipe name in English",
-  "arabicTitle": "Recipe name in Arabic",
-  "transliteration": "Arabic transliteration",
-  "description": "Brief description of the dish",
-  "question": {
-    "arabic": "How to make this dish in Arabic?",
-    "transliteration": "Transliteration of the question",
-    "english": "How to make this dish?"
-  },
-  "ingredients": [
-    {
-      "name": "Ingredient name in English",
-      "arabicName": "Ingredient name in Arabic",
-      "transliteration": "Arabic transliteration",
-      "image": "/ingredient-image.jpg",
-      "description": "Brief description of the ingredient"
-    }
-  ],
-  "recipeEnglish": "Step-by-step instructions in English using numbered line to make the dish using the provided ingredients. Make sure each step displays on a new line.",
-  "recipeArabic": "Step-by-step instructions in Arabic using numbered line to make the dish using the provided ingredients. Make sure each step displays on a new line. The Arabic instruction should be written from right hand side."<br>
-}`,
+                      prompt: `Generate a valid JSON object for a Middle Eastern ${query} recipe. The JSON must strictly follow this structure:
+                      {
+                      "title": "Recipe name in English",
+                      "arabicTitle": "Recipe name in Arabic",
+                      "transliteration": "Arabic transliteration of the title",
+                      "description": "Brief description of the dish",
+                      "question": {
+                        "arabic": "How to make this dish? (in Arabic)",
+                        "transliteration": "Transliteration of the question",
+                        "english": "How to make this dish?"
+                      },
+                      "ingredients": [
+                        {
+                          "name": "Ingredient name in English",
+                          "arabicName": "Ingredient name in Arabic",
+                          "transliteration": "Arabic transliteration of the ingredient name",
+                          "image": "/ingredient-image.jpg",
+                          "description": "Brief description of the ingredient"
+                        }
+                      ],
+                      "recipeEnglish": "Step-by-step instructions in English.",
+                      "recipeArabic": "Step-by-step instructions in Arabic"
+                    }
+                    Requirements:
+                    * Each recipe step must be in a list format, ensuring they appear on separate lines.
+                    * Ensure all Arabic text is properly written.
+                    * Include accurate transliterations.
+                    * Provide clear and structured ingredient details.
+                    * Return the response ONLY as a JSON object with no additional text, explanations, or formatting.
+                      `,
                       stream: false,
                     };
 
@@ -261,20 +359,37 @@ export default function Home() {
                       );
                     }
 
-                    const jsonStr = data.response.trim();
+                    let jsonStr = data.response.trim();
                     console.log("Raw JSON string:", jsonStr);
+
+                    // Extract JSON if it's wrapped in backticks or other text
+                    const jsonMatch = jsonStr.match(/({[\s\S]*})/);
+                    if (jsonMatch) {
+                      jsonStr = jsonMatch[0];
+                    }
+
                     if (!jsonStr.startsWith("{") || !jsonStr.endsWith("}")) {
                       throw new Error(
                         "Invalid recipe data received. Please try again."
                       );
                     }
 
-                    const recipeData = JSON.parse(jsonStr) as Recipe;
-                    setSearchedRecipes((prevRecipes) => [
-                      recipeData,
-                      ...prevRecipes,
-                    ]);
-                    e.currentTarget.value = "";
+                    // Sanitize the JSON string
+                    const sanitizedJson = sanitizeJsonString(jsonStr);
+
+                    try {
+                      const recipeData = JSON.parse(sanitizedJson) as Recipe;
+                      setSearchedRecipes((prevRecipes) => [
+                        recipeData,
+                        ...prevRecipes,
+                      ]);
+                      searchInput.value = "";
+                    } catch (parseError) {
+                      console.error("JSON parse error:", parseError);
+                      throw new Error(
+                        "Failed to parse recipe data. Please try again."
+                      );
+                    }
                   } catch (error) {
                     console.error("Error searching recipe:", error);
                     alert("Failed to generate recipe. Please try again.");
@@ -298,29 +413,37 @@ export default function Home() {
                 try {
                   const requestBody = {
                     model: "llama3",
-                    prompt: `You MUST return ONLY a valid JSON object for a Middle Eastern ${query} recipe, with NO other text. Follow this EXACT format:
-{
-  "title": "Recipe name in English",
-  "arabicTitle": "Recipe name in Arabic",
-  "transliteration": "Arabic transliteration",
-  "description": "Brief description of the dish",
-  "question": {
-    "arabic": "How to make this dish in Arabic?",
-    "transliteration": "Transliteration of the question",
-    "english": "How to make this dish?"
-  },
-  "ingredients": [
-    {
-      "name": "Ingredient name in English",
-      "arabicName": "Ingredient name in Arabic",
-      "transliteration": "Arabic transliteration",
-      "image": "/ingredient-image.jpg",
-      "description": "Brief description of the ingredient"
-    }
-  ],
- "recipeEnglish": "Step-by-step instructions in English using numbered line to make the dish using the provided ingredients. Make sure each step displays on a new line.",
- "recipeArabic": "Step-by-step instructions in Arabic using numbered line to make the dish using the provided ingredients. Make sure each step displays on a new line. The Arabic instruction should be written from right hand side."<br>
-}`,
+                    prompt: `Generate a valid JSON object for a Middle Eastern ${query} recipe. The JSON must strictly follow this structure:
+                      {
+                      "title": "Recipe name in English",
+                      "arabicTitle": "Recipe name in Arabic",
+                      "transliteration": "Arabic transliteration of the title",
+                      "description": "Brief description of the dish",
+                      "question": {
+                        "arabic": "How to make this dish? (in Arabic)",
+                        "transliteration": "Transliteration of the question",
+                        "english": "How to make this dish?"
+                      },
+                      "ingredients": [
+                        {
+                          "name": "Ingredient name in English",
+                          "arabicName": "Ingredient name in Arabic",
+                          "transliteration": "Arabic transliteration of the ingredient name",
+                          "image": "/ingredient-image.jpg",
+                          "description": "Brief description of the ingredient"
+                        }
+                      ],
+                    "recipeEnglish": "Step-by-step instructions in English.",
+                    "recipeArabic": "Step-by-step instructions in Arabic"
+                    }
+                    Requirements:
+                    * Each recipe step must be in a list format, ensuring they appear on separate lines.
+                    * Ensure all Arabic text is properly written.
+                    * Include accurate transliterations.
+                    * Provide clear and structured ingredient details.
+                    * Return the response ONLY as a JSON object with no additional text, explanations, or formatting.
+                      `,
+
                     stream: false,
                   };
 
@@ -346,39 +469,57 @@ export default function Home() {
                     );
                   }
 
-                  const jsonStr = data.response.trim();
+                  let jsonStr = data.response.trim();
+
+                  // Extract JSON if it's wrapped in backticks or other text
+                  const jsonMatch = jsonStr.match(/({[\s\S]*})/);
+                  if (jsonMatch) {
+                    jsonStr = jsonMatch[0];
+                  }
+
                   if (!jsonStr.startsWith("{") || !jsonStr.endsWith("}")) {
                     throw new Error(
                       "Invalid recipe data received. Please try again."
                     );
                   }
 
-                  const recipeData: Recipe = {
-                    ...JSON.parse(jsonStr),
-                    searchedAt: new Date().toISOString(),
-                  };
-                  setSearchedRecipes((prevRecipes) => {
-                    // Keep only the most recent MAX_SAVED_RECIPES recipes
-                    const newRecipes = [recipeData, ...prevRecipes].slice(
-                      0,
-                      MAX_SAVED_RECIPES
-                    );
+                  // Sanitize the JSON string
+                  const sanitizedJson = sanitizeJsonString(jsonStr);
 
-                    // Save to localStorage
-                    try {
-                      localStorage.setItem(
-                        STORAGE_KEY,
-                        JSON.stringify(newRecipes)
+                  try {
+                    const recipeData: Recipe = {
+                      ...JSON.parse(sanitizedJson),
+                      searchedAt: new Date().toISOString(),
+                    };
+
+                    setSearchedRecipes((prevRecipes) => {
+                      // Keep only the most recent MAX_SAVED_RECIPES recipes
+                      const newRecipes = [recipeData, ...prevRecipes].slice(
+                        0,
+                        MAX_SAVED_RECIPES
                       );
-                      // Clear any previous errors since save was successful
-                      setSearchError(null);
-                    } catch (error) {
-                      console.error("Error saving recipes:", error);
-                      setSearchError("Failed to save recipe to history");
-                    }
-                    return newRecipes;
-                  });
-                  searchInput.value = "";
+
+                      // Save to localStorage
+                      try {
+                        localStorage.setItem(
+                          STORAGE_KEY,
+                          JSON.stringify(newRecipes)
+                        );
+                        // Clear any previous errors since save was successful
+                        setSearchError(null);
+                      } catch (error) {
+                        console.error("Error saving recipes:", error);
+                        setSearchError("Failed to save recipe to history");
+                      }
+                      return newRecipes;
+                    });
+                    searchInput.value = "";
+                  } catch (parseError) {
+                    console.error("JSON parse error:", parseError);
+                    throw new Error(
+                      "Failed to parse recipe data. Please try again."
+                    );
+                  }
                 } catch (error) {
                   console.error("Error searching recipe:", error);
                   setSearchError(
