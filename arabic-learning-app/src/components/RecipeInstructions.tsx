@@ -20,15 +20,20 @@ const RecipeInstructions: React.FC<RecipeInstructionsProps> = ({
   const synth = typeof window !== "undefined" ? window.speechSynthesis : null;
 
   // Split the Arabic instructions into separate lines on component mount
-  useEffect(() => {
-    if (recipeArabic) {
-      // Split by newline characters
-      const lines = recipeArabic
-        .split("\n")
-        .filter((line) => line.trim() !== "");
-      setArabicInstructions(lines);
-    }
-  }, [recipeArabic]);
+ useEffect(() => {
+   if (recipeArabic) {
+     // Check if recipeArabic is already an array
+     if (Array.isArray(recipeArabic)) {
+       setArabicInstructions(recipeArabic);
+     } else {
+       // Split by newline characters if it's a string
+       const lines = recipeArabic
+         .split("\n")
+         .filter((line) => line.trim() !== "");
+       setArabicInstructions(lines);
+     }
+   }
+ }, [recipeArabic]);
 
   // Function to speak a specific instruction
   const speakInstruction = (text: string, index: number) => {
@@ -92,9 +97,21 @@ const RecipeInstructions: React.FC<RecipeInstructionsProps> = ({
             <h5 className="text-lg font-bold text-gray-800">
               English Instructions:
             </h5>
-            <p className="whitespace-pre-line text-gray-700 mt-2 leading-relaxed">
-              {recipeEnglish}
-            </p>
+            <div className="text-gray-700 mt-2 leading-relaxed">
+              {Array.isArray(recipeEnglish)
+                ? recipeEnglish.map((step, index) => (
+                    <p key={index} className="mt-2">
+                      Step {index + 1}: {step.trim()}
+                    </p>
+                  ))
+                : (recipeEnglish || "").split(".").map((step, index) =>
+                    step.trim() ? (
+                      <p key={index} className="mt-2">
+                        Step {index + 1}: {step.trim()}.
+                      </p>
+                    ) : null
+                  )}
+            </div>
           </div>
           <div
             dir="rtl"
