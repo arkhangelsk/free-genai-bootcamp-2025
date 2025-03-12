@@ -2,6 +2,7 @@
 import Image from "next/image";
 import RecipeCard from "../components/RecipeCard";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 interface Ingredient {
   name: string;
@@ -577,19 +578,30 @@ export default function Home() {
             "Main Dishes الأطباق الرئيسية",
             "Desserts الحلويات",
             "Beverages المشروبات",
-          ].map((category) => (
-            <div
-              key={category}
-              className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-            >
-              <h3 className="text-xl font-semibold text-green-900 mb-4">
-                {category}
-              </h3>
-              <button className="mt-4 bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors duration-300">
-                Explore
-              </button>
-            </div>
-          ))}
+          ].map((category) => {
+            // Convert the category name to a URL-friendly format
+            const categorySlug = category
+              .split(" ")[0] // Get the first part (e.g., "Main" from "Main Dishes")
+              .toLowerCase() // Convert to lowercase
+              .replace(/ /g, "-"); // Replace spaces with hyphens (if any)
+
+            return (
+              <div
+                key={category}
+                className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              >
+                <h3 className="text-xl font-semibold text-green-900 mb-4">
+                  {category}
+                </h3>
+                {/* Dynamically generate the route based on the category */}
+                <Link href={`/${categorySlug}`}>
+                  <button className="mt-4 bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors duration-300">
+                    Explore
+                  </button>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </section>
 
