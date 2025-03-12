@@ -579,11 +579,21 @@ export default function Home() {
             "Desserts الحلويات",
             "Beverages المشروبات",
           ].map((category) => {
-            // Convert the category name to a URL-friendly format
-            const categorySlug = category
-              .split(" ")[0] // Get the first part (e.g., "Main" from "Main Dishes")
-              .toLowerCase() // Convert to lowercase
-              .replace(/ /g, "-"); // Replace spaces with hyphens (if any)
+            // Extract the English part before the Arabic text
+            const categoryEnglish = category.split(" ")[0]; // Keeps only "Main" instead of "Main Dishes"
+
+            // Handle special cases manually if needed
+            const slugMap: { [key: string]: string } = {
+              Main: "main-dishes",
+              Appetizers: "appetizers",
+              Desserts: "desserts",
+              Beverages: "beverages",
+            };
+
+            // Get correct slug or generate dynamically
+            const categorySlug =
+              slugMap[categoryEnglish as keyof typeof slugMap] ||
+              categoryEnglish.toLowerCase().replace(/ /g, "-");
 
             return (
               <div
@@ -593,7 +603,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-green-900 mb-4">
                   {category}
                 </h3>
-                {/* Dynamically generate the route based on the category */}
+                {/* Corrected dynamic route generation */}
                 <Link href={`/${categorySlug}`}>
                   <button className="mt-4 bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors duration-300">
                     Explore
