@@ -201,18 +201,13 @@ export default function Home() {
             "Desserts الحلويات",
             "Beverages المشروبات",
           ].map((category) => {
-            // Extract the English part before the Arabic text
-            const categoryEnglish = category.split(" ")[0]; // Keeps only "Main" instead of "Main Dishes"
-
-            // Handle special cases manually if needed
+            const categoryEnglish = category.split(" ")[0];
             const slugMap: { [key: string]: string } = {
               Main: "main-dishes",
               Appetizers: "appetizers",
               Desserts: "desserts",
               Beverages: "beverages",
             };
-
-            // Get correct slug or generate dynamically
             const categorySlug =
               slugMap[categoryEnglish as keyof typeof slugMap] ||
               categoryEnglish.toLowerCase().replace(/ /g, "-");
@@ -225,8 +220,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-green-900 mb-4">
                   {category}
                 </h3>
-                {/* Corrected dynamic route generation */}
-                <Link href={`/${categorySlug}`}>
+                <Link href={`/category/${categorySlug}`}>
                   <button className="mt-4 bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors duration-300">
                     Explore
                   </button>
@@ -276,7 +270,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {searchedRecipes.map((recipe, index) => (
               <div key={`searched-${index}`} className="relative">
-                <RecipeCard {...recipe} />
+                <RecipeCard
+                  {...recipe}
+                  onClose={() => {
+                    /* handle close */
+                  }}
+                  isModal={false} // Set isModal to false since it's not in a modal
+                />
                 {recipe.searchedAt && (
                   <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
                     {new Date(recipe.searchedAt).toLocaleDateString()}
@@ -295,7 +295,14 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {recipesData.map((recipe, index) => (
-            <RecipeCard key={index} {...recipe} />
+            <RecipeCard
+              key={index}
+              {...recipe}
+              onClose={() => {
+                /* handle close */
+              }}
+              isModal={false} // Set isModal to false since it's not in a modal
+            />
           ))}
         </div>
       </section>

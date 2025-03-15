@@ -1,0 +1,58 @@
+{
+  "appetizers": [
+    "Hummus حمص",
+    "Baba Ghanoush بابا غنوج",
+    "Falafel فلافل",
+    "Muhammara محمرة",
+    "Labneh لبنة",
+    "Kibbeh كبة",
+    "Sambousek سمبوسك",
+    "Fattoush فتوش",
+    "Tabbouleh تبولة",
+    "Manakish مناقيش",
+    "Dolma (Warak Enab) ورق عنب",
+    "Arayes عرايس"
+  ],
+  "main-dishes": [
+    "Mansaf منسف",
+    "Kabsa كبسة",
+    "Mandi مندي",
+    "Shawarma شاورما",
+    "Kofta كفتة",
+    "Maqluba مقلوبة",
+    "Koshari كشري",
+    "Musakhan مسخن",
+    "Fesenjan فسنجون",
+    "Bamia بامية",
+    "Sayadieh صيادية",
+    "Fatteh فتة"
+  ],
+  "desserts": [
+    "Baklava بقلاوة",
+    "Kunafa كنافة",
+    "Basbousa بسبوسة",
+    "Maamoul معمول",
+    "Qatayef قطايف",
+    "Halva حلاوة",
+    "Umm Ali أم علي",
+    "Zalabia زلابية",
+    "Ruz Bihalib رز بحليب",
+    "Atayef عيش السرايا",
+    "Asabe Zainab أصابع زينب",
+    "Mahalabia مهلبية"
+  ],
+  "beverages": [
+    "Arabic Coffee قهوة عربية",
+    "Turkish Coffee قهوة تركية",
+    "Sahlab سحلب",
+    "Jallab جلاب",
+    "Ayran عيران",
+    "Karkadeh كركديه",
+    "Tamarind Juice تمر هندي",
+    "Qamar Al-Din قمر الدين",
+    "Mint Tea شاي بالنعناع",
+    "Carob Juice عصير خرنوب",
+    "Lemonade with Mint ليمون بالنعناع",
+    "Date Milkshake ميلك شيك التمر"
+  ]
+}

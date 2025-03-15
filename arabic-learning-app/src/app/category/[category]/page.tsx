@@ -1,17 +1,23 @@
 "use client";
 import React, { useState } from "react";
-import RecipeCard from "../../components/RecipeCard";
-import { searchRecipe } from "../services/recipeService";
-import { sanitizeJsonString } from "../utils/sanitizeJsonString";
-import { Recipe } from "../types/recipe";
+import { useParams } from "next/navigation";
+import RecipeCard from "../../../components/RecipeCard";
+import { searchRecipe } from "../../services/recipeService";
+import { sanitizeJsonString } from "../../utils/sanitizeJsonString";
+import { Recipe } from "../../types/recipe";
+import recipes from "../../data/recipes.json";
 
-export default function Appetizers() {
+export default function CategoryPage() {
+  const { category } = useParams(); // Get the category from the URL
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
-  const [loadingRecipe, setLoadingRecipe] = useState<string | null>(null); // Track which recipe is loading
+  const [loadingRecipe, setLoadingRecipe] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  // Get the recipes for the current category
+  const categoryRecipes = recipes[category as keyof typeof recipes] || [];
+
   const handleViewRecipe = async (title: string) => {
-    setLoadingRecipe(title); // Set the currently loading recipe
+    setLoadingRecipe(title);
     setError(null);
 
     try {
@@ -26,7 +32,7 @@ export default function Appetizers() {
       console.error("Error fetching recipe details:", error);
       setError("Failed to fetch recipe details. Please try again.");
     } finally {
-      setLoadingRecipe(null); // Reset loading state
+      setLoadingRecipe(null);
     }
   };
 
@@ -38,45 +44,34 @@ export default function Appetizers() {
     <div className="min-h-screen bg-gray-100 text-green-900">
       {/* Hero Section */}
       <header className="text-center py-16 bg-yellow-50">
-        <h1 className="text-4xl font-bold">Appetizers</h1>
-        <p className="mt-4 text-lg">
-          Start your meal with these delicious bites.
-        </p>
+        <h1 className="text-4xl font-bold capitalize">{category}</h1>
+        <p className="mt-4 text-lg">Discover delicious {category} recipes.</p>
       </header>
 
-      {/* Featured Appetizer Recipes */}
+      {/* Featured Recipes */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-2xl font-semibold mb-6">
-          Featured Appetizer Recipes
+          Featured {category} Recipes
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            "Hummus حمص",
-            "Baba Ghanoush بابا غنوج",
-            "Falafel فلافل",
-            "Muhammara محمرة",
-            "Labneh لبنة",
-            "Kibbeh كبة",
-            "Sambousek سمبوسك",
-            "Fattoush فتوش",
-            "Tabbouleh تبولة",
-            "Manakish مناقيش",
-            "Dolma (Warak Enab) ورق عنب",
-            "Arayes عرايس",
-          ].map((appetizer) => (
+          {categoryRecipes.map((recipe) => (
             <div
-              key={appetizer}
+              key={recipe}
               className="bg-white p-6 rounded-lg shadow-lg text-center"
             >
               <h3 className="text-xl font-semibold text-green-900 mb-4">
-                {appetizer}
+                {recipe}
               </h3>
               <button
-                className="mt-4 bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors duration-300"
-                onClick={() => handleViewRecipe(appetizer)}
-                disabled={loadingRecipe === appetizer} // Disable button while loading
+                className={`mt-4 px-6 py-2 text-white rounded-lg transition-colors duration-300 ${
+                  loadingRecipe === recipe
+                    ? "bg-amber-600" // Apply amber background when loading
+                    : "bg-green-900 hover:bg-amber-600" // Default green background with hover effect
+                }`}
+                onClick={() => handleViewRecipe(recipe)}
+                disabled={loadingRecipe === recipe}
               >
-                {loadingRecipe === appetizer ? "Loading..." : "View Recipe"}
+                {loadingRecipe === recipe ? "Loading..." : "View Recipe"}
               </button>
             </div>
           ))}
@@ -87,7 +82,11 @@ export default function Appetizers() {
       {selectedRecipe && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl overflow-y-auto max-h-screen">
-            <RecipeCard {...selectedRecipe} onClose={handleCloseRecipe} />
+            <RecipeCard
+              {...selectedRecipe}
+              onClose={handleCloseRecipe}
+              isModal={true}
+            />
           </div>
         </div>
       )}
