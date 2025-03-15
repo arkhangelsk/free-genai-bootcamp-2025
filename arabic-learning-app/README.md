@@ -1,7 +1,7 @@
 # README
 
 ## 🌟 App Introduction  
-**Arabic Culinary Explorer** is an innovative application designed to help users learn and practice Arabic while exploring the rich culinary traditions of the Middle East. The app combines language learning with cooking by generating unique Arabic recipes and providing visual representations of the dishes. Whether you're a language enthusiast, a cooking lover, or both, this app offers a seamless and engaging experience.
+**Arabic Culinary Explorer** is an application designed to help users learn and practice Arabic while exploring the rich culinary traditions of the Middle East. The app combines language learning with cooking by generating unique Arabic recipes and providing visual representations of the dishes. Whether you're a language enthusiast, a cooking lover, or both, this app offers a seamless and engaging experience.
 
 ## 🚀 Key Features  
 - **Arabic Recipe Generation**: Create authentic Middle Eastern recipes with step-by-step instructions in both English and Arabic.  
@@ -25,7 +25,25 @@ Here's how it works:
 - Node.js (v16 or higher)  
 - npm, yarn, pnpm, or bun installed
 - Local LLM running on port http://localhost:11434/ (used llama3 through Ollama)
+```
+ollama run llama3:latest
+```
+If you already have Ollama installed on your machine, running the above command will start Ollama on http://localhost:11434/
+
+![alt text](image.png)
+> Checkout this video for local Ollama setup: [Create & Deploy Your Own Local AI Platform Using Any AI Model (Ollama | Open WebUI | NGROK)](https://www.youtube.com/watch?v=kuaalMmarrc)
 - Stable Diffusion API (AUTOMATIC1111 Web UI) is running locally at http://127.0.0.1:7860
+
+This is how you can run Stable Diffusion with the API enabled:
+
+```sh
+cd <stable-diffusion-webui> 
+chmod +x webui.sh
+./webui.sh --api
+
+```
+
+![alt text](image-1.png)
 
 ### Run the app:
 1. Navigate to the project directory.
