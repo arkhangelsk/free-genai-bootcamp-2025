@@ -14,8 +14,8 @@ export async function POST(req: NextRequest) {
       {
         prompt: enhancedPrompt,
         steps: 20,
-        width: 512,
-        height: 512,
+        width: 500,
+        height: 500,
         sampler_name: "Euler a",
         cfg_scale: 7.5,
         seed: -1,
@@ -41,13 +41,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(
       { imageUrl: `/images/${imageName}` }
-      // ,
-      // // {
-      //   headers: {
-      //     "Access-Control-Allow-Origin": "*",
-      //     "Access-Control-Allow-Methods": "POST",
-      //   },
-      // }
     );
     // Send base64 image to client
   } catch (error) {

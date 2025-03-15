@@ -120,14 +120,15 @@ export default function RecipeCard({
 
   return (
     <div className="bg-white p-6 rounded-lg shadow relative">
-      <div className="relative w-full h-[200px] overflow-hidden rounded-md">
+      <div className="w-full flex justify-center">
         {imageExists ? (
           // Display existing image if it exists
           <Image
             src={`/images/${title.toLowerCase().replace(/\s/g, "-")}.png`}
-            fill
+            width={300} // Set appropriate width
+            height={200} // Set appropriate height
             alt={title}
-            className="object-cover"
+            className="rounded-md object-cover"
             priority
             unoptimized={true}
           />
