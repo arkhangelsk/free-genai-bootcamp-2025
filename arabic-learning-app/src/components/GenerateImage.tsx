@@ -13,11 +13,12 @@ export default function GenerateImage({ title, onImageGenerated }: GenerateImage
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (title) {
-      checkImageExists(title);
-    }
-  }, [title]);
+    useEffect(() => {
+      if (title) {
+        setImageUrl(""); // Clear previous image URL
+        checkImageExists(title);
+      }
+    }, [title]);
 
   // Check if the image already exists
   const checkImageExists = async (title: string) => {
@@ -32,6 +33,8 @@ export default function GenerateImage({ title, onImageGenerated }: GenerateImage
       img.onload = () => {
         // Image exists, set the URL
         setImageUrl(imagePath);
+        // Call the callback function after the image is loaded
+        onImageGenerated();
       };
 
       img.onerror = () => {
@@ -56,11 +59,12 @@ export default function GenerateImage({ title, onImageGenerated }: GenerateImage
       // setImageUrl(`data:image/png;base64,${data.image}`);
       if (data.imageUrl) {
         setImageUrl(data.imageUrl); // Use the saved image path
+        onImageGenerated(); 
       } else {
         console.error("No image URL found in response");
       }
       // Call the callback function after the image is generated
-      onImageGenerated();
+      // onImageGenerated();
     } catch (error) {
       console.error("Error generating image:", error);
     } finally {
@@ -81,8 +85,8 @@ export default function GenerateImage({ title, onImageGenerated }: GenerateImage
           <Image
             src={imageUrl}
             alt="Generated"
-            width={512}
-            height={512}
+            width={500}
+            height={500}
             className="rounded shadow object-cover"
           />
         </div>

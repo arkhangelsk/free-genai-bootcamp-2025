@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import IngredientsPage from "./IngredientsPage";
 import RecipeInstructions from "./RecipeInstructions";
 import Image from "next/image";
@@ -113,6 +113,11 @@ export default function RecipeCard({
   const questionAudio = useAudioPlayback();
   const [imageExists, setImageExists] = useState(false);
 
+  // Reset imageExists when title changes
+  useEffect(() => {
+    setImageExists(false);
+  }, [title]);
+
   // Callback to update imageExists after generating an image
   const handleImageGenerated = () => {
     setImageExists(true);
@@ -125,8 +130,8 @@ export default function RecipeCard({
           // Display existing image if it exists
           <Image
             src={`/images/${title.toLowerCase().replace(/\s/g, "-")}.png`}
-            width={300} // Set appropriate width
-            height={200} // Set appropriate height
+            width={500} // Set appropriate width
+            height={500} // Set appropriate height
             alt={title}
             className="rounded-md object-cover"
             priority
