@@ -280,6 +280,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold">
           Middle Eastern Recipes - Learn & Cook
         </h1>
+        <h2 className="mt-4 text-4xl">وصفات من الشرق الأوسط - تعلَّم واطبخ</h2>
         <p className="mt-4 text-lg">
           Discover Authentic Middle Eastern Dishes While Learning Arabic.
         </p>
