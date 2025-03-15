@@ -5,9 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Recipe } from "./types/recipe";
 import { sanitizeJsonString } from "./utils/sanitizeJsonString";
-
-const STORAGE_KEY = "savedRecipes";
-const MAX_SAVED_RECIPES = 20; // Maximum number of recipes to keep in history
+import { STORAGE_KEY, MAX_SAVED_RECIPES } from "./constants";
 
 export default function Home() {
   const [searchedRecipes, setSearchedRecipes] = useState<Recipe[]>([]);
