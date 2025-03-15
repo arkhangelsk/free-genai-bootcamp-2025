@@ -8,6 +8,8 @@ import { sanitizeJsonString } from "./utils/sanitizeJsonString";
 import { STORAGE_KEY, MAX_SAVED_RECIPES } from "./constants";
 import { searchRecipe } from "./services/recipeService";
 import { recipes } from "./data/recipes";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [searchedRecipes, setSearchedRecipes] = useState<Recipe[]>([]);
@@ -40,6 +42,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 text-green-900">
+      {/* Navbar */}
+      <Navbar currentCategory="Home" />
       {/* Hero Section */}
       <header className="text-center py-16 bg-yellow-50">
         <h1 className="text-4xl font-bold">
@@ -308,9 +312,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-6 bg-gray-800 text-white mt-12">
-        <p>&copy; 2025 Middle Eastern Recipes. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

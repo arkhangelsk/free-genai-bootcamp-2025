@@ -6,6 +6,8 @@ import { searchRecipe } from "../../services/recipeService";
 import { sanitizeJsonString } from "../../utils/sanitizeJsonString";
 import { Recipe } from "../../types/recipe";
 import recipes from "../../data/recipes.json";
+import Navbar from "../../../components/Navbar";
+import Footer from "../../../components/Footer";
 
 export default function CategoryPage() {
   const { category } = useParams(); // Get the category from the URL
@@ -42,6 +44,9 @@ export default function CategoryPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 text-green-900">
+      {/* Navbar */}
+      <Navbar currentCategory={category as string} />
+
       {/* Hero Section */}
       <header className="text-center py-16 bg-yellow-50">
         <h1 className="text-4xl font-bold capitalize">{category}</h1>
@@ -99,9 +104,7 @@ export default function CategoryPage() {
       )}
 
       {/* Footer */}
-      <footer className="text-center py-6 bg-gray-800 text-white mt-12">
-        <p>&copy; 2025 Middle Eastern Recipes. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
