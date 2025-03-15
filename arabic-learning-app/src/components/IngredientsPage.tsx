@@ -114,8 +114,8 @@ interface IngredientsPageProps {
   title: string;
   arabicTitle: string;
   ingredients: Ingredient[];
-  recipeEnglish?: string;
-  recipeArabic?: string;
+  recipeEnglish?: string[] | string;
+  recipeArabic?: string[] | string;
   onClose: () => void;
 }
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import RecipeCard from "../../components/RecipeCard";
 import Link from "next/link";
 import type { Recipe } from "../../components/RecipeSearch";
+// import GenerateImage from "../../components/GenerateImage";
 
 export default function SearchResults() {
   const searchParams = useSearchParams();
@@ -64,7 +65,7 @@ export default function SearchResults() {
         // Ensure recipe instructions are properly formatted
         if (typeof recipeData.recipe === 'string') {
           // Clean up the recipe text
-          let recipeText = recipeData.recipe.trim();
+          const recipeText = recipeData.recipe.trim();
 
           // Check if recipe is empty
           if (!recipeText) {
@@ -110,11 +111,10 @@ export default function SearchResults() {
         }
 
         console.log('Processed recipe data:', recipeData);
-        const imageUrl = await generateRecipeImage(recipeData.title);
-        setRecipe({ 
-          ...recipeData, 
-          image: imageUrl || '/placeholder-recipe.jpg',
-          recipe: recipeData.recipe || ''
+        setRecipe({
+          ...recipeData,
+          image: recipeData.image || "/placeholder-recipe.jpg",
+          recipe: recipeData.recipe || "",
         });
         setError("");
       } catch (error: any) {
@@ -122,38 +122,6 @@ export default function SearchResults() {
         setError(error.message || "Failed to generate recipe");
       } finally {
         setIsLoading(false);
-      }
-    };
-
-    const generateRecipeImage = async (recipeTitle: string): Promise<string | null> => {
-      try {
-        const requestBody = {
-          prompt: `Professional food photography of ${recipeTitle}, Middle Eastern cuisine, overhead shot, natural lighting, garnished, colorful, high resolution`,
-          negative_prompt: "text, watermark, blurry, distorted, low quality",
-          steps: 25,
-          width: 768,
-          height: 768,
-          cfg_scale: 7,
-          sampler_name: "DPM++ 2M Karras"
-        };
-    
-        const response = await fetch("http://127.0.0.1:7860/sdapi/v1/txt2img", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestBody)
-        });
-    
-        if (!response.ok) {
-          throw new Error(`Image generation failed: ${response.status}`);
-        }
-    
-        const data = await response.json();
-        return data.images?.[0] ? `data:image/png;base64,${data.images[0]}` : null;
-      } catch (error) {
-        console.error("Error generating image:", error);
-        return null;
       }
     };
 
@@ -165,7 +133,7 @@ export default function SearchResults() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">Search Results</h1>
-          <Link 
+          <Link
             href="/"
             className="px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-amber-600 transition-colors"
           >
@@ -183,7 +151,10 @@ export default function SearchResults() {
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-8">
             <p className="text-red-600">{error}</p>
-            <Link href="/" className="text-green-600 hover:underline mt-2 inline-block">
+            <Link
+              href="/"
+              className="text-green-600 hover:underline mt-2 inline-block"
+            >
               Try another search
             </Link>
           </div>
@@ -191,7 +162,7 @@ export default function SearchResults() {
 
         {recipe && (
           <div className="max-w-2xl mx-auto">
-            <RecipeCard {...recipe} />
+          <RecipeCard {...recipe} image={recipe.image || undefined} />
           </div>
         )}
       </div>
