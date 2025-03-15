@@ -95,6 +95,7 @@ interface RecipeCardProps {
   recipeEnglish?: string[] | string;
   recipeArabic?: string[] | string;
   image?: string;
+  onClose: () => void;
 }
 
 export default function RecipeCard({
@@ -106,6 +107,7 @@ export default function RecipeCard({
   ingredients,
   recipeEnglish,
   recipeArabic,
+  onClose,
 }: RecipeCardProps) {
   const [showIngredients, setShowIngredients] = useState(false);
   const [showRecipe, setShowRecipe] = useState(false);
@@ -125,6 +127,26 @@ export default function RecipeCard({
 
   return (
     <div className="bg-white p-6 rounded-lg shadow relative">
+      {/* Close button for the modal */}
+      <button
+        onClick={onClose} // Use the onClose prop to close the modal
+        className="absolute top-4 right-4 p-2 text-gray-600 hover:text-gray-900 transition"
+        aria-label="Close"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
       <div className="w-full flex justify-center">
         {imageExists ? (
           // Display existing image if it exists
