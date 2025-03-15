@@ -24,8 +24,8 @@ Here's how it works:
 ### Prerequisites  
 - Node.js (v16 or higher)  
 - npm, yarn, pnpm, or bun installed
-- Local LLM running on port http://localhost:11434/ 
-- Local Image generation model running on port http://127.0.0.1:7860 
+- Local LLM running on port http://localhost:11434/ (used llama3 through Ollama)
+- Stable Diffusion API (AUTOMATIC1111 Web UI) is running locally at http://127.0.0.1:7860
 
 ### Run the app:
 1. Navigate to the project directory.

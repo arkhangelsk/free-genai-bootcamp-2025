@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 interface RecipeInstructionsProps {
-  recipeEnglish: string;
-  recipeArabic: string;
+  recipeEnglish: string | string[];
+  recipeArabic: string | string[];
   onClose: () => void;
 }
 

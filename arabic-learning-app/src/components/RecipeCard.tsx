@@ -1,8 +1,10 @@
 "use client";
-import Image from "next/image";
+
 import { useState } from "react";
 import IngredientsPage from "./IngredientsPage";
 import RecipeInstructions from "./RecipeInstructions";
+import Image from "next/image";
+import GenerateImage from "./GenerateImage";
 
 interface AudioState {
   isPlaying: boolean;
@@ -90,8 +92,8 @@ interface RecipeCardProps {
     image: string;
     description?: string;
   }>;
-  recipeEnglish?: string;
-  recipeArabic?: string;
+  recipeEnglish?: string[] | string;
+  recipeArabic?: string[] | string;
   image?: string;
 }
 
@@ -104,42 +106,40 @@ export default function RecipeCard({
   ingredients,
   recipeEnglish,
   recipeArabic,
-  image,
 }: RecipeCardProps) {
   const [showIngredients, setShowIngredients] = useState(false);
   const [showRecipe, setShowRecipe] = useState(false);
   const titleAudio = useAudioPlayback();
   const questionAudio = useAudioPlayback();
+  const [imageExists, setImageExists] = useState(false);
 
-  // Debug logs
-  console.log("RecipeCard props:", {
-    title,
-    arabicTitle,
-    recipeEnglish: recipeEnglish || "No recipe provided",
-    recipeArabic: recipeArabic || "No recipe provided",
-    fullProps: {
-      title,
-      arabicTitle,
-      transliteration,
-      description,
-      question,
-      ingredients,
-      recipeEnglish,
-      recipeArabic,
-    },
-  });
+  // Callback to update imageExists after generating an image
+  const handleImageGenerated = () => {
+    setImageExists(true);
+  };
 
   return (
     <div className="bg-white p-6 rounded-lg shadow relative">
-      <div className="relative w-full h-[200px] mb-4">
-        <Image
-          src={image || "/placeholder-recipe.jpg"}
-          fill
-          alt={title}
-          className="rounded-md object-cover"
-          priority
-          unoptimized={true}
-        />
+      <div className="relative w-full h-[200px] overflow-hidden rounded-md">
+        {imageExists ? (
+          // Display existing image if it exists
+          <Image
+            src={`/images/${title.toLowerCase().replace(/\s/g, "-")}.png`}
+            fill
+            alt={title}
+            className="object-cover"
+            priority
+            unoptimized={true}
+          />
+        ) : (
+          // Generate new image if no image exists
+          <div className="rounded-md object-cover">
+            <GenerateImage
+              title={title}
+              onImageGenerated={handleImageGenerated}
+            />
+          </div>
+        )}
       </div>
       <h3 className="text-xl font-bold mt-4">{title}</h3>
       <p className="text-lg text-green-600">{arabicTitle}</p>

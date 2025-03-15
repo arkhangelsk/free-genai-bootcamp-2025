@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import RecipeCard from "../components/RecipeCard";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -50,7 +50,7 @@ export default function Home() {
       setSearchError("Failed to load saved recipes");
     }
   }, []);
-  const [recipes, setRecipes] = useState<Recipe[]>([
+  const [recipes] = useState<Recipe[]>([
     {
       title: "Hummus",
       arabicTitle: "حمص",
