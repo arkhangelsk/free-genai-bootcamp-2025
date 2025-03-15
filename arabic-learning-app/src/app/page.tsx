@@ -3,40 +3,18 @@
 import RecipeCard from "../components/RecipeCard";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
-interface Ingredient {
-  name: string;
-  arabicName: string;
-  transliteration: string;
-  image: string;
-  description?: string;
-}
-
-interface Recipe {
-  searchedAt?: string; // ISO string timestamp
-  title: string;
-  arabicTitle: string;
-  transliteration: string;
-  description: string;
-  question: {
-    arabic: string;
-    transliteration: string;
-    english: string;
-  };
-  ingredients: Ingredient[];
-  recipeEnglish?: string[] | string;
-  recipeArabic?: string[] | string;
-  image?: string;
-}
-
-const STORAGE_KEY = "savedRecipes";
-const MAX_SAVED_RECIPES = 20; // Maximum number of recipes to keep in history
+import { Recipe } from "./types/recipe";
+import { sanitizeJsonString } from "./utils/sanitizeJsonString";
+import { STORAGE_KEY, MAX_SAVED_RECIPES } from "./constants";
+import { searchRecipe } from "./services/recipeService";
+import { recipes } from "./data/recipes";
 
 export default function Home() {
   const [searchedRecipes, setSearchedRecipes] = useState<Recipe[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
-
+  const [recipesData] = useState<Recipe[]>(recipes);
+  
   // Load saved recipes on component mount
   useEffect(() => {
     try {
@@ -50,228 +28,15 @@ export default function Home() {
       setSearchError("Failed to load saved recipes");
     }
   }, []);
-  const [recipes] = useState<Recipe[]>([
-    {
-      title: "Hummus",
-      arabicTitle: "حمص",
-      transliteration: "ḥummuṣ",
-      description:
-        "A creamy dip made from blended chickpeas, tahini, lemon juice, and garlic.",
-      question: {
-        arabic: "هل تحب الحمص؟",
-        transliteration: "hal tuḥibb al-ḥummuṣ?",
-        english: "Do you like hummus?",
-      },
-      ingredients: [
-        {
-          name: "Chickpeas",
-          arabicName: "حمص",
-          transliteration: "ḥummuṣ",
-          image: "/chickpeas.jpg",
-          description:
-            "The main ingredient in hummus, these legumes are rich in protein and fiber.",
-        },
-        {
-          name: "Tahini",
-          arabicName: "طحينة",
-          transliteration: "ṭaḥīna",
-          image: "/tahini.jpg",
-          description:
-            "A paste made from ground sesame seeds, adding richness and nutty flavor.",
-        },
-        {
-          name: "Lemon",
-          arabicName: "ليمون",
-          transliteration: "laymūn",
-          image: "/lemon.jpg",
-          description: "Adds brightness and balances the flavors.",
-        },
-        {
-          name: "Garlic",
-          arabicName: "ثوم",
-          transliteration: "thūm",
-          image: "/garlic.jpg",
-          description: "Provides a pungent kick and depth of flavor.",
-        },
-      ],
-    },
-    {
-      title: "Falafel",
-      arabicTitle: "فلافل",
-      transliteration: "falāfil",
-      description:
-        "Deep-fried patties made from ground chickpeas, herbs, and spices.",
-      question: {
-        arabic: "كيف تحب الفلافل؟",
-        transliteration: "kayf tuḥib al-falāfil?",
-        english: "How do you like your falafel?",
-      },
-      ingredients: [
-        {
-          name: "Chickpeas",
-          arabicName: "حمص",
-          transliteration: "ḥummuṣ",
-          image: "/chickpeas.jpg",
-          description: "Soaked and ground to form the base of falafel.",
-        },
-        {
-          name: "Parsley",
-          arabicName: "بقدونس",
-          transliteration: "baqdounis",
-          image: "/parsley.jpg",
-          description: "Fresh herb that adds color and fresh flavor.",
-        },
-        {
-          name: "Coriander",
-          arabicName: "كزبرة",
-          transliteration: "kuzbara",
-          image: "/coriander.jpg",
-          description: "Both leaves and seeds are used for authentic flavor.",
-        },
-        {
-          name: "Cumin",
-          arabicName: "كمون",
-          transliteration: "kammūn",
-          image: "/cumin.jpg",
-          description: "Adds warmth and earthiness to the spice blend.",
-        },
-      ],
-    },
-    {
-      title: "Shawarma",
-      arabicTitle: "شاورما",
-      transliteration: "shāwarmā",
-      description:
-        "Marinated meat cooked on a rotating spit, served with bread and vegetables.",
-      question: {
-        arabic: "ما نوع الشاورما المفضل لديك؟",
-        transliteration: "mā naw' al-shāwarmā al-mufaḍḍal ladayk?",
-        english: "What's your favorite type of shawarma?",
-      },
-      ingredients: [
-        {
-          name: "Chicken/Meat",
-          arabicName: "دجاج/لحم",
-          transliteration: "dajāj/laḥm",
-          image: "/meat.jpg",
-          description:
-            "Marinated in Middle Eastern spices and slow-cooked on a vertical rotisserie.",
-        },
-        {
-          name: "Garlic Sauce",
-          arabicName: "ثومية",
-          transliteration: "thūmiyya",
-          image: "/garlic-sauce.jpg",
-          description:
-            "A creamy emulsion of garlic, oil, and lemon juice, also known as toum.",
-        },
-        {
-          name: "Pita Bread",
-          arabicName: "خبز",
-          transliteration: "khubz",
-          image: "/pita.jpg",
-        },
-        {
-          name: "Pickles",
-          arabicName: "مخلل",
-          transliteration: "mukhallal",
-          image: "/pickles.jpg",
-          description: "Adds crunch and tangy flavor to balance the rich meat.",
-        },
-      ],
-    },
-  ]);
-
-  // Function to sanitize JSON string by removing control characters and ensuring valid JSON
- const sanitizeJsonString = (jsonStr: string): string => {
-   try {
-     // First attempt: Basic sanitization
-     let sanitized = jsonStr
-       .replace(/[\u0000-\u001F\u007F-\u009F]/g, "") // Remove control characters
-       .replace(/\n/g, "\\n") // Properly escape newlines
-       .replace(/\r/g, "\\r") // Properly escape carriage returns
-       .replace(/\t/g, "\\t") // Properly escape tabs
-       .replace(/\\(?!["\\/bfnrt])/g, "\\\\"); // Escape backslashes not followed by valid escape chars
-
-     // Fix trailing commas in arrays
-     sanitized = sanitized.replace(/,\s*]/g, "]");
-
-     // Fix trailing commas in objects
-     sanitized = sanitized.replace(/,\s*}/g, "}");
-
-     // Fix missing commas between array elements (addresses the specific error)
-     sanitized = sanitized.replace(/][ \t\r\n]*\[/g, "],[");
-
-     // Fix missing commas between string elements
-     sanitized = sanitized.replace(/"[ \t\r\n]*"/g, '","');
-
-     // Check if the JSON is valid after sanitization
-     JSON.parse(sanitized);
-     return sanitized;
-   } catch (parseError) {
-     console.warn(
-       "Basic sanitization failed, attempting more aggressive repair:",
-       parseError
-     );
-
-     // Second attempt: More aggressive cleaning and repair
-     try {
-       // Extract what looks like a JSON object
-       const jsonMatch = jsonStr.match(/({[\s\S]*})/);
-       if (jsonMatch) {
-         jsonStr = jsonMatch[0];
-       }
-
-       // Ensure the string starts and ends with valid JSON brackets
-       if (!jsonStr.trim().startsWith("{")) jsonStr = "{" + jsonStr;
-       if (!jsonStr.trim().endsWith("}")) jsonStr = jsonStr + "}";
-
-       // Replace unescaped quotes in strings
-       let inString = false;
-       let result = "";
-
-       for (let i = 0; i < jsonStr.length; i++) {
-         const char = jsonStr[i];
-
-         if (char === '"' && (i === 0 || jsonStr[i - 1] !== "\\")) {
-           inString = !inString;
-         }
-
-         // Handle array syntax problems
-         if (inString && char === "]") {
-           result += "\\]"; // Escape closing brackets inside strings
-         } else if (inString && char === "[") {
-           result += "\\["; // Escape opening brackets inside strings
-         } else {
-           result += char;
-         }
-       }
-
-       // Check if we closed all strings properly
-       let fixedJson = result;
-       if (inString) {
-         fixedJson += '"'; // Close any unclosed string
-       }
-
-       // Final fixes for common issues
-       fixedJson = fixedJson
-         // Fix double commas
-         .replace(/,,/g, ",")
-         // Fix space between property name and colon
-         .replace(/"([^"]+)"[ \t]+:/g, '"$1":')
-         // Fix missing quotes around property names
-         .replace(/([{,]\s*)([a-zA-Z0-9_$]+)(\s*:)/g, '$1"$2"$3');
-
-       // Validate the final result
-       JSON.parse(fixedJson);
-       return fixedJson;
-     } catch (finalError) {
-       // If all repair attempts fail, throw an error with details
-       console.error("All JSON repair attempts failed:", finalError);
-       throw new Error("Failed to repair malformed JSON");
-     }
-   }
- };
+  
+  const handleSearch = async (query: string) => {
+    try {
+      const data = await searchRecipe(query);
+      return data;
+    } catch (error) {
+      console.error("Error searching recipe:", error);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 text-green-900">
@@ -302,82 +67,9 @@ export default function Home() {
                   setIsSearching(true);
 
                   try {
-                    const requestBody = {
-                      model: "llama3",
-                      prompt: `Generate a valid JSON object for a Middle Eastern ${query} recipe. The JSON must strictly follow this structure:
-                      {
-                      "title": "Recipe name in English",
-                      "arabicTitle": "Recipe name in Arabic",
-                      "transliteration": "Arabic transliteration of the title",
-                      "description": "Brief description of the dish",
-                      "question": {
-                        "arabic": "How to make this dish? (in Arabic)",
-                        "transliteration": "Transliteration of the question",
-                        "english": "How to make this dish?"
-                      },
-                      "ingredients": [
-                        {
-                          "name": "Ingredient name in English",
-                          "arabicName": "Ingredient name in Arabic",
-                          "transliteration": "Arabic transliteration of the ingredient name",
-                          "image": "/ingredient-image.jpg",
-                          "description": "Brief description of the ingredient"
-                        }
-                      ],
-                      "recipeEnglish": "Step-by-step instructions in English.",
-                      "recipeArabic": "Step-by-step instructions in Arabic"
-                    }
-                    Requirements:
-                    * Each recipe step must be in a list format, ensuring they appear on separate lines.
-                    * Ensure all Arabic text is properly written.
-                    * Include accurate transliterations.
-                    * Provide clear and structured ingredient details.
-                    * Return the response ONLY as a JSON object with no additional text, explanations, or formatting.
-                      `,
-                      stream: false,
-                    };
-
-                    const response = await fetch(
-                      "http://localhost:11434/api/generate",
-                      {
-                        method: "POST",
-                        headers: {
-                          "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(requestBody),
-                      }
-                    );
-
-                    console.log("Response:--------", response);
-
-                    if (!response.ok) {
-                      throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-
-                    const data = await response.json();
-                    if (!data.response) {
-                      throw new Error(
-                        "No recipe data received. Please try again."
-                      );
-                    }
-
-                    let jsonStr = data.response.trim();
-                    console.log("Raw JSON string:", jsonStr);
-
-                    // Extract JSON if it's wrapped in backticks or other text
-                    const jsonMatch = jsonStr.match(/({[\s\S]*})/);
-                    if (jsonMatch) {
-                      jsonStr = jsonMatch[0];
-                    }
-
-                    if (!jsonStr.startsWith("{") || !jsonStr.endsWith("}")) {
-                      throw new Error(
-                        "Invalid recipe data received. Please try again."
-                      );
-                    }
-
                     // Sanitize the JSON string
-                    const sanitizedJson = sanitizeJsonString(jsonStr);
+                    const searchResult = await handleSearch(query);
+                    const sanitizedJson = sanitizeJsonString(searchResult);
 
                     try {
                       const recipeData = JSON.parse(sanitizedJson) as Recipe;
@@ -413,80 +105,9 @@ export default function Home() {
                 setSearchError(null);
 
                 try {
-                  const requestBody = {
-                    model: "llama3",
-                    prompt: `Generate a valid JSON object for a Middle Eastern ${query} recipe. The JSON must strictly follow this structure:
-                      {
-                      "title": "Recipe name in English",
-                      "arabicTitle": "Recipe name in Arabic",
-                      "transliteration": "Arabic transliteration of the title",
-                      "description": "Brief description of the dish",
-                      "question": {
-                        "arabic": "How to make this dish? (in Arabic)",
-                        "transliteration": "Transliteration of the question",
-                        "english": "How to make this dish?"
-                      },
-                      "ingredients": [
-                        {
-                          "name": "Ingredient name in English",
-                          "arabicName": "Ingredient name in Arabic",
-                          "transliteration": "Arabic transliteration of the ingredient name",
-                          "image": "/ingredient-image.jpg",
-                          "description": "Brief description of the ingredient"
-                        }
-                      ],
-                    "recipeEnglish": "Step-by-step instructions in English.",
-                    "recipeArabic": "Step-by-step instructions in Arabic"
-                    }
-                    Requirements:
-                    * Each recipe step must be in a list format, ensuring they appear on separate lines.
-                    * Ensure all Arabic text is properly written.
-                    * Include accurate transliterations.
-                    * Provide clear and structured ingredient details.
-                    * Return the response ONLY as a JSON object with no additional text, explanations, or formatting.
-                      `,
-
-                    stream: false,
-                  };
-
-                  const response = await fetch(
-                    "http://localhost:11434/api/generate",
-                    {
-                      method: "POST",
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify(requestBody),
-                    }
-                  );
-
-                  if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                  }
-
-                  const data = await response.json();
-                  if (!data.response) {
-                    throw new Error(
-                      "No recipe data received. Please try again."
-                    );
-                  }
-
-                  let jsonStr = data.response.trim();
-
-                  // Extract JSON if it's wrapped in backticks or other text
-                  const jsonMatch = jsonStr.match(/({[\s\S]*})/);
-                  if (jsonMatch) {
-                    jsonStr = jsonMatch[0];
-                  }
-
-                  if (!jsonStr.startsWith("{") || !jsonStr.endsWith("}")) {
-                    throw new Error(
-                      "Invalid recipe data received. Please try again."
-                    );
-                  }
-
+                  const showSearchResult = await handleSearch(query);
                   // Sanitize the JSON string
-                  const sanitizedJson = sanitizeJsonString(jsonStr);
+                  const sanitizedJson = sanitizeJsonString(showSearchResult);
 
                   try {
                     const recipeData: Recipe = {
@@ -673,7 +294,7 @@ export default function Home() {
           Popular Recipes وصفات شعبية
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {recipes.map((recipe, index) => (
+          {recipesData.map((recipe, index) => (
             <RecipeCard key={index} {...recipe} />
           ))}
         </div>
