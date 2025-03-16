@@ -30,7 +30,7 @@ ollama run llama3:latest
 ```
 If you already have Ollama installed on your machine, running the above command will start Ollama on http://localhost:11434/
 
-![alt text](image.png)
+![alt text](images/ollama.png)
 > Checkout this video for local Ollama setup: [Create & Deploy Your Own Local AI Platform Using Any AI Model (Ollama | Open WebUI | NGROK)](https://www.youtube.com/watch?v=kuaalMmarrc)
 - Stable Diffusion API (AUTOMATIC1111 Web UI) is running locally at http://127.0.0.1:7860
 
@@ -43,7 +43,7 @@ chmod +x webui.sh
 
 ```
 
-![alt text](image-1.png)
+![alt text](images/stable-diffusion.png)
 
 ### Run the app:
 1. Navigate to the project directory.
