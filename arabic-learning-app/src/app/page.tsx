@@ -7,7 +7,7 @@ import { Recipe } from "./types/recipe";
 import { sanitizeJsonString } from "./utils/sanitizeJsonString";
 import { STORAGE_KEY, MAX_SAVED_RECIPES } from "./constants";
 import { searchRecipe } from "./services/recipeService";
-import { recipes } from "./data/recipes";
+import recipesData from "./data/recipes.json"; // Import recipes.json
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -15,8 +15,14 @@ export default function Home() {
   const [searchedRecipes, setSearchedRecipes] = useState<Recipe[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
-  const [recipesData] = useState<Recipe[]>(recipes);
-  
+
+  // Filter popular recipes: Hummus, Falafel, and Shawarma
+  const popularRecipes = Object.values(recipesData)
+    .flat() // Flatten the array of categories into a single array
+    .filter((recipe) =>
+      ["Hummus", "Falafel", "Shawarma"].includes(recipe.title)
+    );
+
   // Load saved recipes on component mount
   useEffect(() => {
     try {
@@ -30,7 +36,7 @@ export default function Home() {
       setSearchError("Failed to load saved recipes");
     }
   }, []);
-  
+
   const handleSearch = async (query: string) => {
     try {
       const data = await searchRecipe(query);
@@ -44,6 +50,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100 text-green-900">
       {/* Navbar */}
       <Navbar currentCategory="Home" />
+
       {/* Hero Section */}
       <header className="text-center py-16 bg-yellow-50">
         <h1 className="text-4xl font-bold">
@@ -292,13 +299,13 @@ export default function Home() {
         </section>
       )}
 
-      {/* Featured Recipes */}
+      {/* Popular Recipes */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-2xl font-semibold mb-6">
           Popular Recipes وصفات شعبية
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {recipesData.map((recipe, index) => (
+          {popularRecipes.map((recipe, index) => (
             <RecipeCard
               key={index}
               {...recipe}
