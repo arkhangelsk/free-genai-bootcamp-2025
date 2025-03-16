@@ -1,58 +1,651 @@
 {
   "appetizers": [
-    "Hummus حمص",
-    "Baba Ghanoush بابا غنوج",
-    "Falafel فلافل",
-    "Muhammara محمرة",
-    "Labneh لبنة",
-    "Kibbeh كبة",
-    "Sambousek سمبوسك",
-    "Fattoush فتوش",
-    "Tabbouleh تبولة",
-    "Manakish مناقيش",
-    "Dolma (Warak Enab) ورق عنب",
-    "Arayes عرايس"
+    {
+      "title": "Hummus",
+      "arabicTitle": "حمص",
+      "transliteration": "Hummus",
+      "description": "A creamy dip made from blended chickpeas, tahini, lemon juice, and garlic.",
+      "question": {
+        "arabic": "ما هي مكونات الحمص؟",
+        "transliteration": "Ma hiya mokawinat al-hummus?",
+        "english": "What are the ingredients of hummus?"
+      },
+      "ingredients": [
+        {
+          "name": "Chickpeas",
+          "arabicName": "حمص",
+          "transliteration": "Hummus",
+          "image": "/images/chickpeas.png",
+          "description": "Cooked and peeled chickpeas."
+        },
+        {
+          "name": "Tahini",
+          "arabicName": "طحينة",
+          "transliteration": "Tahini",
+          "image": "/images/tahini.png",
+          "description": "Sesame seed paste."
+        }
+      ],
+      "recipeEnglish": [
+        "Blend chickpeas, tahini, lemon juice, and garlic in a food processor.",
+        "Add olive oil and blend until smooth.",
+        "Season with salt and serve with olive oil and paprika on top."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اخلط الحمص، الطحينة، عصير الليمون، والثوم في محضرة الطعام.",
+        "الخطوة 2: أضف زيت الزيتون واخلط حتى يصبح المزيج ناعماً.",
+        "الخطوة 3: تبّل بالملح وقدم مع زيت الزيتون والفلفل الحلو على الوجه."
+      ]
+    },
+    {
+      "title": "Baba Ghanoush",
+      "arabicTitle": "بابا غنوج",
+      "transliteration": "Baba Ghanoush",
+      "description": "A smoky eggplant dip made with tahini, garlic, and lemon juice.",
+      "question": {
+        "arabic": "ما هي مكونات البابا غنوج؟",
+        "transliteration": "Ma hiya mokawinat al-baba ghanoush?",
+        "english": "What are the ingredients of baba ghanoush?"
+      },
+      "ingredients": [
+        {
+          "name": "Eggplant",
+          "arabicName": "باذنجان",
+          "transliteration": "Badenjan",
+          "image": "/images/eggplant.png",
+          "description": "Roasted eggplant."
+        },
+        {
+          "name": "Tahini",
+          "arabicName": "طحينة",
+          "transliteration": "Tahini",
+          "image": "/images/tahini.png",
+          "description": "Sesame seed paste."
+        }
+      ],
+      "recipeEnglish": [
+        "Roast the eggplant until the skin is charred and the flesh is soft.",
+        "Peel the eggplant and mash the flesh.",
+        "Mix with tahini, garlic, lemon juice, and olive oil."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اشوي الباذنجان حتى يصبح الجلد محترقاً واللحم طرياً.",
+        "الخطوة 2: قشر الباذنجان واهرس اللحم.",
+        "الخطوة 3: اخلط مع الطحينة، الثوم، عصير الليمون، وزيت الزيتون."
+      ]
+    },
+    {
+      "title": "Falafel",
+      "arabicTitle": "فلافل",
+      "transliteration": "Falafel",
+      "description": "Deep-fried balls made from ground chickpeas, herbs, and spices.",
+      "question": {
+        "arabic": "ما هي مكونات الفلافل؟",
+        "transliteration": "Ma hiya mokawinat al-falafel?",
+        "english": "What are the ingredients of falafel?"
+      },
+      "ingredients": [
+        {
+          "name": "Chickpeas",
+          "arabicName": "حمص",
+          "transliteration": "Hummus",
+          "image": "/images/chickpeas.png",
+          "description": "Soaked chickpeas." 
+          },
+          {
+          "name": "Herbs",
+          "arabicName": "الأحمر",
+          "transliteration": "Al-Ahmar",
+          "image": "/images/herbs.png",
+          "description": "Fresh herbs."
+          },
+        {
+            "name": "Spices",
+            "arabicName": "البهارات",
+            "transliteration": "Al-Baharat",
+            "image": "/images/spices.png",
+            "description": "Seasonings."
+        }
   ],
+      "recipeEnglish": [
+        "Soak chickpeas in water and drain.",
+        "Mix with herbs and spices.",
+        "Deep-fry until golden brown."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اسخد الحمص في الماء والتقط.",
+        "الخطوة 2: اخلط بالأحمر والبهارات.",
+        "الخطوة 3: اشوي حتى يصبح الفلافل الجلد."
+      ]
+    }, 
+    {
+      "title": "Tabbouleh",
+      "arabicTitle": "تببولي",
+      "transliteration": "Tabbouleh",
+      "description": "A Mediterranean salad made with mixed greens, tahini, lemon juice, and olive oil.",
+      "question": {
+        "arabic": "ما هي مكونات التببولي؟",
+        "transliteration": "Ma hiya mokawinat al-tabbouleh?",
+        "english": "What are the ingredients of tabbouleh?"
+      },
+      "ingredients": [
+        {
+          "name": "Mixed Greens",
+          "arabicName": "الخضراوات",
+          "transliteration": "Al-Khadrwat",
+          "image": "/images/mixed-greens.png",
+          "description": "Mixed greens."
+        },
+        {
+          "name": "Tahini",
+          "arabicName": "طحينة",
+          "transliteration": "Tahini",
+          "image": "/images/tahini.png",
+          "description": "Sesame seed paste."
+        }
+      ],
+      "recipeEnglish": [
+        "Mix mixed greens with tahini, lemon juice, and olive oil.",
+        "Season with salt and serve with olive oil and paprika on top."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اخلط الخضراوات والطحينة وعصير الليمون وزيت الزيتون.",
+        "الخطوة 2: تبّل بالملح وقدم مع زيت الزيتون والفلفل الحلو على الوجه."
+      ]
+    },
+    {
+      "title": "Muhammara",
+      "arabicTitle": "محمرة",
+      "transliteration": "Muhammara",
+      "description": "A spicy dip made from roasted red peppers, walnuts, and pomegranate molasses.",
+      "question": {
+        "arabic": "ما هي مكونات المحمرة؟",
+        "transliteration": "Ma hiya mokawinat al-muhammara?",
+        "english": "What are the ingredients of muhammara?"
+      },
+      "ingredients": [
+        {
+          "name": "Red Peppers",
+          "arabicName": "الباذنجان",
+          "transliteration": "Al-Badenjan",
+          "image": "/images/red-peppers.png",
+          "description": "Roasted red peppers."
+        },
+        {
+          "name": "Walnuts",
+          "arabicName": "الفلفل",
+          "transliteration": "Al-Falafel",
+          "image": "/images/walnuts.png",
+          "description": "Roasted walnuts."
+        }
+      ],
+      "recipeEnglish": [
+        "Roast red peppers and walnuts until the skin is charred and the flesh is soft.",
+        "Mix with pomegranate molasses and season with salt and pepper."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اشوي الباذنجان والفلفل حتى يصبح الجلد محترقاً واللحم طرياً.",
+        "الخطوة 2: اخلط مع الكربونة والملح وتبّل بالملح والفلفل الحلو على الوجه."
+      ]
+    },
+    {
+      "title": "Zaatar",
+      "arabicTitle": "زعتر",
+      "transliteration": "Zaatar",
+      "description": "A spicy dip made from roasted red peppers, walnuts, and pomegranate molasses.",
+      "question": {
+        "arabic": "ما هي مكونات الزعتر؟",
+        "transliteration": "Ma hiya mokawinat al-zaatar?",
+        "english": "What are the ingredients of zaatar?"
+      },
+      "ingredients": [
+        {
+          "name": "Red Peppers",
+          "arabicName": "الباذنجان",
+          "transliteration": "Al-Badenjan",
+          "image": "/images/red-peppers.png",
+          "description": "Roasted red peppers."
+        },
+        {
+          "name": "Walnuts",
+          "arabicName": "الفلفل",
+          "transliteration": "Al-Falafel",
+          "image": "/images/walnuts.png",
+          "description": "Roasted walnuts."
+        }
+      ],
+      "recipeEnglish": [
+        "Roast red peppers and walnuts until the skin is charred and the flesh is soft.",
+        "Mix with pomegranate molasses and season with salt and pepper."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اشوي الباذنجان والفلفل حتى يصبح الجلد محترقاً واللحم طرياً.",
+        "الخطوة 2: اخلط مع الكربونة والملح وتبّل بالملح والفلفل الحلو على الوجه."
+      ]
+    },
+    {
+      "title": "Labneh",
+      "arabicTitle": "لبنة",
+      "transliteration": "Labneh",
+      "description": "A tangy yogurt cheese made from strained yogurt.",
+      "question": {
+        "arabic": "ما هي مكونات اللبنة؟",
+        "transliteration": "Ma hiya mokawinat al-labneh?",
+        "english": "What are the ingredients of labneh?"
+      },
+      "ingredients": [
+        {
+          "name": "Yogurt",
+          "arabicName": "لبن",
+          "transliteration": "Laban",
+          "image": "/images/yogurt.png",
+          "description": "Plain yogurt."
+        },
+        {
+          "name": "Olive Oil",
+          "arabicName": "زيت الزيتون",
+          "transliteration": "Zayt Al-Zaytoun",
+          "image": "/images/olive-oil.png",
+          "description": "Extra virgin olive oil."
+        }
+      ],
+      "recipeEnglish": [
+        "Strain yogurt in a cheesecloth for 24 hours.",
+        "Season with salt and serve with olive oil and herbs."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: صفي اللبن في قماش الجبن لمدة 24 ساعة.",
+        "الخطوة 2: تبّل بالملح وقدم مع زيت الزيتون والأعشاب."
+      ]
+    }
+],     
   "main-dishes": [
-    "Mansaf منسف",
-    "Kabsa كبسة",
-    "Mandi مندي",
-    "Shawarma شاورما",
-    "Kofta كفتة",
-    "Maqluba مقلوبة",
-    "Koshari كشري",
-    "Musakhan مسخن",
-    "Fesenjan فسنجون",
-    "Bamia بامية",
-    "Sayadieh صيادية",
-    "Fatteh فتة"
+    {
+      "title": "Shawarma",
+      "arabicTitle": "شاورما",
+      "transliteration": "Shawarma",
+      "description": "A Middle Eastern dish of marinated meat cooked on a vertical rotisserie.",
+      "question": {
+        "arabic": "ما هي مكونات الشاورما؟",
+        "transliteration": "Ma hiya mokawinat al-shawarma?",
+        "english": "What are the ingredients of shawarma?"
+      },
+      "ingredients": [
+        {
+          "name": "Chicken",
+          "arabicName": "دجاج",
+          "transliteration": "Dajaj",
+          "image": "/images/chicken.png",
+          "description": "Marinated chicken."
+        },
+        {
+          "name": "Garlic Sauce",
+          "arabicName": "صوص ثوم",
+          "transliteration": "Sous Thoum",
+          "image": "/images/garlic-sauce.png",
+          "description": "Creamy garlic sauce."
+        }
+      ],
+      "recipeEnglish": [
+        "Marinate the chicken with spices and yogurt.",
+        ": Cook on a vertical rotisserie.",
+        ": Serve with garlic sauce and pita bread."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: تتبّل الدجاج بالبهارات واللبن.",
+        "الخطوة 2: اطبخ على سيخ دوّار.",
+        "الخطوة 3: قدم مع صوص الثوم وخبز البيتا."
+      ]
+    },
+    {
+      "title": "Kebab",
+      "arabicTitle": "كباب",
+      "transliteration": "Kebab",
+      "description": "A Middle Eastern dish of marinated meat cooked on a vertical rotisserie.",
+      "question": {
+        "arabic": "ما هي مكونات الكباب؟",
+        "transliteration": "Ma hiya mokawinat al-kebab?",
+        "english": "What are the ingredients of kebab?"
+      },
+      "ingredients": [
+        {
+          "name": "Chicken",
+          "arabicName": "دجاج",
+          "transliteration": "Dajaj",
+          "image": "/images/chicken.png",
+          "description": "Marinated chicken."
+        },
+        {
+          "name": "Garlic Sauce",
+          "arabicName": "صوص ثوم",
+          "transliteration": "Sous Thoum",
+          "image": "/images/garlic-sauce.png",
+          "description": "Creamy garlic sauce."
+        }
+      ],
+      "recipeEnglish": [
+        "Marinate the chicken with spices and yogurt.",
+        ": Cook on a vertical rotisserie.",
+        ": Serve with garlic sauce and pita bread."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: تتبّل الدجاج بالبهارات واللبن.",
+        "الخطوة 2: اطبخ على سيخ دوّار.",
+        "الخطوة 3: قدم مع صوص الثوم وخبز البيتا."
+      ]
+    },
+    {
+      "title": "Mansaf",
+      "arabicTitle": "منسف",
+      "transliteration": "Mansaf",
+      "description": "A traditional Jordanian dish made with lamb, yogurt sauce, and served over rice and flatbread.",
+      "question": {
+        "arabic": "ما هي مكونات المنسف؟",
+        "transliteration": "Ma hiya mokawinat al-Mansaf?",
+        "english": "What are the ingredients of Mansaf?"
+      },
+      "ingredients": [
+        {
+          "name": "Lamb",
+          "arabicName": "لحم الضأن",
+          "transliteration": "Lahm al-Dhan",
+          "image": "/images/lamb.png",
+          "description": "Tender lamb cooked in a yogurt-based sauce."
+        },
+        {
+          "name": "Jameed",
+          "arabicName": "جميد",
+          "transliteration": "Jameed",
+          "image": "/images/jameed.png",
+          "description": "A dried fermented yogurt used to make the signature sauce."
+        },
+        {
+          "name": "Rice",
+          "arabicName": "أرز",
+          "transliteration": "Arroz",
+          "image": "/images/rice.png",
+          "description": "Steamed rice as the base of the dish."
+        },
+        {
+          "name": "Flatbread",
+          "arabicName": "خبز شراك",
+          "transliteration": "Khobz Shrak",
+          "image": "/images/flatbread.png",
+          "description": "Thin Jordanian flatbread placed under the rice."
+        },
+        {
+          "name": "Almonds",
+          "arabicName": "لوز",
+          "transliteration": "Louz",
+          "image": "/images/almonds.png",
+          "description": "Toasted almonds used for garnish."
+        }
+      ],
+      "recipeEnglish": [
+        "Soak jameed in warm water until softened, then blend into a smooth yogurt sauce.",
+        "Cook lamb with spices until tender, then add the jameed sauce and simmer.",
+        "Cook rice separately and toast almonds for garnish.",
+        "Layer flatbread on a large platter, top with rice, and pour the lamb and sauce over it.",
+        "Garnish with toasted almonds and serve warm."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: انقع الجميد في ماء دافئ حتى يصبح طريًا، ثم امزجه حتى يصبح صلصة ناعمة.",
+        "الخطوة 2: اطبخ اللحم مع التوابل حتى يصبح طريًا، ثم أضف صلصة الجميد واتركه ينضج.",
+        "الخطوة 3: اطبخ الأرز بشكل منفصل وحمّص اللوز للتزيين.",
+        "الخطوة 4: ضع خبز الشراك على طبق كبير، ثم ضع الأرز واسكب اللحم والصلصة فوقه.",
+        "الخطوة 5: زيّن باللوز المحمص وقدمه ساخنًا."
+      ]
+    }
   ],
   "desserts": [
-    "Baklava بقلاوة",
-    "Kunafa كنافة",
-    "Basbousa بسبوسة",
-    "Maamoul معمول",
-    "Qatayef قطايف",
-    "Halva حلاوة",
-    "Umm Ali أم علي",
-    "Zalabia زلابية",
-    "Ruz Bihalib رز بحليب",
-    "Atayef عيش السرايا",
-    "Asabe Zainab أصابع زينب",
-    "Mahalabia مهلبية"
+    {
+      "title": "Baklava",
+      "arabicTitle": "بكلويه",
+      "transliteration": "Baklawa",
+      "description": "A sweet pastry made from flour, water, sugar, and nuts.",
+      "question": {
+        "arabic": "ما هي مكونات البكلويه؟",
+        "transliteration": "Ma hiya mokawinat al-baklawa?",
+        "english": "What are the ingredients of baklawa?"
+      },
+      "ingredients": [
+        {
+          "name": "Flour",
+          "arabicName": "ذرة",
+          "transliteration": "Zhra",
+          "image": "/images/flour.png",
+          "description": "All-purpose flour."
+        },
+        {
+          "name": "Sugar",
+          "arabicName": "سكر",
+          "transliteration": "Sakar",
+          "image": "/images/sugar.png",
+          "description": "Granulated sugar."
+        }
+      ],
+      "recipeEnglish": [
+        "Mix flour, water, sugar, and nuts.",
+        "Roll the mixture into a ball.",
+        "Bake in a preheated oven."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اخلط الذرة، الماء، السكر، والأفلف.",
+        "الخطوة 2: اكسر الخطوة الناعماً واحفظها بالبيتا.",
+        "الخطوة 3: قدم مع الخل وقدمها على الوجه."
+      ]
+    },
+    {
+      "title": "Kunafa",
+      "arabicTitle": "كنافة",
+      "transliteration": "Kunafa",
+      "description": "A sweet pastry made from flour, water, sugar, and nuts.",
+      "question": {
+        "arabic": "ما هي مكونات الكنافة؟",
+        "transliteration": "Ma hiya mokawinat al-kunafa?",
+        "english": "What are the ingredients of kunafa?"
+      },
+      "ingredients": [
+        {
+          "name": "Flour",
+          "arabicName": "ذرة",
+          "transliteration": "Zhra",
+          "image": "/images/flour.png",
+          "description": "All-purpose flour."
+        },
+        {
+          "name": "Sugar",
+          "arabicName": "سكر",
+          "transliteration": "Sakar",
+          "image": "/images/sugar.png",
+          "description": "Granulated sugar."
+        }
+      ],
+      "recipeEnglish": [
+        "Mix flour, water, sugar, and nuts.",
+        "Roll the mixture into a ball.",
+        "Bake in a preheated oven."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اخلط الذرة، الماء، السكر، والأفلف.",
+        "الخطوة 2: اكسر الخطوة الناعماً واحفظها بالبيتا.",
+        "الخطوة 3: قدم مع الخل وقدمها على الوجه."
+      ]
+    },
+    {
+      "title": "Basbousa",
+      "arabicTitle": "بسبوسة",
+      "transliteration": "Basbousa",
+      "description": "A sweet semolina cake soaked in syrup and topped with almonds.",
+      "question": {
+        "arabic": "ما هي مكونات البسبوسة؟",
+        "transliteration": "Ma hiya mokawinat al-basbousa?",
+        "english": "What are the ingredients of basbousa?"
+      },
+      "ingredients": [
+        {
+          "name": "Semolina",
+          "arabicName": "سميد",
+          "transliteration": "Smeed",
+          "image": "/images/semolina.png",
+          "description": "Coarse wheat flour."
+        },
+        {
+          "name": "Almonds",
+          "arabicName": "لوز",
+          "transliteration": "Looz",
+          "image": "/images/almonds.png",
+          "description": "Whole almonds."
+        }
+      ],
+      "recipeEnglish": [
+        "Mix semolina, sugar, yogurt, and baking powder.",
+        "Pour into a baking dish and bake until golden brown.",
+        "Pour syrup over the hot cake and top with almonds."
+      ],
+      "recipeArabic": [
+        "الخطوة 1: اخلط السميد، السكر، اللبن، والبيكنج باودر.",
+        "الخطوة 2: اسكب في صينية فرن واخبز حتى يصبح ذهبي اللون.",
+        "الخطوة 3: اسكب الشراب فوق الكيك الساخن وقدم مع اللوز."
+      ]
+    }
   ],
-  "beverages": [
-    "Arabic Coffee قهوة عربية",
-    "Turkish Coffee قهوة تركية",
-    "Sahlab سحلب",
-    "Jallab جلاب",
-    "Ayran عيران",
-    "Karkadeh كركديه",
-    "Tamarind Juice تمر هندي",
-    "Qamar Al-Din قمر الدين",
-    "Mint Tea شاي بالنعناع",
-    "Carob Juice عصير خرنوب",
-    "Lemonade with Mint ليمون بالنعناع",
-    "Date Milkshake ميلك شيك التمر"
-  ]
+    "beverages": [
+        {
+            "title": "Date Milkshake",
+            "arabicTitle": "ميلك شيك التمر",
+            "transliteration": "Milk Shake Al-Tamr",
+            "description": "A sweet and creamy milkshake made with dates and milk.",
+            "question": {
+                "arabic": "ما هي مكونات ميلك شيك التمر؟",
+                "transliteration": "Ma hiya mokawinat milk shake al-tamr?",
+                "english": "What are the ingredients of date milkshake?"
+            },
+            "ingredients": [
+                {
+                    "name": "Dates",
+                    "arabicName": "تمر",
+                    "transliteration": "Tamr",
+                    "image": "/images/dates.png",
+                    "description": "Pitted dates."
+                },
+                {
+                    "name": "Milk",
+                    "arabicName": "حليب",
+                    "transliteration": "Haleeb",
+                    "image": "/images/milk.png",
+                    "description": "Whole milk."
+                }
+            ],
+            "recipeEnglish": [
+                "Soak dates in milk for 30 minutes.",
+                "Blend dates and milk until smooth.",
+                "Serve chilled with ice cubes."
+            ],
+            "recipeArabic": [
+                "الخطوة 1: انقع التمر في الحليب لمدة 30 دقيقة.",
+                "الخطوة 2: اخلط التمر والحليب حتى يصبح ناعماً.",
+                "الخطوة 3: قدم مبرداً مع مكعبات الثلج."
+            ]
+        },
+        {
+            "title": "Arabic Coffee",
+            "arabicTitle": "قهوة عربية",
+            "transliteration": "Qahwa Arabiya",
+            "description": "A strong and aromatic coffee brewed with cardamom.",
+            "question": {
+                "arabic": "ما هي مكونات القهوة العربية؟",
+                "transliteration": "Ma hiya mokawinat al-q  ahwa al-arabiya?",
+                "english": "What are the ingredients of Arabic coffee?"
+            },
+            "ingredients": [
+                {
+                    "name": "Coffee",
+                    "arabicName": "قهوة",
+                    "transliteration": "Qahwa",
+                    "image": "/images/coffee.png",
+                    "description": "Ground Arabic coffee beans."
+                },
+                {
+                    "name": "Cardamom",
+                    "arabicName": "هيل",
+                    "transliteration": "Hayl",
+                    "image": "/images/cardamom.png",
+                    "description": "Whole cardamom pods."
+                }
+            ],
+            "recipeEnglish": [
+                "Boil water with cardamom pods.",
+                "Add coffee and simmer for 5 minutes.",
+                "Strain and serve in small cups."
+            ],
+            "recipeArabic": [
+                "الخطوة 1: اغلي الماء مع قرون الهيل.",
+                "الخطوة 2: أضف القهوة واتركها تغلي لمدة 5 دقائق.",
+                "الخطوة 3: صفي وقدم في أكواب صغيرة."
+            ]
+        },
+        {
+          "title": "Sahlab",
+          "arabicTitle": "سحلب",
+          "transliteration": "Sahlab",
+          "description": "A warm and creamy Middle Eastern drink made with milk, orchid root powder, and topped with cinnamon and nuts.",
+          "question": {
+            "arabic": "ما هي مكونات السحلب؟",
+            "transliteration": "Ma hiya mokawinat al-Sahlab?",
+            "english": "What are the ingredients of Sahlab?"
+          },
+          "ingredients": [
+            {
+              "name": "Milk",
+              "arabicName": "حليب",
+              "transliteration": "Haleeb",
+              "image": "/images/milk.png",
+              "description": "Whole milk used as the base of the drink."
+            },
+            {
+              "name": "Sahlab Powder",
+              "arabicName": "مسحوق السحلب",
+              "transliteration": "Mas'houq al-Sahlab",
+              "image": "/images/sahlab-powder.png",
+              "description": "Orchid root powder used as a thickener."
+            },
+            {
+              "name": "Sugar",
+              "arabicName": "سكر",
+              "transliteration": "Sukkar",
+              "image": "/images/sugar.png",
+              "description": "Sweetener for the drink."
+            },
+            {
+              "name": "Cinnamon",
+              "arabicName": "قرفة",
+              "transliteration": "Qirfa",
+              "image": "/images/cinnamon.png",
+              "description": "Ground cinnamon used for garnish."
+            },
+            {
+              "name": "Chopped Nuts",
+              "arabicName": "مكسرات مفرومة",
+              "transliteration": "Mokasarat Mafrouma",
+              "image": "/images/nuts.png",
+              "description": "Almonds, pistachios, or walnuts for topping."
+            }
+          ],
+          "recipeEnglish": [
+            "Heat the milk in a saucepan over medium heat.",
+            "Gradually add the sahlab powder, stirring constantly to prevent lumps.",
+            "Add sugar to taste and continue stirring until the mixture thickens.",
+            "Pour into cups and garnish with cinnamon and chopped nuts.",
+            "Serve warm and enjoy!"
+          ],
+          "recipeArabic": [
+            "الخطوة 1: سخّن الحليب في قدر على نار متوسطة.",
+            "الخطوة 2: أضف مسحوق السحلب تدريجيًا مع التحريك المستمر لمنع التكتل.",
+            "الخطوة 3: أضف السكر حسب الرغبة واستمر في التحريك حتى يصبح المزيج كثيفًا.",
+            "الخطوة 4: اسكب في الأكواب وزيّن بالقرفة والمكسرات المفرومة.",
+            "الخطوة 5: قدّمه دافئًا واستمتع!"
+          ]
+        }
+    ]
 }
