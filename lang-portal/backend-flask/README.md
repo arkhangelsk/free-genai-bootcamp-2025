@@ -28,17 +28,17 @@ pip install -r requirements.txt
 
 ## Set Up SQLite3 Database
 
-### Set Up Your Floder Structure For Database
+### Set Up Your Folder Structure For Database
 ```
 backend_flask/
-│── lib/
-│   ├── db.py  # Database connection and helper functions
-│── sql/
-│   ├── setup.sql  # SQL Schema for tables
 |── db/
 |   ├── config.py
 |   ├── schema.py
 |   ├── words.db # actual database containing the words
+│── db/lib/ 
+│   ├── db.py # Database connection and helper functions
+│── db/sql/ 
+|   ├── setup.sql  # SQL Schema for tables
 │── db/seeds/ # Seed Data & Related Functions
 │   ├── data_basic_greetings.json
 |   ├── data_common_phrases.json
@@ -49,8 +49,13 @@ backend_flask/
 |   ├── study_activities.json 
 |   ├── study_activities.py
 |   ├── words.py 
+│── docs/
+│   ├── business-requirements.md
+|   ├── technical-requirements.md
+|── images/
+|── routes/
+│── requirements.txt 
 │── tasks.py  # Helper functions to initialize DB
-│── requirements.txt  
 
 ```
 ### Define the Database Schema (db/sql/setup.sql)
@@ -107,7 +112,7 @@ CREATE TABLE IF NOT EXISTS word_review_attempts (
 );
 ```
 ### Set Up Config File 
-Setup config file to define folder paths
+Setup config file `config.py` to define folder paths 
 ```
 import os
 
@@ -117,7 +122,7 @@ SEED_DIR = "seeds"
 ```
 
 ### Set Up the Schema File 
-Schema file will initialze the database using SQL schema.
+Schema file `schema.py` will initialze the database using SQL schema.
 ```py
 import sqlite3
 import os
@@ -211,7 +216,7 @@ def seed_study_activities():
 
 ```
 1. Modify tasks.py to insert study_activities seed data:
-```
+```py
 from db.schema import init_db
 from db.seeds.study_activities import seed_study_activities
 
@@ -219,10 +224,11 @@ if __name__ == "__main__":
     init_db()
     seed_study_activities()
 ```
-1. Run the Seeding Script
+2. Run the Seeding Script
 ```sh
 python3 tasks.py
 ```
+
 This will:
 
 1. Create the `study_activities` table (if not exists).
@@ -242,9 +248,10 @@ Similary define the seed data & related funcions for words & group update tasks 
 backend_flask/
 │── app.py  # Main Flask application
 │── routes/
-│   ├── study_activities.py  # Study activity routes
-│   ├── words.py  # Word routes
 │   ├── groups.py  # Group routes
+│   ├── study_activities.py  # Study activity routes
+|   ├── study_sessions.py  # Study activity routes
+│   ├── words.py  # Word routes
 
 ### Create the Flask App (app.py)
 Create app.py and set up Flask:
