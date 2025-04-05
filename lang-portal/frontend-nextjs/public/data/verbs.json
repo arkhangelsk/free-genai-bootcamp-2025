@@ -1,0 +1,40 @@
+[
+  { "arabic": "ذَهَبَ", "transliteration": "dhahaba", "english": "To go" },
+  { "arabic": "جَاءَ", "transliteration": "jaa'a", "english": "To come" },
+  { "arabic": "رَأَى", "transliteration": "ra'aa", "english": "To see" },
+  { "arabic": "سَمِعَ", "transliteration": "sami'a", "english": "To hear" },
+  { "arabic": "قَالَ", "transliteration": "qaala", "english": "To say" },
+  { "arabic": "فَعَلَ", "transliteration": "fa'ala", "english": "To do" },
+  { "arabic": "أَخَذَ", "transliteration": "akhadha", "english": "To take" },
+  { "arabic": "أَعْطَى", "transliteration": "a'Taa", "english": "To give" },
+  { "arabic": "عَرَفَ", "transliteration": "'arafa", "english": "To know" },
+  {
+    "arabic": "فَهِمَ",
+    "transliteration": "fahima",
+    "english": "To understand"
+  },
+  { "arabic": "دَرَسَ", "transliteration": "darasa", "english": "To study" },
+  { "arabic": "كَتَبَ", "transliteration": "kataba", "english": "To write" },
+  { "arabic": "قَرَأَ", "transliteration": "qara'a", "english": "To read" },
+  { "arabic": "لَعِبَ", "transliteration": "la'iba", "english": "To play" },
+  { "arabic": "نَامَ", "transliteration": "naama", "english": "To sleep" },
+  { "arabic": "صَحَا", "transliteration": "SaHaa", "english": "To wake up" },
+  { "arabic": "جَلَسَ", "transliteration": "jalasa", "english": "To sit" },
+  { "arabic": "وَقَفَ", "transliteration": "waqafa", "english": "To stand" },
+  { "arabic": "مَشَى", "transliteration": "mashaa", "english": "To walk" },
+  { "arabic": "جَرَى", "transliteration": "jaraa", "english": "To run" },
+  { "arabic": "فَتَحَ", "transliteration": "fataHa", "english": "To open" },
+  { "arabic": "أَغْلَقَ", "transliteration": "aghlaqa", "english": "To close" },
+  { "arabic": "أَكَلَ", "transliteration": "akala", "english": "To eat" },
+  { "arabic": "شَرِبَ", "transliteration": "shariba", "english": "To drink" },
+  {
+    "arabic": "تَكَلَّمَ",
+    "transliteration": "takallama",
+    "english": "To speak"
+  },
+  { "arabic": "سَأَلَ", "transliteration": "sa'ala", "english": "To ask" },
+  { "arabic": "أَجَابَ", "transliteration": "ajaaba", "english": "To answer" },
+  { "arabic": "حَاوَلَ", "transliteration": "Haawala", "english": "To try" },
+  { "arabic": "أَحَبَّ", "transliteration": "aHabba", "english": "To love" },
+  { "arabic": "اِرَادَ", "transliteration": "araada", "english": "To want" }
+]

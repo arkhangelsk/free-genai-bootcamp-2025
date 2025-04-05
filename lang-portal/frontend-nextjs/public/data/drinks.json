@@ -1,0 +1,44 @@
+[
+  { "arabic": "مَاء", "transliteration": "maa'", "english": "Water" },
+  { "arabic": "شَاي", "transliteration": "shaay", "english": "Tea" },
+  { "arabic": "قَهْوَة", "transliteration": "qahwah", "english": "Coffee" },
+  { "arabic": "عَصِير", "transliteration": "'aSiir", "english": "Juice" },
+  { "arabic": "حَلِيب", "transliteration": "Haliib", "english": "Milk" },
+  { "arabic": "لَبَن", "transliteration": "laban", "english": "Yogurt drink" },
+  {
+    "arabic": "عَصِير بُرْتُقَال",
+    "transliteration": "'aSiir burtuqaal",
+    "english": "Orange juice"
+  },
+  {
+    "arabic": "عَصِير تُفّاح",
+    "transliteration": "'aSiir tuffaaH",
+    "english": "Apple juice"
+  },
+  { "arabic": "صُودَا", "transliteration": "Suudaa", "english": "Soda" },
+  {
+    "arabic": "مَشْرُوب غَازِيّ",
+    "transliteration": "mashruub ghaaziyy",
+    "english": "Carbonated drink"
+  },
+  {
+    "arabic": "تَمْر هِنْدِي",
+    "transliteration": "tamr hindii",
+    "english": "Tamarind drink"
+  },
+  {
+    "arabic": "كَرْكَدِيه",
+    "transliteration": "karkadiih",
+    "english": "Hibiscus drink"
+  },
+  {
+    "arabic": "جَلَّاب",
+    "transliteration": "jallaab",
+    "english": "Jallab (date and raisin drink)"
+  },
+  {
+    "arabic": "عَرَق سُوس",
+    "transliteration": "'araq suus",
+    "english": "Licorice drink"
+  }
+]

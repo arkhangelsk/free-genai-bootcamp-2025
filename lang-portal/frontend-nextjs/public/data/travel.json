@@ -1,0 +1,83 @@
+[
+  { "arabic": "مَطَار", "transliteration": "maTaar", "english": "Airport" },
+  { "arabic": "فُنْدُق", "transliteration": "funduq", "english": "Hotel" },
+  {
+    "arabic": "مَحَطَّة",
+    "transliteration": "maHaTTah",
+    "english": "Station (train/bus)"
+  },
+  {
+    "arabic": "تَذْكَرَة",
+    "transliteration": "tadhkarah",
+    "english": "Ticket"
+  },
+  {
+    "arabic": "جَوَاز سَفَر",
+    "transliteration": "jawaaz safar",
+    "english": "Passport"
+  },
+  {
+    "arabic": "حَقِيبَة",
+    "transliteration": "Haqiibah",
+    "english": "Luggage/Suitcase"
+  },
+  { "arabic": "خَرِيطَة", "transliteration": "khariiTah", "english": "Map" },
+  {
+    "arabic": "سَيَّارَة أُجْرَة",
+    "transliteration": "sayyaarah ujrah",
+    "english": "Taxi"
+  },
+  { "arabic": "حَافِلَة", "transliteration": "Haafilah", "english": "Bus" },
+  { "arabic": "قِطَار", "transliteration": "qiTaar", "english": "Train" },
+  {
+    "arabic": "طَائِرَة",
+    "transliteration": "Taa'irah",
+    "english": "Airplane"
+  },
+  {
+    "arabic": "مُسَافِر",
+    "transliteration": "musaafir",
+    "english": "Traveler/Passenger"
+  },
+  {
+    "arabic": "رِحْلَة",
+    "transliteration": "riHlah",
+    "english": "Trip/Journey"
+  },
+  { "arabic": "وُصُول", "transliteration": "wuSuul", "english": "Arrival" },
+  {
+    "arabic": "مُغَادَرَة",
+    "transliteration": "mughaadarah",
+    "english": "Departure"
+  },
+  {
+    "arabic": "حَجْز",
+    "transliteration": "Hajz",
+    "english": "Reservation/Booking"
+  },
+  { "arabic": "غُرْفَة", "transliteration": "ghurfah", "english": "Room" },
+  { "arabic": "عُنْوَان", "transliteration": "'unwaan", "english": "Address" },
+  {
+    "arabic": "جَوَاز مُرُور",
+    "transliteration": "jawaaz muruur",
+    "english": "Visa"
+  },
+  {
+    "arabic": "مَعْلُومَات",
+    "transliteration": "ma'luumaat",
+    "english": "Information"
+  },
+  { "arabic": "مَكَان", "transliteration": "makaan", "english": "Place" },
+  {
+    "arabic": "مُسَاعَدَة",
+    "transliteration": "musaa'adah",
+    "english": "Help/Assistance"
+  },
+  { "arabic": "سُؤَال", "transliteration": "su'aal", "english": "Question" },
+  { "arabic": "إِجَابَة", "transliteration": "ijaabah", "english": "Answer" },
+  { "arabic": "مَطْعَم", "transliteration": "maT'am", "english": "Restaurant" },
+  { "arabic": "سُوق", "transliteration": "suuq", "english": "Market" },
+  { "arabic": "مُتْحَف", "transliteration": "mutHaf", "english": "Museum" },
+  { "arabic": "شَاطِئ", "transliteration": "shaaTi'", "english": "Beach" },
+  { "arabic": "مَدِينَة", "transliteration": "madiinah", "english": "City" }
+]

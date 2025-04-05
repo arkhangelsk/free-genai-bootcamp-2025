@@ -1,7 +1,43 @@
 [
   {
     "name": "Typing Tutor",
-    "url": "http://localhost:8080",
-    "preview_url": "/assets/study_activities/typing-tutor.png"
+    "description": "Practice typing with this interactive typing tutor.",
+    "type": "practice",
+    "difficulty": "easy",
+    "url": "http://127.0.0.1:5500/learning-activities/arabic-keyboard/keyboard.htm",
+    "preview_url": "/assets/study_activities/arabic-keyboard.png"
+
+  },
+  {
+    "name": "Arabic Flashcards",
+    "description": "Learn Arabic words and phrases with interactive flashcards.",
+    "type": "flashcards",
+    "difficulty": "medium",
+    "url": "http://localhost:3001/",
+    "preview_url": "/assets/study_activities/flashcards.png"
+  },
+  {
+    "name": "Arabic Grammar Quiz",
+    "description": "Test your knowledge of Arabic grammar with this interactive quiz.",
+    "type": "quiz",
+    "difficulty": "hard",
+    "url": "http://localhost:8080/grammar-quiz",
+    "preview_url": "/assets/study_activities/arabic-grammar-quiz.png"
+  },
+  {
+    "name": "Arabic Vocabulary Quiz",
+    "description": "Test your knowledge of Arabic vocabulary with this interactive quiz.",
+    "type": "quiz",
+    "difficulty": "medium",
+    "url": "http://localhost:8080/vocabulary-quiz",
+    "preview_url": "/assets/study_activities/arabic-vocabulary-quiz.png"
+  },
+  {
+    "name": "Learn Vocabulary",
+    "description": "Practice Arabic vocabulary by reviewing words list.",
+    "type": "practice",
+    "difficulty": "medium",
+    "url": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "preview_url": ""
   }
 ]
