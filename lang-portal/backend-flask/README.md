@@ -101,15 +101,6 @@ CREATE TABLE IF NOT EXISTS study_sessions (
     FOREIGN KEY (study_activity_id) REFERENCES study_activities(id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS word_review_attempts (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    word_id INTEGER NOT NULL,
-    study_session_id INTEGER NOT NULL,
-    score INTEGER NOT NULL CHECK (score BETWEEN 0 AND 1), -- 0 = incorrect, 1 = correct
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (word_id) REFERENCES words(id) ON DELETE CASCADE,
-    FOREIGN KEY (study_session_id) REFERENCES study_sessions(id) ON DELETE CASCADE
-);
 ```
 ### Set Up Config File 
 Setup config file `config.py` to define folder paths 

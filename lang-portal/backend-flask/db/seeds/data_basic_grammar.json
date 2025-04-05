@@ -1,0 +1,448 @@
+{
+  "quizTitle": "مسابقة قواعد اللغة العربية للمبتدئين",
+  "quizDescription": "اختبر معرفتك الأساسية بقواعد اللغة العربية",
+  "quizTitleEn": "Beginner Arabic Grammar Quiz",
+  "quizDescriptionEn": "Test your basic knowledge of Arabic grammar",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ما نوع الكلمة 'كتاب'؟",
+      "questionEn": "What type of word is 'كتاب' (book)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "اسم"
+        },
+        {
+          "id": "b",
+          "text": "فعل"
+        },
+        {
+          "id": "c",
+          "text": "حرف"
+        },
+        {
+          "id": "d",
+          "text": "ضمير"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "Noun"
+        },
+        {
+          "id": "b",
+          "text": "Verb"
+        },
+        {
+          "id": "c",
+          "text": "Particle"
+        },
+        {
+          "id": "d",
+          "text": "Pronoun"
+        }
+      ],
+      "correctAnswer": "a",
+      "explanation": "كلمة 'كتاب' هي اسم لأنها تدل على شيء.",
+      "explanationEn": "The word 'كتاب' (book) is a noun because it refers to a thing."
+    },
+    {
+      "id": 2,
+      "question": "أي من الجمل التالية تعتبر جملة اسمية؟",
+      "questionEn": "Which of the following is a nominal sentence?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ذهب محمد إلى المدرسة"
+        },
+        {
+          "id": "b",
+          "text": "يلعب الأولاد في الحديقة"
+        },
+        {
+          "id": "c",
+          "text": "المدرسة كبيرة"
+        },
+        {
+          "id": "d",
+          "text": "اكتب الواجب"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "Mohammed went to school"
+        },
+        {
+          "id": "b",
+          "text": "The boys play in the park"
+        },
+        {
+          "id": "c",
+          "text": "The school is big"
+        },
+        {
+          "id": "d",
+          "text": "Write the homework"
+        }
+      ],
+      "correctAnswer": "c",
+      "explanation": "الجملة 'المدرسة كبيرة' هي جملة اسمية لأنها تبدأ باسم وهو 'المدرسة'.",
+      "explanationEn": "The sentence 'المدرسة كبيرة' (The school is big) is a nominal sentence because it starts with a noun 'المدرسة' (the school)."
+    },
+    {
+      "id": 3,
+      "question": "ما هو المفرد من كلمة 'كتب'؟",
+      "questionEn": "What is the singular form of the word 'كتب' (books)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "كاتب"
+        },
+        {
+          "id": "b",
+          "text": "مكتبة"
+        },
+        {
+          "id": "c",
+          "text": "كتاب"
+        },
+        {
+          "id": "d",
+          "text": "كتابة"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "Writer"
+        },
+        {
+          "id": "b",
+          "text": "Library"
+        },
+        {
+          "id": "c",
+          "text": "Book"
+        },
+        {
+          "id": "d",
+          "text": "Writing"
+        }
+      ],
+      "correctAnswer": "c",
+      "explanation": "المفرد من كلمة 'كتب' هو 'كتاب'.",
+      "explanationEn": "The singular form of 'كتب' (books) is 'كتاب' (book)."
+    },
+    {
+      "id": 4,
+      "question": "أي من الكلمات التالية هي فعل ماضي؟",
+      "questionEn": "Which of the following words is a past tense verb?",
+      "options": [
+        {
+          "id": "a",
+          "text": "يكتب"
+        },
+        {
+          "id": "b",
+          "text": "اكتب"
+        },
+        {
+          "id": "c",
+          "text": "كتب"
+        },
+        {
+          "id": "d",
+          "text": "كاتب"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "He writes"
+        },
+        {
+          "id": "b",
+          "text": "Write!"
+        },
+        {
+          "id": "c",
+          "text": "He wrote"
+        },
+        {
+          "id": "d",
+          "text": "Writer"
+        }
+      ],
+      "correctAnswer": "c",
+      "explanation": "كلمة 'كتب' هي فعل ماضي يدل على حدوث الفعل في الزمن الماضي.",
+      "explanationEn": "The word 'كتب' (wrote) is a past tense verb indicating that the action happened in the past."
+    },
+    {
+      "id": 5,
+      "question": "ما هو جمع كلمة 'ولد'؟",
+      "questionEn": "What is the plural form of the word 'ولد' (boy)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "والد"
+        },
+        {
+          "id": "b",
+          "text": "أولاد"
+        },
+        {
+          "id": "c",
+          "text": "ولدان"
+        },
+        {
+          "id": "d",
+          "text": "ولدات"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "Father"
+        },
+        {
+          "id": "b",
+          "text": "Boys"
+        },
+        {
+          "id": "c",
+          "text": "Two boys"
+        },
+        {
+          "id": "d",
+          "text": "Not correct"
+        }
+      ],
+      "correctAnswer": "b",
+      "explanation": "جمع كلمة 'ولد' هو 'أولاد'.",
+      "explanationEn": "The plural form of 'ولد' (boy) is 'أولاد' (boys)."
+    },
+    {
+      "id": 6,
+      "question": "أي من الجمل التالية تعتبر جملة فعلية؟",
+      "questionEn": "Which of the following is a verbal sentence?",
+      "options": [
+        {
+          "id": "a",
+          "text": "البيت جميل"
+        },
+        {
+          "id": "b",
+          "text": "محمد طالب"
+        },
+        {
+          "id": "c",
+          "text": "يدرس الطالب"
+        },
+        {
+          "id": "d",
+          "text": "الكتاب على الطاولة"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "The house is beautiful"
+        },
+        {
+          "id": "b",
+          "text": "Mohammed is a student"
+        },
+        {
+          "id": "c",
+          "text": "The student studies"
+        },
+        {
+          "id": "d",
+          "text": "The book is on the table"
+        }
+      ],
+      "correctAnswer": "c",
+      "explanation": "الجملة 'يدرس الطالب' هي جملة فعلية لأنها تبدأ بفعل وهو 'يدرس'.",
+      "explanationEn": "The sentence 'يدرس الطالب' (The student studies) is a verbal sentence because it starts with a verb 'يدرس' (studies)."
+    },
+    {
+      "id": 7,
+      "question": "ما هو الضمير المناسب للفراغ: '___ طالبة مجتهدة'؟",
+      "questionEn": "What is the appropriate pronoun for the blank: '___ طالبة مجتهدة' (___is a hardworking female student)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "أنا"
+        },
+        {
+          "id": "b",
+          "text": "أنت"
+        },
+        {
+          "id": "c",
+          "text": "هو"
+        },
+        {
+          "id": "d",
+          "text": "هي"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "I"
+        },
+        {
+          "id": "b",
+          "text": "You"
+        },
+        {
+          "id": "c",
+          "text": "He"
+        },
+        {
+          "id": "d",
+          "text": "She"
+        }
+      ],
+      "correctAnswer": "d",
+      "explanation": "الضمير المناسب هو 'هي' لأن كلمة 'طالبة' مؤنثة.",
+      "explanationEn": "The appropriate pronoun is 'هي' (she) because the word 'طالبة' (student) is feminine."
+    },
+    {
+      "id": 8,
+      "question": "أي من الكلمات التالية هي فعل مضارع؟",
+      "questionEn": "Which of the following words is a present tense verb?",
+      "options": [
+        {
+          "id": "a",
+          "text": "كتب"
+        },
+        {
+          "id": "b",
+          "text": "اكتب"
+        },
+        {
+          "id": "c",
+          "text": "يكتب"
+        },
+        {
+          "id": "d",
+          "text": "كتاب"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "Wrote"
+        },
+        {
+          "id": "b",
+          "text": "Write!"
+        },
+        {
+          "id": "c",
+          "text": "Writes"
+        },
+        {
+          "id": "d",
+          "text": "Book"
+        }
+      ],
+      "correctAnswer": "c",
+      "explanation": "كلمة 'يكتب' هي فعل مضارع يدل على حدوث الفعل في الزمن الحاضر أو المستقبل.",
+      "explanationEn": "The word 'يكتب' (writes) is a present tense verb indicating that the action happens in the present or future."
+    },
+    {
+      "id": 9,
+      "question": "ما هي صيغة فعل الأمر من الفعل 'كتب'؟",
+      "questionEn": "What is the imperative form of the verb 'كتب' (wrote)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "كتب"
+        },
+        {
+          "id": "b",
+          "text": "يكتب"
+        },
+        {
+          "id": "c",
+          "text": "كاتب"
+        },
+        {
+          "id": "d",
+          "text": "اكتب"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "Wrote"
+        },
+        {
+          "id": "b",
+          "text": "Writes"
+        },
+        {
+          "id": "c",
+          "text": "Writer"
+        },
+        {
+          "id": "d",
+          "text": "Write!"
+        }
+      ],
+      "correctAnswer": "d",
+      "explanation": "صيغة فعل الأمر من الفعل 'كتب' هي 'اكتب'.",
+      "explanationEn": "The imperative form of the verb 'كتب' (wrote) is 'اكتب' (write!)."
+    },
+    {
+      "id": 10,
+      "question": "ما هي الكلمة المؤنثة من بين الكلمات التالية؟",
+      "questionEn": "Which of the following words is feminine?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ولد"
+        },
+        {
+          "id": "b",
+          "text": "كتاب"
+        },
+        {
+          "id": "c",
+          "text": "معلمة"
+        },
+        {
+          "id": "d",
+          "text": "قلم"
+        }
+      ],
+      "optionsEn": [
+        {
+          "id": "a",
+          "text": "Boy"
+        },
+        {
+          "id": "b",
+          "text": "Book"
+        },
+        {
+          "id": "c",
+          "text": "Female teacher"
+        },
+        {
+          "id": "d",
+          "text": "Pen"
+        }
+      ],
+      "correctAnswer": "c",
+      "explanation": "كلمة 'معلمة' هي كلمة مؤنثة تدل على المعلمة الأنثى.",
+      "explanationEn": "The word 'معلمة' (female teacher) is feminine as it refers to a female teacher."
+    }
+  ]
+}

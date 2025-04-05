@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Arabic Keyboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #textArea {
+        width: 100%;
+        height: 150px;
+        margin: 20px 0;
+        padding: 10px;
+        font-size: 18px;
+        direction: rtl;
+        text-align: right;
+      }
+
+      .keyboard {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .keyboard-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 5px;
+      }
+
+      .key {
+        min-width: 40px;
+        height: 50px; /* Increased height to accommodate two lines */
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+        user-select: none;
+        padding: 2px;
+        box-sizing: border-box;
+      }
+
+      .key .char {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .key .letter-name {
+        font-size: 10px;
+        color: #666;
+        line-height: 1.2;
+        display: block;
+        text-align: center;
+      }
+
+      .key:hover {
+        background-color: #e0e0e0;
+      }
+
+      .key:active {
+        background-color: #d0d0d0;
+      }
+
+      .key.wide {
+        min-width: 80px;
+        height: 50px;
+      }
+
+      .key.extra-wide {
+        min-width: 120px;
+        height: 50px;
+      }
+
+      .key.small {
+        font-size: 14px;
+      }
+
+      .section {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f8f8f8;
+        border-radius: 4px;
+      }
+
+      .section h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+
+      .controls button {
+        padding: 8px 15px;
+        background-color: #4F39F6;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .controls button:hover {
+        background-color: #3d27e2;
+      }
+
+      .mappings {
+        margin-top: 20px;
+        text-align: left;
+        direction: ltr;
+        font-size: 14px;
+        background-color: #f8f8f8;
+        padding: 10px;
+        border-radius: 4px;
+      }
+
+      .mappings table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .mappings th,
+      .mappings td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+
+      .mappings th {
+        background-color: #f2f2f2;
+      }
+
+      .letter-name {
+        font-size: 10px;
+        display: block;
+        margin-top: 2px;
+        color: #666;
+      }
+
+      .input-mode-toggle {
+        margin: 10px 0;
+      }
+
+      .input-mode-toggle label {
+        margin-right: 10px;
+      }
+
+      .status {
+        margin-top: 10px;
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 12px;
+        background-color: #e8f5e9;
+        color: #4caf50;
+        display: none;
+      }
+
+      .punctuation-key {
+        background-color: #e0e0ff;
+      }
+
+      .control-key {
+        background-color: #ffe0e0;
+      }
+
+      .diacritic-key {
+        background-color: #e0ffe0;
+      }
+
+      .number-key {
+        background-color: #ffffe0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Arabic Keyboard</h1>
+
+    <div class="input-mode-toggle">
+      <label>Input Mode:</label>
+      <input type="radio" id="directMode" name="inputMode" checked />
+      <label for="directMode">Direct Arabic Input</label>
+      <input type="radio" id="transliterationMode" name="inputMode" />
+      <label for="transliterationMode">Transliteration Mode</label>
+    </div>
+
+    <textarea
+      id="textArea"
+      placeholder=""
+    ></textarea>
+    <div id="status" class="status">!Text copied to clipboard</div>
+
+    <div class="controls">
+      <button id="copyButton">Copy Text</button>
+      <button id="clearButton">Clear Text</button>
+    </div>
+
+    <div class="keyboard section">
+      <h3>Arabic Keyboard with Integrated Controls</h3>
+
+      <!-- First Row -->
+      <div class="keyboard-row">
+        <div class="key punctuation-key" data-char="،">
+          <span>،</span><span class="letter-name">Comma</span>
+        </div>
+        <div class="key punctuation-key" data-char="؟">
+          <span>؟</span><span class="letter-name">Question</span>
+        </div>
+        <div class="key punctuation-key" data-char="؛">
+          <span>؛</span><span class="letter-name">Semicolon</span>
+        </div>
+        <div class="key punctuation-key" data-char="."><span>.</span></div>
+        <div class="key punctuation-key" data-char=":"><span>:</span></div>
+        <div class="key punctuation-key" data-char="-"><span>-</span></div>
+        <div class="key" data-char="ء">
+          <span>ء</span><span class="letter-name">Hamza</span>
+        </div>
+        <div class="key" data-char="ا">
+          <span>ا</span><span class="letter-name">Alif</span>
+        </div>
+        <div class="key" data-char="ب">
+          <span>ب</span><span class="letter-name">Baa</span>
+        </div>
+        <div class="key" data-char="ت">
+          <span>ت</span><span class="letter-name">Taa</span>
+        </div>
+        <div class="key" data-char="ث">
+          <span>ث</span><span class="letter-name">Thaa</span>
+        </div>
+        <div class="key" data-char="ج">
+          <span>ج</span><span class="letter-name">Jeem</span>
+        </div>
+        <div class="key" data-char="ح">
+          <span>ح</span><span class="letter-name">Haa</span>
+        </div>
+        <div class="key" data-char="خ">
+          <span>خ</span><span class="letter-name">Khaa</span>
+        </div>
+        <div class="key wide control-key" id="backspace">
+          <span>⌫</span><span class="letter-name">Backspace</span>
+        </div>
+      </div>
+
+      <!-- Second Row -->
+      <div class="keyboard-row">
+        <div class="key extra-wide control-key" data-char=" ">
+          <span>Space</span>
+        </div>
+        <div class="key" data-char="د">
+          <span>د</span><span class="letter-name">Dal</span>
+        </div>
+        <div class="key" data-char="ذ">
+          <span>ذ</span><span class="letter-name">Thal</span>
+        </div>
+        <div class="key" data-char="ر">
+          <span>ر</span><span class="letter-name">Raa</span>
+        </div>
+        <div class="key" data-char="ز">
+          <span>ز</span><span class="letter-name">Zay</span>
+        </div>
+        <div class="key" data-char="س">
+          <span>س</span><span class="letter-name">Seen</span>
+        </div>
+        <div class="key" data-char="ش">
+          <span>ش</span><span class="letter-name">Sheen</span>
+        </div>
+        <div class="key" data-char="ص">
+          <span>ص</span><span class="letter-name">Sad</span>
+        </div>
+        <div class="key" data-char="ض">
+          <span>ض</span><span class="letter-name">Dad</span>
+        </div>
+        <div class="key" data-char="ط">
+          <span>ط</span><span class="letter-name">Taa</span>
+        </div>
+        <div class="key" data-char="ظ">
+          <span>ظ</span><span class="letter-name">Zaa</span>
+        </div>
+        <div class="key" data-char="ع">
+          <span>ع</span><span class="letter-name">Ayn</span>
+        </div>
+        <div class="key" data-char="غ">
+          <span>غ</span><span class="letter-name">Ghayn</span>
+        </div>
+      </div>
+
+      <!-- Third Row -->
+      <div class="keyboard-row">
+        <div class="key diacritic-key" data-char="َ">
+          <span>َ</span><span class="letter-name">Fatha</span>
+        </div>
+        <div class="key diacritic-key" data-char="ُ">
+          <span>ُ</span><span class="letter-name">Damma</span>
+        </div>
+        <div class="key diacritic-key" data-char="ِ">
+          <span>ِ</span><span class="letter-name">Kasra</span>
+        </div>
+        <div class="key diacritic-key" data-char="ّ">
+          <span>ّ</span><span class="letter-name">Shadda</span>
+        </div>
+        <div class="key diacritic-key" data-char="ْ">
+          <span>ْ</span><span class="letter-name">Sukoon</span>
+        </div>
+        <div class="key" data-char="ف">
+          <span>ف</span><span class="letter-name">Faa</span>
+        </div>
+        <div class="key" data-char="ق">
+          <span>ق</span><span class="letter-name">Qaf</span>
+        </div>
+        <div class="key" data-char="ك">
+          <span>ك</span><span class="letter-name">Kaf</span>
+        </div>
+        <div class="key" data-char="ل">
+          <span>ل</span><span class="letter-name">Lam</span>
+        </div>
+        <div class="key" data-char="م">
+          <span>م</span><span class="letter-name">Meem</span>
+        </div>
+        <div class="key" data-char="ن">
+          <span>ن</span><span class="letter-name">Noon</span>
+        </div>
+        <div class="key" data-char="ه">
+          <span>ه</span><span class="letter-name">Haa</span>
+        </div>
+        <div class="key" data-char="و">
+          <span>و</span><span class="letter-name">Waw</span>
+        </div>
+        <div class="key" data-char="ي">
+          <span>ي</span><span class="letter-name">Yaa</span>
+        </div>
+      </div>
+
+      <!-- Fourth Row -->
+      <div class="keyboard-row">
+        <div class="key number-key" data-char="٠">
+          <span>٠</span><span class="letter-name">0</span>
+        </div>
+        <div class="key number-key" data-char="١">
+          <span>١</span><span class="letter-name">1</span>
+        </div>
+        <div class="key number-key" data-char="٢">
+          <span>٢</span><span class="letter-name">2</span>
+        </div>
+        <div class="key number-key" data-char="٣">
+          <span>٣</span><span class="letter-name">3</span>
+        </div>
+        <div class="key number-key" data-char="٤">
+          <span>٤</span><span class="letter-name">4</span>
+        </div>
+        <div class="key number-key" data-char="٥">
+          <span>٥</span><span class="letter-name">5</span>
+        </div>
+        <div class="key number-key" data-char="٦">
+          <span>٦</span><span class="letter-name">6</span>
+        </div>
+        <div class="key number-key" data-char="٧">
+          <span>٧</span><span class="letter-name">7</span>
+        </div>
+        <div class="key number-key" data-char="٨">
+          <span>٨</span><span class="letter-name">8</span>
+        </div>
+        <div class="key number-key" data-char="٩">
+          <span>٩</span><span class="letter-name">9</span>
+        </div>
+        <div class="key" data-char="ة">
+          <span>ة</span><span class="letter-name">Taa Marb.</span>
+        </div>
+        <div class="key" data-char="ى">
+          <span>ى</span><span class="letter-name">Alif Maq.</span>
+        </div>
+        <div class="key" data-char="آ">
+          <span>آ</span><span class="letter-name">Alif Madda</span>
+        </div>
+        <div class="key" data-char="إ">
+          <span>إ</span><span class="letter-name">Alif Hamza</span>
+        </div>
+        <div class="key" data-char="أ">
+          <span>أ</span><span class="letter-name">Alif Hamza</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mappings">
+      <h3>Latin to Arabic Keyboard Mappings (for Transliteration Mode)</h3>
+      <p>
+        When in Transliteration Mode, you can type with these keyboard mappings:
+      </p>
+      <table>
+        <tr>
+          <th>Type</th>
+          <th>For</th>
+          <th>Type</th>
+          <th>For</th>
+          <th>Type</th>
+          <th>For</th>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>ا</td>
+          <td>d</td>
+          <td>د</td>
+          <td>s</td>
+          <td>س</td>
+        </tr>
+        <tr>
+          <td>b</td>
+          <td>ب</td>
+          <td>dh</td>
+          <td>ذ</td>
+          <td>sh</td>
+          <td>ش</td>
+        </tr>
+        <tr>
+          <td>t</td>
+          <td>ت</td>
+          <td>r</td>
+          <td>ر</td>
+          <td>S</td>
+          <td>ص</td>
+        </tr>
+        <tr>
+          <td>th</td>
+          <td>ث</td>
+          <td>z</td>
+          <td>ز</td>
+          <td>D</td>
+          <td>ض</td>
+        </tr>
+        <tr>
+          <td>j</td>
+          <td>ج</td>
+          <td>3</td>
+          <td>ع</td>
+          <td>T</td>
+          <td>ط</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>ح</td>
+          <td>gh</td>
+          <td>غ</td>
+          <td>Z</td>
+          <td>ظ</td>
+        </tr>
+        <tr>
+          <td>kh</td>
+          <td>خ</td>
+          <td>f</td>
+          <td>ف</td>
+          <td>q</td>
+          <td>ق</td>
+        </tr>
+        <tr>
+          <td>k</td>
+          <td>ك</td>
+          <td>l</td>
+          <td>ل</td>
+          <td>w</td>
+          <td>و</td>
+        </tr>
+        <tr>
+          <td>m</td>
+          <td>م</td>
+          <td>n</td>
+          <td>ن</td>
+          <td>y</td>
+          <td>ي</td>
+        </tr>
+        <tr>
+          <td>h</td>
+          <td>ه</td>
+          <td>e</td>
+          <td>ة</td>
+          <td>Y</td>
+          <td>ى</td>
+        </tr>
+        <tr>
+          <td>'</td>
+          <td>ء</td>
+          <td>2</td>
+          <td>أ</td>
+          <td>aa</td>
+          <td>آ</td>
+        </tr>
+        <tr>
+          <td>i</td>
+          <td>إ</td>
+          <td>W</td>
+          <td>ؤ</td>
+          <td>I</td>
+          <td>ئ</td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const textArea = document.getElementById("textArea");
+        const keys = document.querySelectorAll(".key");
+        const backspace = document.getElementById("backspace");
+        const copyButton = document.getElementById("copyButton");
+        const clearButton = document.getElementById("clearButton");
+        const directMode = document.getElementById("directMode");
+        const transliterationMode = document.getElementById(
+          "transliterationMode"
+        );
+        const statusEl = document.getElementById("status");
+
+        // Input mode toggles
+        directMode.addEventListener("change", function () {
+          if (this.checked) {
+            buffer = ""; // Clear buffer when switching to direct mode
+            textArea.focus();
+          }
+        });
+
+        transliterationMode.addEventListener("change", function () {
+          if (this.checked) {
+            buffer = ""; // Clear buffer when switching to transliteration mode
+            textArea.focus();
+          }
+        });
+
+        // Latin to Arabic mappings (expanded)
+        const latinToArabic = {
+          a: "ا",
+          b: "ب",
+          t: "ت",
+          th: "ث",
+          j: "ج",
+          7: "ح",
+          kh: "خ",
+          d: "د",
+          dh: "ذ",
+          r: "ر",
+          z: "ز",
+          s: "س",
+          sh: "ش",
+          S: "ص",
+          D: "ض",
+          T: "ط",
+          Z: "ظ",
+          3: "ع",
+          gh: "غ",
+          f: "ف",
+          q: "ق",
+          k: "ك",
+          l: "ل",
+          m: "م",
+          n: "ن",
+          h: "ه",
+          w: "و",
+          y: "ي",
+          "'": "ء",
+          2: "أ",
+          i: "إ",
+          W: "ؤ",
+          I: "ئ",
+          e: "ة",
+          aa: "آ",
+          Y: "ى",
+          la: "لا",
+          fat7a: "َ",
+          damma: "ُ",
+          kasra: "ِ",
+          fathatan: "ً",
+          dammatan: "ٌ",
+          kasratan: "ٍ",
+          shadda: "ّ",
+          sukun: "ْ",
+          // Shorthand for diacritics
+          "a'": "َ",
+          "u'": "ُ",
+          "i'": "ِ",
+          an: "ً",
+          un: "ٌ",
+          in: "ٍ",
+          "~": "ّ",
+          o: "ْ",
+          //` Additional mappings for transliteration
+          'v': 'ڤ',  // Common Arabic transliteration for 'v'
+          'p': 'پ',  // Persian peh
+          'g': 'گ',  // Persian gaf
+        };
+
+        let buffer = "";
+
+        // Click on virtual keyboard keys
+        keys.forEach((key) => {
+          key.addEventListener("click", function () {
+            const char = this.getAttribute("data-char");
+            insertAtCursor(textArea, char);
+            textArea.focus();
+          });
+        });
+
+        // Backspace button
+        backspace.addEventListener("click", function () {
+          const start = textArea.selectionStart;
+          const end = textArea.selectionEnd;
+
+          if (start === end && start > 0) {
+            textArea.value =
+              textArea.value.substring(0, start - 1) +
+              textArea.value.substring(end);
+            textArea.selectionStart = textArea.selectionEnd = start - 1;
+          } else if (start !== end) {
+            textArea.value =
+              textArea.value.substring(0, start) +
+              textArea.value.substring(end);
+            textArea.selectionStart = textArea.selectionEnd = start;
+          }
+
+          textArea.focus();
+        });
+
+        // Copy button
+        copyButton.addEventListener("click", function () {
+          textArea.select();
+
+          try {
+            // Modern approach
+            navigator.clipboard
+              .writeText(textArea.value)
+              .then(() => {
+                showStatus("!Text copied to clipboard");
+              })
+              .catch((err) => {
+                // Fallback
+                document.execCommand("copy");
+                showStatus("!Text copied to clipboard");
+              });
+          } catch (err) {
+            // Extra fallback
+            document.execCommand("copy");
+            showStatus("!Text copied to clipboard");
+          }
+        });
+
+        function showStatus(message) {
+          statusEl.textContent = message;
+          statusEl.style.display = "block";
+          setTimeout(() => {
+            statusEl.style.display = "none";
+          }, 2000);
+        }
+
+        // Clear button
+        clearButton.addEventListener("click", function () {
+          textArea.value = "";
+          buffer = ""; // Clear the transliteration buffer
+          textArea.focus();
+        });
+
+        let bufferTimeout;
+        // Handle typing into the textarea
+        textArea.addEventListener('keydown', function(e) {
+        if (directMode.checked) return;
+
+        if (transliterationMode.checked) {
+        // Allow control and navigation keys
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 
+             'Home', 'End', 'PageUp', 'PageDown'].includes(e.key)) {
+            return;
+        }
+
+        // Handle backspace and delete normally
+        if (e.key === 'Backspace' || e.key === 'Delete') {
+            buffer = ''; // Clear buffer on deletion
+            clearTimeout(bufferTimeout);
+            return;
+        }
+
+        e.preventDefault();
+
+        // Process special keys immediately
+        if ([' ', 'Enter', 'Tab'].includes(e.key)) {
+            processBuffer(false);
+            if (e.key === ' ') insertAtCursor(textArea, ' ');
+            else if (e.key === 'Enter') insertAtCursor(textArea, '\n');
+            else if (e.key === 'Tab') insertAtCursor(textArea, '\t');
+            return;
+        }
+
+        // Add character to buffer
+        buffer += e.key;
+        clearTimeout(bufferTimeout);
+        
+        // Set timeout to flush buffer if no further input comes
+        bufferTimeout = setTimeout(() => {
+            processBuffer(false);
+        }, 500); // 500ms timeout for multi-character sequences
+
+        // Try immediate processing for single-character matches
+        processBuffer(true);
+    }
+});
+
+        function processBuffer(partial = false) {
+    if (!buffer) return;
+
+    let matched = false;
+    
+    // Try to match the longest possible sequence first
+    for (let len = Math.min(buffer.length, 3); len > 0; len--) {
+        const seq = buffer.substring(0, len);
+        if (latinToArabic[seq]) {
+            insertAtCursor(textArea, latinToArabic[seq]);
+            buffer = buffer.substring(len);
+            matched = true;
+            
+            // If we matched, process the remainder
+            if (buffer.length > 0) {
+                processBuffer(partial);
+            }
+            break;
+        }
+    }
+
+    // If no match found and we're not doing partial processing
+    if (!matched && !partial) {
+        // Insert the first character as-is and continue with the rest
+        if (buffer.length > 0) {
+            insertAtCursor(textArea, buffer[0]);
+            buffer = buffer.substring(1);
+            processBuffer(partial);
+        }
+    }
+}
+
+        function insertAtCursor(textarea, text) {
+          const start = textarea.selectionStart;
+          const end = textarea.selectionEnd;
+
+          textarea.value =
+            textarea.value.substring(0, start) +
+            text +
+            textarea.value.substring(end);
+          textarea.selectionStart = textarea.selectionEnd = start + text.length;
+        }
+        // Focus text area when page loads
+        textArea.focus();
+      });
+    </script>
+  </body>
+</html>

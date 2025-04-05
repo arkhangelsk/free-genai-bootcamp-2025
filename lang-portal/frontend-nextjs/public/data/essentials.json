@@ -1,0 +1,60 @@
+[
+  { "arabic": "مرحبًا", "transliteration": "marhabaan", "english": "Hello" },
+  {
+    "arabic": "السلام عليكم",
+    "transliteration": "as-salaamu 'alaykum",
+    "english": "Peace be upon you"
+  },
+  {
+    "arabic": "كيف حالك؟",
+    "transliteration": "kayfa Haaluk?",
+    "english": "How are you?"
+  },
+  {
+    "arabic": "أنا بخير، شكرًا",
+    "transliteration": "ana bi-khayr, shukran",
+    "english": "I’m fine, thank you"
+  },
+  {
+    "arabic": "ما اسمك؟",
+    "transliteration": "ma ismuka?",
+    "english": "What’s your name?"
+  },
+  { "arabic": "شكرًا", "transliteration": "shukran", "english": "Thank you" },
+  { "arabic": "من فضلك", "transliteration": "min faDlik", "english": "Please" },
+  { "arabic": "نعم", "transliteration": "na'am", "english": "Yes" },
+  { "arabic": "لا", "transliteration": "laa", "english": "No" },
+  {
+    "arabic": "لا أفهم",
+    "transliteration": "laa afham",
+    "english": "I don’t understand"
+  },
+  {
+    "arabic": "أين الحمام؟",
+    "transliteration": "ayna al-Hammaam?",
+    "english": "Where is the bathroom?"
+  },
+  {
+    "arabic": "كم السعر؟",
+    "transliteration": "kam as-si'r?",
+    "english": "How much is this?"
+  },
+  {
+    "arabic": "أنا أتعلم العربية",
+    "transliteration": "ana ata'allamu al-'arabiyya",
+    "english": "I’m learning Arabic"
+  },
+  { "arabic": "الآن", "transliteration": "al-aan", "english": "Now" },
+  { "arabic": "غدًا", "transliteration": "ghadan", "english": "Tomorrow" },
+  { "arabic": "اليوم", "transliteration": "al-yawm", "english": "Today" },
+  {
+    "arabic": "واحد، اثنان، ثلاثة...",
+    "transliteration": "waaHid, ithnaan, thalaathah...",
+    "english": "One, two, three..."
+  },
+  {
+    "arabic": "الساعة كم؟",
+    "transliteration": "as-saa'ah kam?",
+    "english": "What time is it?"
+  }
+]

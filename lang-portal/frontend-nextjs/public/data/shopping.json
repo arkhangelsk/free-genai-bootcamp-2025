@@ -1,0 +1,84 @@
+[
+  { "arabic": "سُوق", "transliteration": "suuq", "english": "Market" },
+  { "arabic": "مَتْجَر", "transliteration": "matjar", "english": "Store/Shop" },
+  { "arabic": "مَحَلّ", "transliteration": "maHall", "english": "Shop/Store" },
+  {
+    "arabic": "مَرْكَز تِجَارِيّ",
+    "transliteration": "markaz tijaariyy",
+    "english": "Shopping mall"
+  },
+  {
+    "arabic": "مُشْتَرِي",
+    "transliteration": "mushtarii",
+    "english": "Buyer/Customer"
+  },
+  { "arabic": "بَائِع", "transliteration": "baa'i'", "english": "Seller" },
+  {
+    "arabic": "فَاتُورَة",
+    "transliteration": "faatuurah",
+    "english": "Receipt"
+  },
+  { "arabic": "سِعْر", "transliteration": "si'r", "english": "Price" },
+  {
+    "arabic": "تَخْفِيض",
+    "transliteration": "takhfiiD",
+    "english": "Discount"
+  },
+  {
+    "arabic": "عَرْض",
+    "transliteration": "'arD",
+    "english": "Offer/Promotion"
+  },
+  { "arabic": "مُقَاس", "transliteration": "muqaas", "english": "Size" },
+  { "arabic": "لَوْن", "transliteration": "lawn", "english": "Color" },
+  { "arabic": "قِسْم", "transliteration": "qism", "english": "Department" },
+  { "arabic": "نَقْد", "transliteration": "naqd", "english": "Cash" },
+  {
+    "arabic": "بِطَاقَة اِئْتِمَان",
+    "transliteration": "biTaaqah i'timaan",
+    "english": "Credit card"
+  },
+  {
+    "arabic": "بِطَاقَة خَصْم",
+    "transliteration": "biTaaqah khaSm",
+    "english": "Debit card"
+  },
+  { "arabic": "حَجْز", "transliteration": "Hajz", "english": "Reservation" },
+  { "arabic": "شِرَاء", "transliteration": "shiraa'", "english": "Purchase" },
+  { "arabic": "بَيْع", "transliteration": "bay'", "english": "Sale" },
+  {
+    "arabic": "مَجَّانِيّ",
+    "transliteration": "majjaaniyy",
+    "english": "Free"
+  },
+  {
+    "arabic": "مُبَادَلَة",
+    "transliteration": "mubaadalah",
+    "english": "Exchange"
+  },
+  { "arabic": "إِرْجَاع", "transliteration": "irjaa'", "english": "Return" },
+  { "arabic": "حَقِيبَة", "transliteration": "Haqiibah", "english": "Bag" },
+  { "arabic": "صُنْدُوق", "transliteration": "Sunduuq", "english": "Box" },
+  { "arabic": "مَلَابِس", "transliteration": "malaabis", "english": "Clothes" },
+  { "arabic": "أَحْذِيَة", "transliteration": "aHdhiyah", "english": "Shoes" },
+  {
+    "arabic": "مُجَوْهَرَات",
+    "transliteration": "mujawharaat",
+    "english": "Jewelry"
+  },
+  {
+    "arabic": "أَدَوَات تَجْمِيل",
+    "transliteration": "adawaat tajmiil",
+    "english": "Cosmetics"
+  },
+  {
+    "arabic": "أَغْذِيَة",
+    "transliteration": "aghDhiyah",
+    "english": "Foodstuffs"
+  },
+  {
+    "arabic": "أَجْهِزَة كَهْرَبَائِيَّة",
+    "transliteration": "ajhizah kahrabaa'iyyah",
+    "english": "Electronic devices"
+  }
+]

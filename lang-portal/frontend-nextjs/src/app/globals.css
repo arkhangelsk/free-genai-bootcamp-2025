@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Light mode */
+.light {
+  --background: #ffffff;
+  --foreground: #171717;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --primary-button: #4f46e5;
+  --primary-button-hover: #4338ca;
+}
+
+/* Dark mode */
+.dark {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --card-bg: #2d2d2d;
+  --card-border: #404040;
+  --primary-button: #6366f1;
+  --primary-button-hover: #4f46e5;
+
+  /* Navigation specific colors */
+  --nav-text: #e5e7eb;
+  --nav-hover-bg: rgba(59, 130, 246, 0.15);
+  --nav-hover-text: #60a5fa;
+  --nav-active-text: #60a5fa;
+
+  /* Table specific colors */
+  --table-header-bg: #2d2d2d;
+  --table-header-text: #e5e7eb;
+  --table-border: #404040;
+  --table-row-hover: rgba(59, 130, 246, 0.1);
+
+  /* Container and card colors */
+  --container-bg: #262626;
+  --container-border: #404040;
+  --card-shadow: rgba(0, 0, 0, 0.2);
+  --secondary-text: #a3a3a3;
+  --hover-bg: #333333;
+
+  /* Theme button colors */
+  --theme-button-bg: #374151;
+  --theme-button-text: #e5e7eb;
+  --theme-button-hover-bg: #4b5563;
+
+  /* Arabic text colors */
+  --arabic-text: #a5b4fc;
+  --arabic-text-large: #818cf8;
+  --arabic-text-hover: #6366f1;
+}
+
+/* Apply theme variables */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Card styles */
+.bg-white {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+}
+
+/* Button styles */
+.bg-indigo-600 {
+  background-color: var(--primary-button);
+}
+
+.hover\:bg-indigo-700:hover {
+  background-color: var(--primary-button-hover);
+}
+
+/* Text colors */
+.text-gray-600 {
+  color: var(--foreground);
+  opacity: 0.75;
+}
+
+.text-gray-700 {
+  color: var(--foreground);
+  opacity: 0.85;
+}
+
+.text-gray-900 {
+  color: var(--foreground);
+}
+
+/* Navigation dark mode overrides */
+.dark nav a {
+  color: var(--nav-text);
+}
+
+.dark nav a:hover {
+  background-color: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
+}
+
+.dark nav a.text-blue-800 {
+  color: var(--nav-active-text);
+}
+
+.dark nav a:hover svg {
+  color: var(--nav-hover-text);
+}
+
+/* Table dark mode overrides */
+.dark table thead th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  border-color: var(--table-border);
+}
+
+.dark table tbody tr:hover {
+  background-color: var(--table-row-hover);
+}
+
+.dark table th,
+.dark table td {
+  border-color: var(--table-border);
+}
+
+/* Container and card dark mode overrides */
+.dark .bg-white,
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  background-color: var(--container-bg);
+}
+
+/* Quiz options in dark mode */
+.dark button.bg-white.border-gray-300 {
+  background-color: #6449FA;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+.dark button.bg-white.border-gray-300:hover {
+  background-color: #4b5563;
+  border-color: #6b7280;
+}
+
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: var(--container-border);
+}
+
+.dark .shadow-sm,
+.dark .shadow-md,
+.dark .shadow-lg {
+  --tw-shadow-color: var(--card-shadow);
+}
+
+.dark .text-gray-500,
+.dark .text-gray-600 {
+  color: var(--secondary-text);
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: var(--hover-bg);
+}
+
+.dark .text-gray-900 {
+  color: var(--foreground);
+}
+
+/* Theme button dark mode overrides */
+.dark button.bg-gray-100 {
+  background-color: var(--theme-button-bg);
+  color: var(--theme-button-text);
+}
+
+.dark button.bg-gray-100:hover {
+  background-color: var(--theme-button-hover-bg);
+}
+
+/* Quiz options dark mode overrides */
+.dark .bg-white.border-gray-300 {
+  background-color: var(--quiz-option-bg);
+  border-color: var(--quiz-option-border);
+  color: var(--quiz-option-text);
+}
+
+.dark .bg-white.border-gray-300:hover {
+  background-color: var(--quiz-option-hover-bg);
+  border-color: var(--quiz-option-hover-border);
+}
+
+/* Arabic text dark mode overrides */
+.dark [dir="rtl"] {
+  color: var(--arabic-text-large);
+}
+
+.dark .text-gray-500[dir="rtl"],
+.dark .text-gray-600[dir="rtl"] {
+  color: var(--arabic-text);
+}
+
+.dark .text-gray-700[dir="rtl"],
+.dark .text-gray-800[dir="rtl"],
+.dark .text-gray-900[dir="rtl"] {
+  color: var(--arabic-text-large);
+}
+
+.dark .hover\:text-gray-900[dir="rtl"]:hover {
+  color: var(--arabic-text-hover);
+}

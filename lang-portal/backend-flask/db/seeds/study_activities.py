@@ -13,10 +13,16 @@ def seed_study_activities():
 
     for activity in study_activities:
         cursor.execute(
-            "INSERT INTO study_activities (name, url, preview_url) VALUES (?, ?, ?)",
-            (activity["name"], activity["url"], activity["preview_url"]),
+            "INSERT INTO study_activities (name, description, type, difficulty, url, preview_url) VALUES (?, ?, ?, ?, ?, ?)",
+            (
+                activity["name"],
+                activity["description"],
+                activity["type"],
+                activity["difficulty"],
+                activity["url"],
+                activity["preview_url"],
+            ),
         )
-
     conn.commit()
     conn.close()
     print("Study activities seeded successfully.")

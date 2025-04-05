@@ -1,0 +1,44 @@
+[
+  { "arabic": "خُبْز", "transliteration": "khubz", "english": "Bread" },
+  { "arabic": "دَجَاج", "transliteration": "dajaaj", "english": "Chicken" },
+  { "arabic": "لَحْم", "transliteration": "laHm", "english": "Meat" },
+  { "arabic": "سَمَك", "transliteration": "samak", "english": "Fish" },
+  { "arabic": "أَرُزّ", "transliteration": "aruzz", "english": "Rice" },
+  { "arabic": "بَيْض", "transliteration": "bayD", "english": "Eggs" },
+  { "arabic": "حَلِيب", "transliteration": "Haliib", "english": "Milk" },
+  { "arabic": "جُبْن", "transliteration": "jubn", "english": "Cheese" },
+  { "arabic": "زُبْدَة", "transliteration": "zubdah", "english": "Butter" },
+  { "arabic": "زَيْت", "transliteration": "zayt", "english": "Oil" },
+  { "arabic": "مِلْح", "transliteration": "milH", "english": "Salt" },
+  { "arabic": "فِلْفِل", "transliteration": "filfil", "english": "Pepper" },
+  { "arabic": "سُكَّر", "transliteration": "sukkar", "english": "Sugar" },
+  { "arabic": "تُفّاح", "transliteration": "tuffaaH", "english": "Apple" },
+  { "arabic": "مَوْز", "transliteration": "mawz", "english": "Banana" },
+  {
+    "arabic": "بُرْتُقَال",
+    "transliteration": "burtuqaal",
+    "english": "Orange"
+  },
+  { "arabic": "عِنَب", "transliteration": "'inab", "english": "Grapes" },
+  {
+    "arabic": "طَمَاطِم",
+    "transliteration": "TamaaTim",
+    "english": "Tomatoes"
+  },
+  { "arabic": "خِيَار", "transliteration": "khiyaar", "english": "Cucumber" },
+  { "arabic": "جَزَر", "transliteration": "jazar", "english": "Carrot" },
+  { "arabic": "بَصَل", "transliteration": "baSal", "english": "Onion" },
+  { "arabic": "ثَوْم", "transliteration": "thawm", "english": "Garlic" },
+  {
+    "arabic": "بَطَاطِس",
+    "transliteration": "baTaaTis",
+    "english": "Potatoes"
+  },
+  { "arabic": "فُول", "transliteration": "fuul", "english": "Beans" },
+  { "arabic": "عَدَس", "transliteration": "'adas", "english": "Lentils" },
+  { "arabic": "مَاء", "transliteration": "maa'", "english": "Water" },
+  { "arabic": "شَاي", "transliteration": "shaay", "english": "Tea" },
+  { "arabic": "قَهْوَة", "transliteration": "qahwah", "english": "Coffee" },
+  { "arabic": "عَصِير", "transliteration": "'aSiir", "english": "Juice" },
+  { "arabic": "تَمْر", "transliteration": "tamr", "english": "Dates" }
+]
