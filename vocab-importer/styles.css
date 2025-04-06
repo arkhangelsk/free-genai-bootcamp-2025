@@ -1,0 +1,111 @@
+/* Groups panel specific styles */
+.groups-panel .streamlit-expanderHeader {
+    font-size: 1.2em;
+    margin-bottom: 0.5rem;
+}
+
+/* Scrollable groups list */
+.groups-list {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    background: var(--card-bg);
+    margin: 10px 0;
+}
+
+/* Group item styling for consistent height */
+.group-item {
+    background-color: var(--group-bg);
+    border-left: 4px solid var(--group-border);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    color: var(--text-color);
+    line-height: 1.2;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Scrollbar styling for better appearance */
+.groups-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.groups-list::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-radius: 4px;
+}
+
+.groups-list::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+/* Main styling */
+.main {
+    background-color: var(--background-color);
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+    --background-color: #1e1e1e;
+    --text-color: #ffffff;
+    --header-color: #4a9eff;
+    --border-color: #4a9eff;
+    --card-bg: #2d2d2d;
+    --group-bg: #2d3748;
+    --group-border: #4a9eff;
+    --intro-bg: #2d3748;
+    --sidebar-bg: #262626;
+}
+
+/* Light mode variables */
+[data-theme="light"] {
+    --background-color: #f9f9f9;
+    --text-color: #2c3e50;
+    --header-color: #2c3e50;
+    --border-color: #3498db;
+    --card-bg: #ffffff;
+    --group-bg: #e3f2fd;
+    --group-border: #3498db;
+    --intro-bg: #e1f5fe;
+    --sidebar-bg: #f0f2f6;
+}
+
+/* Panel styling */
+.panel {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Generate button styling */
+.generate-button {
+    margin-top: 1rem;
+}
+
+/* Download button styling */
+.download-button {
+    margin-top: 1rem;
+}
+
+/* Copy button styling */
+.copy-button {
+    margin-top: 1rem;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    color: var(--text-color);
+    font-size: 0.8em;
+    opacity: 0.8;
+}

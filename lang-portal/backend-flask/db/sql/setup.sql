@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS words (
   english TEXT NOT NULL,
   example JSON, -- Explanation of the word in English 
   group_id INTEGER NOT NULL,
-  pronunciation_audio TEXT,  -- Optional: link to an audio file  
   FOREIGN KEY (group_id) REFERENCES groups(id) ON DELETE CASCADE
 );
 
