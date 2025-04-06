@@ -24,14 +24,15 @@ CREATE TABLE IF NOT EXISTS groups (
 );
 
 -- Create words table if it doesn't exist
-CREATE TABLE IF NOT EXISTS words (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    english TEXT NOT NULL,
-    arabic TEXT NOT NULL,
-    romanized TEXT,
-    group_id INTEGER,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (group_id) REFERENCES groups (id)
+CREATE TABLE words (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  arabic TEXT NOT NULL,
+  romanized TEXT NOT NULL,
+  english TEXT NOT NULL,
+  example JSON, -- Explanation of the word in English 
+  group_id INTEGER NOT NULL,
+  pronunciation_audio TEXT,  -- Optional: link to an audio file  
+  FOREIGN KEY (group_id) REFERENCES groups(id) ON DELETE CASCADE
 );
 
 -- Create study_sessions table if it doesn't exist
@@ -41,7 +42,6 @@ CREATE TABLE IF NOT EXISTS study_sessions (
     study_activity_id INTEGER NOT NULL,
     start_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     end_time TIMESTAMP,
-    active_time_seconds INTEGER DEFAULT 0;
     FOREIGN KEY (group_id) REFERENCES groups (id),
     FOREIGN KEY (study_activity_id) REFERENCES study_activities (id)
 );
