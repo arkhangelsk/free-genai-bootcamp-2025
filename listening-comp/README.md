@@ -4,6 +4,8 @@
 
 **Arabic Listining Practice Quiz App**
 
+![Full Screenshot](arabic-quiz-app/screenshots/arabic-quiz-app.png)
+
 ### Solution Overview
 This app has a robust system for generating Arabic quiz questions, either from YouTube content when available or from high-quality fallback content when extraction isn't possible.
 
@@ -22,8 +24,6 @@ This app provides different options:
 - Auto-play audio for each question
 - Repeat audio automatically (3 times)
 - Slower audio playback
-
-![Full Screenshot](arabic-quiz-app/screenshots/arabic-quiz-app.png)
 
 Check more details & screenshots [here](arabic-quiz-app/README.md)
 
@@ -88,7 +88,8 @@ Initially, my understanding of Arabic language processing tools was limited. Thr
 - The goal was to find a solution that supports **natural-sounding Arabic**, offers **dialect options**, and integrates easily into the app.
 - I was quite impressed by Web Speech API that can generate voice pronunciation for each Arabic word which is supported in most modern browsers (Chrome, Edge, Safari). 
 
-You can find my findings [here](../listening-comp/text-to-speech/README.md) 
+You can check my exploration of different text to speech options [here](text-to-speech-experiments/README.md).
+
 I even tried different `edge-tts` voices. Check it out [here](../listening-comp/text-to-speech/edge-tts-app/README.md) - App credit: [HuggingFace: Edge-TTS-Text-to-Speech](https://huggingface.co/spaces/innoai/Edge-TTS-Text-to-Speech)
 
 Overall, these uncertainties helped me acquire practical knowledge in:
