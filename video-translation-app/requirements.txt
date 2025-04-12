@@ -1,0 +1,12 @@
+youtube-transcript-api==0.6.1
+openai-whisper==20231117
+flask==2.3.3
+flask-cors==4.0.0
+requests==2.31.0
+pydub==0.25.1
+python-dotenv==1.0.0
+ffmpeg-python==0.2.0
+pysrt==1.1.2
+numpy==1.24.4
+torch==2.1.0
+tqdm==4.66.1
