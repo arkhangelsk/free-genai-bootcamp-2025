@@ -1,0 +1,116 @@
+[
+  {
+    "type": "multiple_choice",
+    "arabic_text": "خبز",
+    "question": "What does this phrase mean?",
+    "options": [
+      "meat",
+      "water",
+      "chicken",
+      "bread"
+    ],
+    "correct_index": 3,
+    "audio_path": "audio/food/audio_2K7YqNiy.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "true_false",
+    "arabic_text": "ماء",
+    "statement": "This phrase means 'meat'",
+    "is_true": false,
+    "audio_path": "audio/food/audio_2YXYp9ih.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "fill_blank",
+    "arabic_text": "لحم",
+    "question": "What is the English translation?",
+    "answer": "meat",
+    "audio_path": "audio/food/audio_2YTYrdmF.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "multiple_choice",
+    "arabic_text": "دجاج",
+    "question": "What does this phrase mean?",
+    "options": [
+      "chicken",
+      "meat",
+      "water",
+      "bread"
+    ],
+    "correct_index": 0,
+    "audio_path": "audio/food/audio_2K_YrNin2Kw=.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "true_false",
+    "arabic_text": "سمك",
+    "statement": "This phrase means 'fish'",
+    "is_true": true,
+    "audio_path": "audio/food/audio_2LPZhdmD.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "fill_blank",
+    "arabic_text": "خضروات",
+    "question": "What is the English translation?",
+    "answer": "vegetables",
+    "audio_path": "audio/food/audio_2K7Yttix2YjYp9iq.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "multiple_choice",
+    "arabic_text": "فواكه",
+    "question": "What does this phrase mean?",
+    "options": [
+      "bread",
+      "fruits",
+      "meat",
+      "water"
+    ],
+    "correct_index": 1,
+    "audio_path": "audio/food/audio_2YHZiNin2YPZhw==.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "true_false",
+    "arabic_text": "أرز",
+    "statement": "This phrase means 'rice'",
+    "is_true": true,
+    "audio_path": "audio/food/audio_2KPYsdiy.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "fill_blank",
+    "arabic_text": "حلويات",
+    "question": "What is the English translation?",
+    "answer": "desserts",
+    "audio_path": "audio/food/audio_2K3ZhNmI2YrYp9iq.mp3",
+    "category": "food",
+    "question_language": "english"
+  },
+  {
+    "type": "multiple_choice",
+    "arabic_text": "قهوة",
+    "question": "What does this phrase mean?",
+    "options": [
+      "water",
+      "bread",
+      "meat",
+      "coffee"
+    ],
+    "correct_index": 3,
+    "audio_path": "audio/food/audio_2YLZh9mI2Kk=.mp3",
+    "category": "food",
+    "question_language": "english"
+  }
+]

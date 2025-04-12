@@ -1,0 +1,130 @@
+[
+    {
+      "type": "multiple_choice",
+      "arabic_text": "أب",
+      "question": "What does this word mean?",
+      "options": ["Uncle", "Brother", "Father", "Grandfather"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "أم",
+      "statement": "This word means 'Mother'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "أخت",
+      "question": "Translate this family member to English:",
+      "answer": "Sister"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "أخ",
+      "question": "What does this word mean?",
+      "options": ["Son", "Father", "Brother", "Cousin"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "ابن",
+      "statement": "This word means 'Son'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "ابنة",
+      "question": "Translate this word to English:",
+      "answer": "Daughter"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "جد",
+      "question": "What does this word mean?",
+      "options": ["Uncle", "Father", "Grandfather", "Nephew"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "جدة",
+      "statement": "This word means 'Grandmother'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "زوج",
+      "question": "What is the English word for this?",
+      "answer": "Husband"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "زوجة",
+      "question": "What does this word mean?",
+      "options": ["Mother", "Sister", "Wife", "Aunt"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "خال",
+      "statement": "This word refers to a maternal uncle.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "عم",
+      "question": "What is the English translation?",
+      "answer": "Paternal uncle"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "عمة",
+      "question": "What does this word mean?",
+      "options": ["Paternal aunt", "Maternal aunt", "Niece", "Cousin"],
+      "correct_index": 0
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "خالة",
+      "statement": "This is the Arabic word for a paternal aunt.",
+      "is_true": false
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "ابن عم",
+      "question": "Translate this to English:",
+      "answer": "Cousin (male, paternal)"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "ابنة خال",
+      "question": "What does this mean?",
+      "options": ["Niece", "Female cousin (maternal)", "Sister-in-law", "Aunt"],
+      "correct_index": 1
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "طفل",
+      "statement": "This word means 'Child'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "رضيع",
+      "question": "What is the English translation?",
+      "answer": "Infant"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "أصدقاء",
+      "question": "What does this word mean?",
+      "options": ["Family", "Siblings", "Friends", "Neighbors"],
+      "correct_index": 2
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "عائلة",
+      "question": "Translate this word into English:",
+      "answer": "Family"
+    }
+  ]
+  

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic Listening Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .hidden { display: none; }
+        .quiz-card {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .arabic-text {
+            direction: rtl;
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .answer-feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .answer-feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .answer-feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .progress {
+            height: 10px;
+            margin: 20px 0;
+        }
+        .quiz-summary {
+            text-align: center;
+            padding: 20px;
+        }
+        .quiz-summary .score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .audio-controls {
+            margin: 15px 0;
+            text-align: center;
+        }
+        .audio-controls button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <h1 class="text-center mb-4">Arabic Listening Quiz</h1>
+        
+        <!-- Quiz Setup -->
+        <div id="quizSetup" class="quiz-card">
+            <h3>Arabic Quiz</h3>
+            
+            <!-- Search Form -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Search for a Topic</h5>
+                </div>
+                <div class="card-body">
+                    <form id="searchForm" class="mb-0">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="searchQuery" class="form-label">What would you like to learn about?</label>
+                                <input type="text" class="form-control" id="searchQuery" placeholder="e.g. food, family, greetings" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="searchCategory" class="form-label">Category (Optional)</label>
+                                <select class="form-select" id="searchCategory">
+                                    <option value="">All Categories</option>
+                                    {% for quiz in quizzes %}
+                                    <option value="{{ quiz.name }}">{{ quiz.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="numQuestions" class="form-label">Number of Questions</label>
+                                <select class="form-select" id="numQuestions">
+                                    <option value="3">3 Questions</option>
+                                    <option value="5" selected>5 Questions</option>
+                                    <option value="10">10 Questions</option>
+                                    <option value="15">15 Questions</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Quiz Mode</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quizMode" id="standardMode" value="standard" checked>
+                                    <label class="form-check-label" for="standardMode">
+                                        Standard Mode (Text & Audio)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quizMode" id="listeningMode" value="listening">
+                                    <label class="form-check-label" for="listeningMode">
+                                        Listening Mode (Audio Only - Hide Arabic Text)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quizMode" id="dictationMode" value="dictation">
+                                    <label class="form-check-label" for="dictationMode">
+                                        Dictation Mode (Write what you hear)
+                                    </label>
+                                </div>
+                                
+                                <div class="mt-3">
+                                    <label class="form-label">Question Language</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="questionLanguage" id="englishQuestions" value="english" checked>
+                                        <label class="form-check-label" for="englishQuestions">
+                                            English Questions
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="questionLanguage" id="arabicQuestions" value="arabic">
+                                        <label class="form-check-label" for="arabicQuestions">
+                                            Arabic Questions
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Listening Options</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="autoPlayAudio" checked>
+                                    <label class="form-check-label" for="autoPlayAudio">
+                                        Auto-play audio for each question
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="repeatAudio">
+                                    <label class="form-check-label" for="repeatAudio">
+                                        Repeat audio automatically (3 times)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="slowAudio">
+                                    <label class="form-check-label" for="slowAudio">
+                                        Slower audio playback
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-end">
+                            <button type="submit" class="btn btn-primary">Create Custom Quiz</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Available Quizzes -->
+            <h4>Available Categories</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for quiz in quizzes %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ quiz.name }}</h5>
+                            <p class="card-text">{{ quiz.num_questions }} questions</p>
+                            <button type="button" class="btn btn-primary" onclick="startQuiz('{{ quiz.id }}')">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Quiz Area -->
+        <div id="quizArea" class="quiz-card hidden">
+            <h4 id="quizTitle" class="text-center mb-3">Arabic Quiz</h4>
+            
+            <div class="progress">
+                <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            
+            <div class="text-center mb-3">
+                Question <span id="currentQuestion">0</span> of <span id="totalQuestions">0</span>
+            </div>
+            
+            <!-- Question Content -->
+            <div id="questionContent">
+                <div class="audio-controls mb-3">
+                    <div class="d-flex justify-content-center gap-2 mb-2">
+                        <button id="playAudioBtn" class="btn btn-primary">
+                            <i class="bi bi-play-circle"></i> Play Audio
+                        </button>
+                        <button id="repeatAudioBtn" class="btn btn-outline-primary">
+                            <i class="bi bi-arrow-repeat"></i> Repeat 3×
+                        </button>
+                        <button id="slowAudioBtn" class="btn btn-outline-primary">
+                            <i class="bi bi-speedometer"></i> Slow
+                        </button>
+                    </div>
+                    <div class="text-center" id="audioFeedback"></div>
+                </div>
+                
+                <div id="arabicTextContainer" class="mb-3">
+                    <div id="arabicText" class="arabic-text"></div>
+                    <button id="showTextBtn" class="btn btn-sm btn-outline-secondary mt-2" style="display: none;">
+                        <i class="bi bi-eye"></i> Show Arabic Text
+                    </button>
+                </div>
+                
+                <div id="questionText" class="mb-3"></div>
+                
+                <!-- Multiple Choice Options -->
+                <div id="multipleChoiceOptions" class="hidden">
+                    <div class="list-group" id="optionsList"></div>
+                </div>
+                
+                <!-- True/False Options -->
+                <div id="trueFalseOptions" class="hidden">
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-outline-primary" onclick="submitTrueFalseAnswer(true)">True</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="submitTrueFalseAnswer(false)">False</button>
+                    </div>
+                </div>
+                
+                <!-- Fill in the Blank -->
+                <div id="fillBlankOptions" class="hidden">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="fillBlankInput" placeholder="Type your answer">
+                    </div>
+                    <button type="button" class="btn btn-primary w-100" id="submitFillBlank">Submit Answer</button>
+                </div>
+                
+                <!-- Dictation Mode -->
+                <div id="dictationOptions" class="hidden">
+                    <div class="mb-3">
+                        <label for="dictationInput" class="form-label">Write what you hear in Arabic:</label>
+                        <input type="text" class="form-control" id="dictationInput" placeholder="Type the Arabic phrase you hear" dir="rtl">
+                    </div>
+                    <button type="button" class="btn btn-primary w-100" id="submitDictation">Submit Answer</button>
+                </div>
+            </div>
+            
+            <!-- Answer Feedback -->
+            <div id="answerFeedback" class="answer-feedback hidden"></div>
+            
+            <button id="nextQuestionBtn" class="btn btn-primary w-100 mt-3 hidden">Next Question</button>
+        </div>
+        
+        <!-- Quiz Summary -->
+        <div id="quizSummary" class="quiz-card quiz-summary hidden">
+            <h3>Quiz Complete!</h3>
+            <div class="score mb-3">
+                <span id="finalScore">0</span>/<span id="totalScore">0</span>
+                (<span id="scorePercentage">0</span>%)
+            </div>
+            <div id="scoreFeedback" class="mb-3"></div>
+            
+            <!-- Answers Review Section -->
+            <div id="answersReview" class="mt-4">
+                <h4>Review Your Answers</h4>
+                <div id="answersList" class="list-group mt-3"></div>
+            </div>
+            
+            <button id="restartQuizBtn" class="btn btn-primary mt-4">Start New Quiz</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <script>
+        // Global variables
+        let currentQuizId = null;
+        let currentAudio = null;
+        let currentQuestionType = null;
+        let quizMode = 'standard';
+        let autoPlayEnabled = true;
+        let repeatAudioEnabled = false;
+        let slowAudioEnabled = false;
+        let audioRepeatCount = 0;
+        let maxAudioRepeats = 3;
+        
+        // DOM Elements
+        const quizSetup = document.getElementById('quizSetup');
+        const quizArea = document.getElementById('quizArea');
+        const quizSummary = document.getElementById('quizSummary');
+
+        const progressBar = document.getElementById('progressBar');
+        const currentQuestionSpan = document.getElementById('currentQuestion');
+        const totalQuestionsSpan = document.getElementById('totalQuestions');
+        
+        // Audio control elements
+        const playAudioBtn = document.getElementById('playAudioBtn');
+        const repeatAudioBtn = document.getElementById('repeatAudioBtn');
+        const slowAudioBtn = document.getElementById('slowAudioBtn');
+        const showTextBtn = document.getElementById('showTextBtn');
+        const audioFeedback = document.getElementById('audioFeedback');
+        const arabicTextContainer = document.getElementById('arabicTextContainer');
+        const arabicText = document.getElementById('arabicText');
+        const questionText = document.getElementById('questionText');
+        
+        // Quiz mode elements
+        const standardModeRadio = document.getElementById('standardMode');
+        const listeningModeRadio = document.getElementById('listeningMode');
+        const dictationModeRadio = document.getElementById('dictationMode');
+        const autoPlayCheckbox = document.getElementById('autoPlayAudio');
+        const repeatAudioCheckbox = document.getElementById('repeatAudio');
+        const slowAudioCheckbox = document.getElementById('slowAudio');
+        const dictationOptions = document.getElementById('dictationOptions');
+        const dictationInput = document.getElementById('dictationInput');
+        const submitDictation = document.getElementById('submitDictation');
+        const multipleChoiceOptions = document.getElementById('multipleChoiceOptions');
+        const optionsList = document.getElementById('optionsList');
+        const trueFalseOptions = document.getElementById('trueFalseOptions');
+        const fillBlankOptions = document.getElementById('fillBlankOptions');
+        const fillBlankInput = document.getElementById('fillBlankInput');
+        const submitFillBlank = document.getElementById('submitFillBlank');
+        const answerFeedback = document.getElementById('answerFeedback');
+        const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+        const restartQuizBtn = document.getElementById('restartQuizBtn');
+        
+        // Event Listeners
+        playAudioBtn.addEventListener('click', playAudio);
+        nextQuestionBtn.addEventListener('click', loadNextQuestion);
+        submitFillBlank.addEventListener('click', () => submitAnswer(fillBlankInput.value));
+        restartQuizBtn.addEventListener('click', showQuizSetup);
+        document.getElementById('searchForm').addEventListener('submit', searchQuiz);
+        
+        // Add event listener for dictation submit button
+        if (submitDictation) {
+            submitDictation.addEventListener('click', submitDictationAnswer);
+        }
+        
+        // Add event listeners for audio control buttons
+        repeatAudioBtn.addEventListener('click', toggleRepeatAudio);
+        slowAudioBtn.addEventListener('click', toggleSlowAudio);
+        showTextBtn.addEventListener('click', showArabicText);
+        
+        // Quiz Functions
+        function searchQuiz(e) {
+            e.preventDefault();
+            
+            const query = document.getElementById('searchQuery').value.trim();
+            const category = document.getElementById('searchCategory').value;
+            const numQuestions = document.getElementById('numQuestions').value;
+            
+            if (!query) {
+                alert('Please enter a search query');
+                return;
+            }
+            
+            console.log(`Searching for: "${query}", Category: "${category}", Questions: ${numQuestions}`);
+            
+            // Show loading state
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Searching...';
+            
+            // Create form data
+            const formData = new FormData();
+            formData.append('query', query);
+            if (category) formData.append('category', category);
+            formData.append('num_questions', numQuestions);
+            
+            // Add quiz mode information
+            const selectedMode = document.querySelector('input[name="quizMode"]:checked').value;
+            formData.append('quiz_mode', selectedMode);
+            formData.append('auto_play', document.getElementById('autoPlayAudio').checked);
+            formData.append('repeat_audio', document.getElementById('repeatAudio').checked);
+            formData.append('slow_audio', document.getElementById('slowAudio').checked);
+            
+            // Add question language information
+            const questionLanguage = document.querySelector('input[name="questionLanguage"]:checked').value;
+            formData.append('question_language', questionLanguage);
+            console.log(`Question language: ${questionLanguage}`);
+            
+            // Send search request
+            fetch('/search_quiz', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                // Start the custom quiz
+                currentQuizId = data.quiz_id;
+                quizSetup.classList.add('hidden');
+                quizArea.classList.remove('hidden');
+                
+                // Update quiz info
+                document.getElementById('quizTitle').textContent = data.name;
+                loadQuestion();
+            })
+            .catch(error => {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                
+                alert('Error creating custom quiz: ' + error.message);
+            });
+        }
+        
+        function startQuiz(quizId) {
+            // Get quiz mode settings
+            quizMode = document.querySelector('input[name="quizMode"]:checked').value;
+            autoPlayEnabled = document.getElementById('autoPlayAudio').checked;
+            repeatAudioEnabled = document.getElementById('repeatAudio').checked;
+            slowAudioEnabled = document.getElementById('slowAudio').checked;
+            questionLanguage = document.querySelector('input[name="questionLanguage"]:checked').value;
+            
+            fetch(`/start_quiz/${quizId}`, {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                currentQuizId = data.quiz_id;
+                showQuizArea();
+                
+                // Apply quiz mode settings
+                applyQuizModeSettings();
+                
+                loadQuestion();
+            })
+            .catch(error => alert('Error starting quiz: ' + error.message));
+        }
+        
+        // Apply quiz mode settings
+        function applyQuizModeSettings() {
+            // Reset all modes first
+            arabicText.style.display = 'block';
+            showTextBtn.style.display = 'none';
+            dictationOptions.classList.add('hidden');
+            fillBlankOptions.classList.add('hidden');
+            multipleChoiceOptions.classList.add('hidden');
+            trueFalseOptions.classList.add('hidden');
+            
+            // Apply specific mode settings
+            if (quizMode === 'listening') {
+                // Hide Arabic text in listening mode
+                arabicText.style.display = 'none';
+                showTextBtn.style.display = 'block';
+            } else if (quizMode === 'dictation') {
+                // Show dictation input in dictation mode
+                dictationOptions.classList.remove('hidden');
+            }
+            
+            // Apply audio settings
+            if (slowAudioEnabled) {
+                slowAudioBtn.classList.remove('btn-outline-primary');
+                slowAudioBtn.classList.add('btn-primary');
+            } else {
+                slowAudioBtn.classList.add('btn-outline-primary');
+                slowAudioBtn.classList.remove('btn-primary');
+            }
+            
+            if (repeatAudioEnabled) {
+                repeatAudioBtn.classList.remove('btn-outline-primary');
+                repeatAudioBtn.classList.add('btn-primary');
+            } else {
+                repeatAudioBtn.classList.add('btn-outline-primary');
+                repeatAudioBtn.classList.remove('btn-primary');
+            }
+        }
+        
+        function loadQuestion() {
+            fetch(`/get_question/${currentQuizId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                
+                // Update quiz mode settings from server response
+                if (data.quiz_mode) quizMode = data.quiz_mode;
+                if ('auto_play' in data) autoPlayEnabled = data.auto_play;
+                if ('repeat_audio' in data) repeatAudioEnabled = data.repeat_audio;
+                if ('slow_audio' in data) slowAudioEnabled = data.slow_audio;
+                
+                // Apply the settings to the UI
+                applyQuizModeSettings();
+                
+                // Display the question
+                displayQuestion(data);
+            })
+            .catch(error => alert('Error loading question: ' + error.message));
+        }
+        
+        function displayQuestion(question) {
+            console.log('Displaying question:', question);  // Debug log
+            currentQuestionType = question.type;  // Store current question type
+            
+            // Update progress
+            currentQuestionSpan.textContent = question.index + 1;
+            totalQuestionsSpan.textContent = question.total;
+            progressBar.style.width = `${((question.index + 1) / question.total) * 100}%`;
+            
+            // Display Arabic text (or hide it based on quiz mode)
+            arabicText.textContent = question.arabic_text;
+            if (quizMode === 'listening' || quizMode === 'dictation') {
+                arabicText.style.display = 'none';
+                showTextBtn.style.display = 'block';
+            } else {
+                arabicText.style.display = 'block';
+                showTextBtn.style.display = 'none';
+            }
+            
+            // Setup audio
+            if (question.audio_url) {
+                playAudioBtn.classList.remove('hidden');
+                playAudioBtn.dataset.audioUrl = question.audio_url;
+                
+                // Auto-play if enabled
+                if (autoPlayEnabled) {
+                    // Small delay to ensure everything is loaded
+                    setTimeout(playAudio, 500);
+                }
+            } else {
+                playAudioBtn.classList.add('hidden');
+                playAudioBtn.dataset.audioUrl = '';
+            }
+            currentAudio = null;
+            
+            // Reset UI
+            resetQuestionUI();
+            
+            // Show appropriate question type
+            if (question.type === 'multiple_choice') {
+                questionText.textContent = question.question;
+                displayMultipleChoice(question.options);
+            } else if (question.type === 'true_false') {
+                questionText.textContent = question.statement;
+                displayTrueFalse();
+            } else if (question.type === 'fill_blank') {
+                questionText.textContent = question.question;
+                displayFillBlank();
+            }
+        }
+        
+        function resetQuestionUI() {
+            // Hide all answer options
+            multipleChoiceOptions.classList.add('hidden');
+            trueFalseOptions.classList.add('hidden');
+            fillBlankOptions.classList.add('hidden');
+            answerFeedback.classList.add('hidden');
+            nextQuestionBtn.classList.add('hidden');
+            
+            // Reset button states
+            document.querySelectorAll('button:not(#playAudioBtn)').forEach(btn => {
+                if (!btn.classList.contains('navbar-toggler')) {
+                    btn.disabled = false;
+                }
+            });
+            
+            // Reset input field
+            fillBlankInput.value = '';
+            fillBlankInput.disabled = false;
+            
+            // Clear feedback
+            answerFeedback.innerHTML = '';
+        }
+        
+        function displayMultipleChoice(options) {
+            multipleChoiceOptions.classList.remove('hidden');
+            optionsList.innerHTML = options.map((option, index) => `
+                <button class="list-group-item list-group-item-action" 
+                        onclick="submitAnswer(${index})">
+                    ${option}
+                </button>
+            `).join('');
+        }
+        
+        function displayTrueFalse() {
+            console.log('Displaying True/False options'); // Debug log
+            trueFalseOptions.classList.remove('hidden');
+        }
+        
+        function submitTrueFalseAnswer(isTrue) {
+            console.log('Submitting True/False answer:', isTrue);
+            if (currentQuestionType !== 'true_false') {
+                console.error('Wrong question type!');
+                return;
+            }
+            submitAnswer(isTrue.toString());
+        }
+        
+        // Function to submit dictation answer
+        function submitDictationAnswer() {
+            const userAnswer = dictationInput.value.trim();
+            if (!userAnswer) {
+                alert('Please enter what you heard in Arabic');
+                return;
+            }
+            
+            // Get the correct Arabic text from the question
+            const correctAnswer = arabicText.textContent.trim();
+            
+            // Compare the answers (basic comparison for now)
+            // A more sophisticated comparison could be implemented
+            const isCorrect = userAnswer === correctAnswer;
+            
+            // Show the correct Arabic text
+            arabicText.style.display = 'block';
+            showTextBtn.style.display = 'none';
+            
+            // Submit the dictation answer
+            fetch(`/submit_dictation/${currentQuizId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_answer: userAnswer,
+                    correct_answer: correctAnswer,
+                    is_correct: isCorrect
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                
+                // Show feedback
+                const feedbackClass = data.is_correct ? 'correct' : 'incorrect';
+                const feedbackText = data.is_correct ? 
+                    'Correct! Your answer matches exactly.' : 
+                    `Incorrect. The correct answer is: <span dir="rtl">${data.correct_answer}</span>`;
+                
+                answerFeedback.innerHTML = feedbackText;
+                answerFeedback.className = `answer-feedback ${feedbackClass}`;
+                answerFeedback.classList.remove('hidden');
+                
+                // Enable next question button
+                nextQuestionBtn.classList.remove('hidden');
+            })
+            .catch(error => alert('Error submitting dictation: ' + error.message));
+        }
+        
+        function displayFillBlank() {
+            fillBlankOptions.classList.remove('hidden');
+            fillBlankInput.value = '';
+            fillBlankInput.disabled = false;
+            submitFillBlank.disabled = false;
+            fillBlankInput.focus();
+        }
+        
+        function submitAnswer(answer) {
+            fetch(`/submit_answer/${currentQuizId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `answer=${encodeURIComponent(answer)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                displayFeedback(data);
+            })
+            .catch(error => alert('Error submitting answer: ' + error.message));
+        }
+        
+        function displayFeedback(feedback) {
+            // Show feedback
+            answerFeedback.classList.remove('hidden');
+            answerFeedback.classList.remove('correct', 'incorrect');
+            answerFeedback.classList.add(feedback.is_correct ? 'correct' : 'incorrect');
+            
+            answerFeedback.innerHTML = `
+                <p><strong>${feedback.is_correct ? 'Correct!' : 'Incorrect.'}</strong></p>
+                <p>Correct answer: ${feedback.correct_answer}</p>
+                <p>Score: ${feedback.score}/${feedback.total}</p>
+            `;
+            
+            // Disable answer inputs
+            disableAnswerInputs();
+            
+            // Show next question button or end quiz
+            if (feedback.quiz_complete) {
+                showQuizSummary(feedback.final_score);
+            } else {
+                nextQuestionBtn.classList.remove('hidden');
+            }
+        }
+        
+        function disableAnswerInputs() {
+            if (currentQuestionType === 'multiple_choice') {
+                // Disable multiple choice
+                const options = optionsList.querySelectorAll('button');
+                options.forEach(btn => btn.disabled = true);
+            } else if (currentQuestionType === 'true_false') {
+                // Disable true/false
+                const tfButtons = trueFalseOptions.querySelectorAll('button');
+                tfButtons.forEach(btn => btn.disabled = true);
+            } else if (currentQuestionType === 'fill_blank') {
+                // Disable fill in blank
+                fillBlankInput.disabled = true;
+                submitFillBlank.disabled = true;
+            }
+        }
+        
+        function loadNextQuestion() {
+            loadQuestion();
+        }
+        
+        function showQuizSummary(score) {
+            quizArea.classList.add('hidden');
+            quizSummary.classList.remove('hidden');
+            
+            document.getElementById('finalScore').textContent = score.correct;
+            document.getElementById('totalScore').textContent = score.total;
+            document.getElementById('scorePercentage').textContent = Math.round(score.percentage);
+            
+            // Add feedback based on score
+            const feedback = document.getElementById('scoreFeedback');
+            if (score.percentage >= 90) {
+                feedback.textContent = 'Excellent! You have a great understanding of Arabic!';
+            } else if (score.percentage >= 70) {
+                feedback.textContent = 'Good job! Keep practicing to improve further.';
+            } else if (score.percentage >= 50) {
+                feedback.textContent = 'Not bad! More practice will help you improve.';
+            } else {
+                feedback.textContent = 'Keep practicing! You\'ll get better with time.';
+            }
+            
+            // Get detailed answers for review
+            fetch(`/quiz_summary/${currentQuizId}`)
+            .then(response => response.json())
+            .then(data => {
+                // Display detailed answers
+                const answersList = document.getElementById('answersList');
+                answersList.innerHTML = '';
+                
+                data.answers.forEach((answer, index) => {
+                    const answerItem = document.createElement('div');
+                    answerItem.className = `list-group-item ${answer.is_correct ? 'list-group-item-success' : 'list-group-item-danger'}`;
+                    
+                    let questionContent = '';
+                    let answerContent = '';
+                    
+                    // Question section
+                    questionContent += `<div class="arabic-text mb-2">${answer.arabic_text}</div>`;
+                    
+                    if (answer.type === 'multiple_choice') {
+                        questionContent += `<p><strong>Question:</strong> ${answer.question}</p>`;
+                        answerContent += `<p><strong>Your answer:</strong> ${answer.user_answer_text}</p>`;
+                        if (!answer.is_correct) {
+                            answerContent += `<p><strong>Correct answer:</strong> ${answer.correct_answer}</p>`;
+                        }
+                    } else if (answer.type === 'true_false') {
+                        questionContent += `<p><strong>Statement:</strong> ${answer.statement}</p>`;
+                        answerContent += `<p><strong>Your answer:</strong> ${answer.user_answer}</p>`;
+                        if (!answer.is_correct) {
+                            answerContent += `<p><strong>Correct answer:</strong> ${answer.correct_answer}</p>`;
+                        }
+                    } else if (answer.type === 'fill_blank') {
+                        questionContent += `<p><strong>Question:</strong> ${answer.question}</p>`;
+                        
+                        // Use original_answer if available, otherwise use user_answer
+                        const displayAnswer = answer.original_answer || answer.user_answer;
+                        answerContent += `<p><strong>Your answer:</strong> "${displayAnswer}"</p>`;
+                        
+                        if (!answer.is_correct) {
+                            answerContent += `<p><strong>Correct answer:</strong> "${answer.correct_answer}"</p>`;
+                            
+                            // Show specific feedback if available
+                            if (answer.feedback) {
+                                answerContent += `<p class="text-info"><i class="bi bi-info-circle"></i> <strong>Feedback:</strong> ${answer.feedback}</p>`;
+                            }
+                            
+                            answerContent += `<p class="text-muted"><small>Note: Fill-in-the-blank answers are case-insensitive, but must match the expected answer.</small></p>`;
+                        }
+                    }
+                    
+                    answerItem.innerHTML = `
+                        <h5 class="mb-3">Question ${index + 1}</h5>
+                        ${questionContent}
+                        <hr>
+                        ${answerContent}
+                        <div class="mt-2">
+                            <span class="badge ${answer.is_correct ? 'bg-success' : 'bg-danger'}">
+                                ${answer.is_correct ? 'Correct' : 'Incorrect'}
+                            </span>
+                        </div>
+                    `;
+                    
+                    answersList.appendChild(answerItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error getting detailed quiz summary:', error);
+            });
+        }
+        
+        function showQuizArea() {
+            quizSetup.classList.add('hidden');
+            quizArea.classList.remove('hidden');
+            quizSummary.classList.add('hidden');
+        }
+        
+        function showQuizSetup() {
+            quizSetup.classList.remove('hidden');
+            quizArea.classList.add('hidden');
+            quizSummary.classList.add('hidden');
+            questionsFileInput.value = '';
+            currentQuizId = null;
+        }
+        
+        // Global variables for audio control
+        let repeatCount = 0;
+        let repeatMax = 3;
+        let playbackRate = 1.0;
+        
+        function playAudio() {
+            if (currentAudio) {
+                // Stop any currently playing audio
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            
+            // Reset repeat counter
+            repeatCount = 0;
+            
+            // Get the audio URL from the play button's data attribute
+            const audioUrl = playAudioBtn.dataset.audioUrl;
+            if (audioUrl) {
+                currentAudio = new Audio(audioUrl);
+                
+                // Apply slow playback if enabled
+                if (slowAudioEnabled) {
+                    currentAudio.playbackRate = 0.75; // 75% speed
+                } else {
+                    currentAudio.playbackRate = 1.0;
+                }
+                
+                // Add event listener for when audio ends
+                currentAudio.addEventListener('ended', handleAudioEnded);
+                
+                // Play the audio
+                currentAudio.play();
+            }
+        }
+        
+        function handleAudioEnded() {
+            // If repeat is enabled and we haven't reached max repeats
+            if (repeatAudioEnabled && repeatCount < repeatMax - 1) {
+                repeatCount++;
+                console.log(`Repeating audio ${repeatCount + 1}/${repeatMax}`);
+                
+                // Wait a short time before replaying
+                setTimeout(() => {
+                    currentAudio.currentTime = 0;
+                    currentAudio.play();
+                }, 1000); // 1 second pause between repeats
+            }
+        }
+        
+        // Toggle repeat audio function
+        function toggleRepeatAudio() {
+            repeatAudioEnabled = !repeatAudioEnabled;
+            
+            // Update button appearance
+            if (repeatAudioEnabled) {
+                repeatAudioBtn.classList.remove('btn-outline-primary');
+                repeatAudioBtn.classList.add('btn-primary');
+                console.log('Repeat audio enabled');
+            } else {
+                repeatAudioBtn.classList.add('btn-outline-primary');
+                repeatAudioBtn.classList.remove('btn-primary');
+                console.log('Repeat audio disabled');
+            }
+            
+            // Store the setting in the quiz session
+            if (currentQuizId) {
+                fetch(`/update_settings/${currentQuizId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        repeat_audio: repeatAudioEnabled
+                    }),
+                }).catch(error => console.error('Error updating settings:', error));
+            }
+        }
+        
+        // Toggle slow audio function
+        function toggleSlowAudio() {
+            slowAudioEnabled = !slowAudioEnabled;
+            
+            // Update button appearance
+            if (slowAudioEnabled) {
+                slowAudioBtn.classList.remove('btn-outline-primary');
+                slowAudioBtn.classList.add('btn-primary');
+                console.log('Slow audio enabled');
+            } else {
+                slowAudioBtn.classList.add('btn-outline-primary');
+                slowAudioBtn.classList.remove('btn-primary');
+                console.log('Slow audio disabled');
+            }
+            
+            // If audio is currently playing, update its playback rate
+            if (currentAudio) {
+                currentAudio.playbackRate = slowAudioEnabled ? 0.75 : 1.0;
+            }
+            
+            // Store the setting in the quiz session
+            if (currentQuizId) {
+                fetch(`/update_settings/${currentQuizId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        slow_audio: slowAudioEnabled
+                    }),
+                }).catch(error => console.error('Error updating settings:', error));
+            }
+        }
+        
+        // Function to show the Arabic text in listening mode
+        function showArabicText() {
+            arabicText.style.display = 'block';
+            showTextBtn.style.display = 'none';
+            
+            // If in dictation mode, focus on the input field
+            if (quizMode === 'dictation') {
+                dictationInput.focus();
+            }
+        }
+    </script>
+</body>
+</html>

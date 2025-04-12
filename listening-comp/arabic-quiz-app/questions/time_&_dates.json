@@ -1,0 +1,130 @@
+[
+    {
+      "type": "multiple_choice",
+      "arabic_text": "الساعة",
+      "question": "What does this word mean?",
+      "options": ["Calendar", "Clock", "Date", "Watch"],
+      "correct_index": 1
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "اليوم",
+      "statement": "This word means 'Today'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "أمس",
+      "question": "Translate this word into English:",
+      "answer": "Yesterday"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "غدًا",
+      "question": "What does this word mean?",
+      "options": ["Morning", "Yesterday", "Today", "Tomorrow"],
+      "correct_index": 3
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "الأسبوع",
+      "statement": "This word means 'Week'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "الشهر",
+      "question": "What is the English translation?",
+      "answer": "Month"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "العام",
+      "question": "What does this word mean?",
+      "options": ["Day", "Month", "Year", "Minute"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "دقيقة",
+      "statement": "This means 'Second'.",
+      "is_true": false
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "ساعة",
+      "question": "Translate this time-related word:",
+      "answer": "Hour"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "الثانية",
+      "question": "What does this word mean?",
+      "options": ["Second", "Minute", "Hour", "Day"],
+      "correct_index": 0
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "الأحد",
+      "statement": "This is the Arabic word for 'Sunday'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "الجمعة",
+      "question": "What is the English translation?",
+      "answer": "Friday"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "الاثنين",
+      "question": "Which day of the week is this?",
+      "options": ["Saturday", "Monday", "Tuesday", "Wednesday"],
+      "correct_index": 1
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "الأربعاء",
+      "statement": "This word means 'Wednesday'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "الخميس",
+      "question": "Translate this day to English:",
+      "answer": "Thursday"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "اليوم هو الثلاثاء",
+      "question": "What is the correct translation?",
+      "options": ["Today is Tuesday", "Tomorrow is Tuesday", "Tuesday is gone", "Yesterday was Tuesday"],
+      "correct_index": 0
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "في الصباح",
+      "statement": "This phrase means 'In the evening'.",
+      "is_true": false
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "في الليل",
+      "question": "What is the English translation of this phrase?",
+      "answer": "At night"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "منتصف الليل",
+      "question": "What does this mean?",
+      "options": ["Midnight", "Morning", "Evening", "Afternoon"],
+      "correct_index": 0
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "الظهر",
+      "question": "Translate this time word into English:",
+      "answer": "Noon"
+    }
+  ]
+  

@@ -1,0 +1,130 @@
+[
+    {
+      "type": "multiple_choice",
+      "arabic_text": "ماء",
+      "question": "What is the meaning of this word?",
+      "options": ["Milk", "Juice", "Water", "Coffee"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "قهوة",
+      "statement": "This word means 'Coffee'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "تفاح",
+      "question": "Translate this word into English:",
+      "answer": "Apple"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "شاي",
+      "question": "What drink is this?",
+      "options": ["Juice", "Tea", "Milk", "Soda"],
+      "correct_index": 1
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "خبز",
+      "statement": "This means 'Bread'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "لحم",
+      "question": "Translate this Arabic food word:",
+      "answer": "Meat"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "سمك",
+      "question": "What does this word mean?",
+      "options": ["Fish", "Chicken", "Meat", "Eggs"],
+      "correct_index": 0
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "بيض",
+      "statement": "This means 'Eggs'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "دجاج",
+      "question": "Translate this Arabic word into English:",
+      "answer": "Chicken"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "عصير",
+      "question": "What is this drink?",
+      "options": ["Milk", "Water", "Juice", "Coffee"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "فطور",
+      "statement": "This word means 'Dinner'.",
+      "is_true": false
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "غداء",
+      "question": "What is the English translation of this meal?",
+      "answer": "Lunch"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "عشاء",
+      "question": "Which meal is this?",
+      "options": ["Breakfast", "Snack", "Lunch", "Dinner"],
+      "correct_index": 3
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "حليب",
+      "statement": "This means 'Milk'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "ملح",
+      "question": "Translate this word to English:",
+      "answer": "Salt"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "سكر",
+      "question": "What does this word mean?",
+      "options": ["Sugar", "Salt", "Pepper", "Spice"],
+      "correct_index": 0
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "خضار",
+      "statement": "This word means 'Fruits'.",
+      "is_true": false
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "فاكهة",
+      "question": "What is the English translation?",
+      "answer": "Fruit"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "بطاطا",
+      "question": "What is this food?",
+      "options": ["Carrot", "Potato", "Tomato", "Onion"],
+      "correct_index": 1
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "رز",
+      "question": "Translate this food item into English:",
+      "answer": "Rice"
+    }
+  ]
+  
