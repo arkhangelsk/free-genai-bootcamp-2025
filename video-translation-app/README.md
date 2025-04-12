@@ -71,9 +71,6 @@ choco install ffmpeg yt-dlp
 # Basic usage
 python video_translator.py https://www.youtube.com/watch?v=VIDEO_ID
 
-# Specify target language
-python video_translator.py https://www.youtube.com/watch?v=VIDEO_ID --target-language french
-
 # Use a different model size
 python video_translator.py https://www.youtube.com/watch?v=VIDEO_ID --model-size medium
 

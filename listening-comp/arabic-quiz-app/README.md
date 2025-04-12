@@ -169,3 +169,9 @@ For each topic, it will:
 * Add the questions to the ChromaDB vector store for semantic search
 
 ![alt text](screenshots/question-json.png)
+
+## Limitations
+
+- Translation quality depends on the accuracy of the translation model
+- Question generation may produce imperfect questions depending on the content
+- The first run may be slow as it downloads necessary language models
