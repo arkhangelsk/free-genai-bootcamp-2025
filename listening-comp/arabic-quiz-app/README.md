@@ -15,6 +15,8 @@ Create an app that helps students practice listening comprehension for language 
 - Generate a new listening comprehension question in the frontend UI.
 - Synthesize audio so students can listen and practice.
 
+---------------
+
 ## 💻 Technical Requirements:
 * Text to Speech (TTS) eg. Amazon Polly, Google Text to Speech etc.
 * (Optional) Speech to Text, (ASR) Transcribe. eg Amazon Transcribe, OpenWhisper
@@ -25,6 +27,8 @@ Create an app that helps students practice listening comprehension for language 
 * Other AI Assistant - ChatGPT, Claude, DeepSeek R1, Google Gemini
 * Frontend eg. Streamlit.
 * Guardrails
+
+---------------
 
 ## 🔧 Possible Technical Uncertainties
 
@@ -43,6 +47,8 @@ Create an app that helps students practice listening comprehension for language 
 ### Vector Store Integration
 * How to map vague or broad topics to useful content from the vector store?
 * What tools to use for embeddings? 
+
+---------------
 
 ## Domain knowledge acquired through technical uncertainty
 Initially, my understanding of Arabic language processing tools was limited. Through this exercise, I learned that Arabic presents unique challenges for Text-to-Speech (TTS) as described below:
@@ -69,6 +75,8 @@ Overall, these uncertainties helped me acquire practical knowledge in:
 * Selecting appropriate tools and models for multilingual applications
 * Designing fallback and filtering mechanisms for real-world data
 
+---------------
+
 ## Solution Overview
 This app has a robust system for generating Arabic quiz questions, either from YouTube content when available or from high-quality fallback content when extraction isn't possible.
 
@@ -91,15 +99,19 @@ This app provides different options:
 ![Full Screenshot](screenshots/arabic-quiz-app.png)
 
 Searches for a topic in ChromaDB & generates questions based on similarity search
+
 ![alt text](screenshots/quiz-search.png)
 
 User attempts the quiz and submits answer. 
+
 ![alt text](screenshots/quiz-start.png)
 
 After submitting the answer, users gets feedback on submitted question.
+
 ![alt text](screenshots/quiz-questions.png)
 
 User can play the audio with different settings.
+
 ![alt text](screenshots/listening-opts.png)
 
 User can choose to display question either in Arabic or English (based on their expertise level). In Dictation mode, user will provide the response based on what they listen.
@@ -109,7 +121,10 @@ User can choose to display question either in Arabic or English (based on their 
 ![alt text](screenshots/dictation-mode-answer.png)
 
 App displays the final quiz results to the user.
+
 ![alt text](screenshots/quiz-results.png)
+
+---------------
 
 ## Tool Stack:
 * Text to Speech: `gTTS` Google Text to Speech to generate speech/voice.
@@ -117,6 +132,8 @@ App displays the final quiz results to the user.
 * `Sentence Transformers` (a.k.a. SBERT) - a Python module for accessing, using, and training state-of-the-art embedding and reranker models.
 * Videos: YouTube Transcript Api to get video transcripts.
   
+---------------
+
 ## How to use the app?
 
 **Prerequites:**
@@ -137,7 +154,7 @@ App displays the final quiz results to the user.
 * The app will run on `http://localhost:5000`
 * Use the search functionality to find questions related to specific topics. The app will use both the predefined questions and any extracted from YouTube.
 
-# Explore Different Topics:
+## 3. Explore Different Topics:
 View available topics with `./run_extractor.sh --list-topics`
 
 ![alt text](topic-list.png)
