@@ -1,0 +1,38 @@
+[
+  {
+    "type": "multiple_choice",
+    "arabic_text": "مرحبا",
+    "question": "What does this phrase mean?",
+    "options": [
+      "hello",
+      "good evening",
+      "good morning",
+      "goodbye"
+    ],
+    "correct_index": 0
+  },
+  {
+    "type": "true_false",
+    "arabic_text": "صباح الخير",
+    "statement": "This phrase means 'good evening'",
+    "is_true": false
+  },
+  {
+    "type": "fill_blank",
+    "arabic_text": "مساء الخير",
+    "question": "What is the English translation?",
+    "answer": "good evening"
+  },
+  {
+    "type": "multiple_choice",
+    "arabic_text": "مع السلامة",
+    "question": "What does this phrase mean?",
+    "options": [
+      "hello",
+      "goodbye",
+      "good evening",
+      "good morning"
+    ],
+    "correct_index": 1
+  }
+]

@@ -1,0 +1,130 @@
+[
+    {
+        "type": "multiple_choice",
+        "arabic_text": "واحد",
+        "question": "What number is this in English?",
+        "options": ["One", "Two", "Three", "Four"],
+        "correct_index": 0
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "خمسة",
+        "question": "What number is this?",
+        "options": ["Four", "Five", "Six", "Seven"],
+        "correct_index": 1
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "عشرة",
+        "statement": "This is the number ten in Arabic",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "ثلاثة",
+        "question": "Translate this number into English:",
+        "answer": "Three"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "ثمانية",
+        "question": "What is the correct translation of this number?",
+        "options": ["Six", "Seven", "Eight", "Nine"],
+        "correct_index": 2
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "صفر",
+        "statement": "This is the number zero in Arabic",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "سبعة",
+        "question": "Translate this Arabic number into English:",
+        "answer": "Seven"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "اثنان",
+        "question": "Which number is this?",
+        "options": ["One", "Two", "Three", "Four"],
+        "correct_index": 1
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "ستة",
+        "statement": "This is the number eight",
+        "is_true": false
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "أربعة",
+        "question": "What is the English word for this number?",
+        "answer": "Four"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "تسعة",
+        "question": "This Arabic word means which number?",
+        "options": ["Six", "Seven", "Eight", "Nine"],
+        "correct_index": 3
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "مائة",
+        "statement": "This means one hundred",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "عشرون",
+        "question": "Translate this Arabic number to English:",
+        "answer": "Twenty"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "خمسة عشر",
+        "question": "What number is this?",
+        "options": ["Fifteen", "Fifty", "Five", "Thirteen"],
+        "correct_index": 0
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "ثلاثون",
+        "statement": "This number is thirty",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "أحد عشر",
+        "question": "What is the English translation?",
+        "answer": "Eleven"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "مليون",
+        "question": "What does this number mean?",
+        "options": ["Thousand", "Million", "Billion", "Trillion"],
+        "correct_index": 1
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "ألف",
+        "statement": "This number is one hundred",
+        "is_true": false
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "تسعة وتسعون",
+        "question": "Translate this number into English:",
+        "answer": "Ninety-nine"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "ستة عشر",
+        "question": "What number is this?",
+        "options": ["Sixteen", "Sixty", "Seventeen", "Fifteen"],
+        "correct_index": 0
+    }
+]

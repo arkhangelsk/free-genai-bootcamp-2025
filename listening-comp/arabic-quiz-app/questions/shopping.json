@@ -1,0 +1,129 @@
+[
+    {
+        "type": "multiple_choice",
+        "arabic_text": "بكم هذا؟",
+        "question": "What does this question mean?",
+        "options": ["What is this?", "How much is this?", "Where is this?", "Do you want this?"],
+        "correct_index": 1
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "كم سعره؟",
+        "statement": "This phrase means 'What is its price?'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "أريد شراء هذا",
+        "question": "What does this sentence mean in English?",
+        "answer": "I want to buy this"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "هل تقبل بطاقة الائتمان؟",
+        "question": "What is this person asking?",
+        "options": ["Do you have a card?", "Do you want a receipt?", "Do you accept credit card?", "Do you give discounts?"],
+        "correct_index": 2
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "هل عندك مقاس أصغر؟",
+        "statement": "This means 'Do you have a bigger size?'",
+        "is_true": false
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "هل عندك مقاس أكبر؟",
+        "question": "Translate this phrase to English:",
+        "answer": "Do you have a bigger size?"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "أين قسم الملابس؟",
+        "question": "What does this question mean?",
+        "options": ["Where is the dressing room?", "Where is the clothing section?", "Where is the store?", "Where is the cashier?"],
+        "correct_index": 1
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "هل هذا قابل للإرجاع؟",
+        "statement": "This means 'Is this returnable?'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "كم هذا؟",
+        "question": "What is the English translation of this question?",
+        "answer": "How much is this?"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "أرخص من هذا",
+        "question": "What does this phrase mean?",
+        "options": ["This is better", "More expensive than this", "Cheaper than this", "I want this"],
+        "correct_index": 2
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "أريد إيصالاً",
+        "statement": "This means 'I want a receipt'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "لا أريد هذا",
+        "question": "Translate this to English:",
+        "answer": "I don’t want this"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "كم الكمية؟",
+        "question": "What does this mean?",
+        "options": ["How many?", "How much?", "What color?", "What size?"],
+        "correct_index": 0
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "أين صندوق الدفع؟",
+        "statement": "This means 'Where is the cashier?'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "هل عندك لون آخر؟",
+        "question": "Translate this phrase:",
+        "answer": "Do you have another color?"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "أريد واحداً فقط",
+        "question": "What does this mean?",
+        "options": ["I want two only", "I want one only", "I want none", "I want more"],
+        "correct_index": 1
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "كم تريد؟",
+        "statement": "This means 'How much do you want?'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "النقد فقط",
+        "question": "What does this sign mean in English?",
+        "answer": "Cash only"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "هل يمكنني تجربة هذا؟",
+        "question": "What does this phrase mean?",
+        "options": ["Can I return this?", "Can I buy this?", "Can I try this?", "Can I take this?"],
+        "correct_index": 2
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "هل لديكم عروض اليوم؟",
+        "question": "Translate this question to English:",
+        "answer": "Do you have any offers today?"
+    }
+]

@@ -1,0 +1,129 @@
+[
+    {
+        "type": "multiple_choice",
+        "arabic_text": "مرحبا",
+        "question": "What is the meaning of this greeting?",
+        "options": ["Hello", "Goodbye", "Thank you", "Excuse me"],
+        "correct_index": 0
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "مع السلامة",
+        "statement": "This phrase means 'Goodbye'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "أنا اسمي علي",
+        "question": "What does this sentence mean in English?",
+        "answer": "My name is Ali"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "كيف حالك؟",
+        "question": "What does this phrase mean?",
+        "options": ["Where are you?", "Who are you?", "How are you?", "What is your name?"],
+        "correct_index": 2
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "تشرفت بلقائك",
+        "statement": "This means 'Nice to meet you'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "من أين أنت؟",
+        "question": "Translate this question to English:",
+        "answer": "Where are you from?"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "صباح الخير",
+        "question": "What time of day is this greeting used?",
+        "options": ["Morning", "Afternoon", "Evening", "Night"],
+        "correct_index": 0
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "أنا بخير، شكراً",
+        "statement": "This means 'I'm fine, thank you'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "ما اسمك؟",
+        "question": "What does this mean in English?",
+        "answer": "What is your name?"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "إلى اللقاء",
+        "question": "What is the correct meaning of this phrase?",
+        "options": ["See you", "Excuse me", "Welcome", "How are you?"],
+        "correct_index": 0
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "السلام عليكم",
+        "statement": "This means 'Peace be upon you'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "وعليكم السلام",
+        "question": "What does this reply mean in English?",
+        "answer": "And peace be upon you"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "مساء الخير",
+        "question": "What time of day is this greeting used?",
+        "options": ["Morning", "Evening", "Afternoon", "Night"],
+        "correct_index": 1
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "ليلة سعيدة",
+        "statement": "This phrase means 'Good morning'",
+        "is_true": false
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "ليلة سعيدة",
+        "question": "Translate this phrase to English:",
+        "answer": "Good night"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "أنا من مصر",
+        "question": "What does this sentence mean?",
+        "options": ["I am Egyptian", "I am from Egypt", "Egypt is beautiful", "I love Egypt"],
+        "correct_index": 1
+    },
+    {
+        "type": "true_false",
+        "arabic_text": "تفضل",
+        "statement": "This phrase can be used to mean 'Here you go' or 'Please go ahead'",
+        "is_true": true
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "هل تتكلم الإنجليزية؟",
+        "question": "What does this question mean in English?",
+        "answer": "Do you speak English?"
+    },
+    {
+        "type": "multiple_choice",
+        "arabic_text": "عفواً",
+        "question": "What is the meaning of this word?",
+        "options": ["Sorry", "Excuse me", "You're welcome", "Thank you"],
+        "correct_index": 2
+    },
+    {
+        "type": "fill_blank",
+        "arabic_text": "شكراً",
+        "question": "Translate this word to English:",
+        "answer": "Thank you"
+    }
+]

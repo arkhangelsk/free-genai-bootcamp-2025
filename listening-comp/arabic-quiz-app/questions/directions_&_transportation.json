@@ -1,0 +1,130 @@
+[
+    {
+      "type": "multiple_choice",
+      "arabic_text": "أين المحطة؟",
+      "question": "What does this question mean?",
+      "options": ["Where is the restaurant?", "Where is the market?", "Where is the station?", "Where is the school?"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "يسار",
+      "statement": "This word means 'left'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "يمين",
+      "question": "What is the English translation?",
+      "answer": "Right"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "الطريق",
+      "question": "What does this word mean?",
+      "options": ["Street", "Road", "Car", "Traffic"],
+      "correct_index": 1
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "قريب",
+      "statement": "This word means 'Far'.",
+      "is_true": false
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "بعيد",
+      "question": "Translate this word to English:",
+      "answer": "Far"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "سيارة",
+      "question": "What kind of transportation is this?",
+      "options": ["Bicycle", "Bus", "Car", "Train"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "حافلة",
+      "statement": "This means 'Bus'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "دراجة",
+      "question": "What is the English word?",
+      "answer": "Bicycle"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "قطار",
+      "question": "What is this mode of transport?",
+      "options": ["Car", "Boat", "Train", "Plane"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "مطار",
+      "statement": "This word means 'Train Station'.",
+      "is_true": false
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "مطار",
+      "question": "Translate this word into English:",
+      "answer": "Airport"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "تاكسي",
+      "question": "What is this?",
+      "options": ["Taxi", "Train", "Truck", "Bicycle"],
+      "correct_index": 0
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "امشِ مباشرة",
+      "statement": "This instruction means 'Walk straight ahead.'",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "انعطف يمينًا",
+      "question": "What is the English translation of this direction?",
+      "answer": "Turn right"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "انعطف يسارًا",
+      "question": "What does this mean?",
+      "options": ["Turn right", "Go back", "Turn left", "Go straight"],
+      "correct_index": 2
+    },
+    {
+      "type": "true_false",
+      "arabic_text": "ميناء",
+      "statement": "This is the Arabic word for 'Port' or 'Harbor'.",
+      "is_true": true
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "محطة القطار",
+      "question": "What does this phrase mean in English?",
+      "answer": "Train station"
+    },
+    {
+      "type": "multiple_choice",
+      "arabic_text": "كم تبعد؟",
+      "question": "What does this question mean?",
+      "options": ["What time is it?", "How far is it?", "Where is it?", "Can I help you?"],
+      "correct_index": 1
+    },
+    {
+      "type": "fill_blank",
+      "arabic_text": "رحلة",
+      "question": "What is the English translation of this word?",
+      "answer": "Trip"
+    }
+  ]
+  
