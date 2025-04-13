@@ -17,20 +17,21 @@ All the videos from the bootcamp can be watched on Andrew's YouTube channel at [
 - [x] [Backend API Implementation](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/lang-portal/backend-flask)
 - [x] [Frontend API Implementation](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/lang-portal/frontend-nextjs)
 - [x] [Vocab Importer Implementation](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/vocab-importer)
-- [x][OPEA Implementation](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/opea-comps)
+- [x] [OPEA Implementation](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/opea-comps)
 
 ### Week: 2
-- [ ] Language Listening App: Describe in summary what the domain knowledge you acquired through technical uncertainty. (WIP)
-- [ ] Kana Practice App: Describe in summary what the domain knowledge you acquired through technical uncertainty. (WIP)
-- [ ] ASL Finger Spelling (Optional , Bonus Points): Describe if you attempted the optional reimplementation of the ASL Finger Spelling app.
-- [ ] Video Translation Task (Optional)
+- [X] [Language Listening App](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/listening-comp); 
+  * Please check [App code here](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/listening-comp/arabic-quiz-app)
+- [X] [Arabic Writing Practice App](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/arabic-writing-practice-app)
+- [X] [Video Translation Task](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/video-translation-app)
 
-Details here: https://docs.google.com/document/d/1KVDTDF4t8VtI69F5KMo67KoTBXgVhsd2O9hK-uPh2rA/edit?tab=t.1ugpln2fwmbp
+Homework details can be found [here](https://docs.google.com/document/d/1KVDTDF4t8VtI69F5KMo67KoTBXgVhsd2O9hK-uPh2rA/edit?tab=t.1ugpln2fwmbp)
 
 ### Week: 3
 - [ ] Describe your progress with OPEA (WIP)
 - [ ] Describe your progress with Agentic Workflows (WIP)
-Details here: https://docs.google.com/document/d/1KVDTDF4t8VtI69F5KMo67KoTBXgVhsd2O9hK-uPh2rA/edit?tab=t.6c5m6gcx8k7k
+
+Homework details can be found [here](https://docs.google.com/document/d/1KVDTDF4t8VtI69F5KMo67KoTBXgVhsd2O9hK-uPh2rA/edit?tab=t.6c5m6gcx8k7k)
 
 ### Week: 4
 - [x] [Developed an Arabic Culinary Explorer](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/arabic-learning-app), an application to help users learn and practice Arabic while exploring the rich culinary traditions of the Middle East.
