@@ -28,8 +28,7 @@ All Bootcamp notes from Andrew Brown can be viewed here:[GenAI Bootcamp Wiki](ht
 - [X] [Video Translation Task](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/video-translation-app)
 
 ### Week: 3
-- [ ] Describe your progress with OPEA (WIP)
-- [ ] Describe your progress with Agentic Workflows (WIP)
+- [x] Agentic Workflows - [Arabic Grammar Explainer App | شارح قواعد اللغة العربية](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/language-learning-agent)
 
 ### Week: 4
 - [x] [Developed an Arabic Culinary Explorer](https://github.com/arkhangelsk/free-genai-bootcamp-2025/tree/main/arabic-learning-app), an application to help users learn and practice Arabic while exploring the rich culinary traditions of the Middle East.
