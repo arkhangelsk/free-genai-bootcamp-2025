@@ -14,15 +14,7 @@
 
 ## Project Structure
 
-arabic_vocabulary_generator/
-├── app.py               # Main application file
-├── styles.css           # External CSS file
-├── db/
-│   ├── words.db         # SQLite database
-│   └── seeds/           # Directory for JSON export
-├── .streamlit/          # Streamlit configuration
-│   └── secrets.toml     # API keys and secrets
-└── requirements.txt     # Project dependencies
+![alt text](screenshots/folder-structure.png)
 
 ## Features
 
